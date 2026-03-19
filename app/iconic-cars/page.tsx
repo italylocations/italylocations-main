@@ -15,15 +15,12 @@ const cars = [
     brand: 'Porsche',
     model: '997 Carrera S Cabrio',
     year: 2006,
-    km: '54.000',
-    color: 'Nero Pastello',
-    interior: 'Pelle nero, capotte nera',
-    origin: 'Vettura ufficiale italiana',
+    color: 'Nero Pastello (Gloss Black)',
+    origin: 'Official Italian market vehicle',
     productionType: 'Automotive · Fashion · Luxury Lifestyle',
     description:
-      'Elegante cabrio nera con capotte in tela, iscritta ASI. Tagliandi rete ufficiale, ultimo dicembre 2025. Una vettura in condizioni eccellenti per produzioni che richiedono stile e autenticità.',
-    features: ['Cerchi 19"', 'Scarico sportivo', 'PCM', 'Frangivento', 'Iscrizione ASI', 'Tagliandi ufficiali'],
-    perfectFor: ['Automotive commercial', 'Fashion editorial', 'Cabrio scenes', 'Luxury lifestyle'],
+      'Elegant black cabriolet with matching black canvas roof, ASI registered. Official dealer service history, last service December 2025. An exceptionally well-maintained vehicle for productions requiring style and authenticity.',
+    features: ['19" Wheels', 'Sport exhaust', 'PCM', 'Wind deflector', 'ASI registered', 'Official service history'],
     image: {
       src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/porsche-997-carrera-s-cabrio-2006.jpg',
       alt: 'Porsche 997 Carrera S Cabriolet 2006 black - available for advertising and film productions Italy',
@@ -34,15 +31,12 @@ const cars = [
     brand: 'Lamborghini',
     model: 'Gallardo LP-560 4',
     year: 2013,
-    km: '26.000',
     color: 'Contact for details',
-    interior: 'Contact for details',
-    origin: 'Vettura unica per condizioni e colorazione',
+    origin: 'Unique livery and condition',
     productionType: 'Supercar · Premium Automotive · Music Video',
     description:
-      'Esemplare unico per colorazione e condizioni. Una delle supercar più iconiche di sempre, con soli 26.000 km. Perfetta per produzioni ad alto impatto visivo e campagne premium.',
-    features: ['LP-560 hp', '26.000 km', 'Colorazione esclusiva', 'Condizioni eccezionali'],
-    perfectFor: ['Supercar campaigns', 'Music video', 'Luxury fashion', 'Premium automotive'],
+      'A one-of-a-kind example in terms of colour and condition. One of the most iconic supercars ever produced, with an exceptional service history. Perfect for high-visual-impact productions and premium campaigns.',
+    features: ['560 hp V10', 'Exclusive livery', 'Exceptional condition', 'Low mileage'],
     image: {
       src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/lamborghini-gallardo-lp560-2013.avif',
       alt: 'Lamborghini Gallardo LP-560 4 2013 matte grey - available for film and advertising productions in Italy',
@@ -53,15 +47,12 @@ const cars = [
     brand: 'Mercedes',
     model: 'SL 350 AMG Sport (R230)',
     year: 2009,
-    km: '150.000',
-    color: 'Argento metallizzato',
-    interior: 'Pelle totale',
-    origin: 'Pacchetto AMG Sport',
+    color: 'Metallic Silver',
+    origin: 'AMG Sport Package',
     productionType: 'Luxury Lifestyle · Fashion · Automotive',
     description:
-      '315CV con il lussuoso pacchetto AMG Sport. Sospensioni ABC revisionate, Airscarf, frangivento elettrico. Un grand tourer cabrio dall\'eleganza senza tempo, perfetto per scene di guida e lifestyle.',
-    features: ['315 CV', 'Cerchi 19"', 'Airscarf', 'Sospensioni ABC', 'Sedili elettrici con memoria', 'Cruise control', 'Frangivento elettrico'],
-    perfectFor: ['Cabrio elegance', 'Fashion editorial', 'Luxury lifestyle', 'Automotive campaigns'],
+      '315 hp with the full AMG Sport package. Overhauled ABC suspension, Airscarf neck heating, electric wind deflector. A grand tourer cabriolet of timeless elegance — ideal for driving scenes and lifestyle campaigns.',
+    features: ['315 hp', '19" Wheels', 'Airscarf', 'ABC suspension', 'Electric memory seats', 'Cruise control', 'Electric wind deflector'],
     image: {
       src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/mercedes-sl350-amg-2009.jpg',
       alt: 'Mercedes SL 350 AMG Sport 2009 silver - available for film and advertising productions in Italy',
@@ -72,15 +63,12 @@ const cars = [
     brand: 'Porsche',
     model: '997 Carrera 4S Coupé',
     year: 2010,
-    km: '41.000',
-    color: 'Bianca Carrara',
-    interior: 'Pelle nero, cerchi 19" verniciati neri',
-    origin: 'Vettura ufficiale italiana, prima vernice originale',
+    color: 'Carrara White',
+    origin: 'Official Italian market, first paint',
     productionType: 'Automotive · Fashion · Urban Campaigns',
     description:
-      'Bianca Carrara con interni neri — contrasto cromatico perfetto per l\'obiettivo. Prima vernice originale, fattura d\'acquisto da nuova. Impianto Bose, fari Xenon PDLS, tetto apribile.',
-    features: ['Cerchi 19" neri', 'Scarico sportivo', 'Fari Xenon PDLS', 'Impianto Bose', 'Tetto apribile', 'PCM', 'Prima vernice'],
-    perfectFor: ['Automotive', 'Fashion editorial', 'Luxury campaigns', 'Urban production'],
+      'Carrara White with black leather interior and black 19" wheels — a perfect chromatic contrast for the lens. First original paint, purchase invoice from new. Bose audio, Xenon PDLS headlights, sunroof.',
+    features: ['19" Black wheels', 'Sport exhaust', 'Xenon PDLS', 'Bose audio', 'Sunroof', 'PCM', 'First paint'],
     image: {
       src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/porsche-997-carrera-4s-2010.jpg',
       alt: 'Porsche 997 Carrera 4S Coupe 2010 Carrara White - available for film productions in Italy',
@@ -93,7 +81,7 @@ const steps = [
     icon: '📋',
     title: 'Send Your Brief',
     description:
-      'Tell us about your production, shooting date and creative vision. We\'ll confirm availability within 24 hours.',
+      'Tell us about your production, shooting date and creative vision. Include your production insurance documentation. We\'ll confirm availability within 24 hours.',
   },
   {
     icon: '🤝',
@@ -145,12 +133,36 @@ export default function IconicCarsPage() {
       {/* Intro */}
       <section className="px-6 pb-20">
         <AnimateOnScroll>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[rgba(255,255,255,0.55)] text-base md:text-lg leading-relaxed border-l-2 border-[rgba(201,168,76,0.4)] pl-6 text-left">
-              Every vehicle in our fleet has been selected for its visual impact, condition and story.
-              Available throughout Italy with full logistical support — from location coordination to
-              on-set assistance. All vehicles are privately owned and managed exclusively by Italy Locations.
+          <div className="max-w-3xl mx-auto">
+            <p className="text-[rgba(255,255,255,0.55)] text-base md:text-lg leading-relaxed border-l-2 border-[rgba(201,168,76,0.4)] pl-6">
+              Every vehicle in our fleet is available exclusively as a production prop for advertising
+              campaigns, photo shoots, music videos and film productions. These vehicles are{' '}
+              <span className="text-white font-semibold">NOT available for rental or personal driving</span>{' '}
+              under any circumstances.
+              <br /><br />
+              All bookings require full production documentation, valid insurance coverage for the vehicle
+              and professional liability. Italy Locations manages every booking directly to ensure the
+              safety and integrity of each vehicle.
             </p>
+          </div>
+        </AnimateOnScroll>
+      </section>
+
+      {/* Production Use Only Banner */}
+      <section className="px-6 pb-12">
+        <AnimateOnScroll>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-start gap-4 p-6 rounded-2xl bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.35)]">
+              <span className="text-2xl flex-shrink-0 mt-0.5">⚠️</span>
+              <div>
+                <h2 className="text-base font-bold text-[#e8d5a0] mb-1">Production Use Only</h2>
+                <p className="text-[rgba(255,255,255,0.55)] text-sm leading-relaxed">
+                  These vehicles are available exclusively for professional film, advertising and photography
+                  productions. Valid production insurance and documentation required. Not available for
+                  private hire or personal driving.
+                </p>
+              </div>
+            </div>
           </div>
         </AnimateOnScroll>
       </section>
@@ -164,27 +176,18 @@ export default function IconicCarsPage() {
 
                 {/* Photo */}
                 <div className="relative w-full aspect-video bg-gradient-to-br from-[#0d1526] to-[#1a2744] overflow-hidden">
-                  {'image' in car && car.image ? (
-                    <Image
-                      src={car.image.src}
-                      alt={car.image.alt}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      unoptimized
-                    />
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[rgba(201,168,76,0.04)] to-transparent" />
-                      <p className="absolute inset-0 flex items-center justify-center text-[rgba(255,255,255,0.18)] text-sm font-medium tracking-wide text-center px-4">
-                        [ Photo — {car.brand} {car.model} ]
-                      </p>
-                    </>
-                  )}
+                  <Image
+                    src={car.image.src}
+                    alt={car.image.alt}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    unoptimized
+                  />
                 </div>
 
                 <div className="p-6">
-                  {/* Production type badge */}
+                  {/* Production type badges */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {car.productionType.split('·').map((t) => (
                       <span
@@ -198,39 +201,37 @@ export default function IconicCarsPage() {
 
                   {/* Title */}
                   <h2
-                    className="text-2xl font-bold gold-text mb-5 leading-tight"
+                    className="text-2xl font-bold gold-text mb-3 leading-tight"
                     style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
                   >
                     {car.brand} {car.model} {car.year}
                   </h2>
 
-                  {/* Specs grid */}
+                  {/* Production Prop Only badge */}
+                  <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-[rgba(251,146,60,0.12)] text-[rgba(251,146,60,0.9)] border border-[rgba(251,146,60,0.3)] mb-5">
+                    Production Prop Only
+                  </span>
+
+                  {/* Specs grid — Year, Color, Origin */}
                   <div className="grid grid-cols-2 gap-3 mb-5">
                     <div className="flex items-start gap-2">
                       <span className="text-base leading-none mt-0.5">🗓</span>
                       <div>
-                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Anno</p>
+                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Year</p>
                         <p className="text-white text-sm font-semibold">{car.year}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-base leading-none mt-0.5">📍</span>
-                      <div>
-                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Km</p>
-                        <p className="text-white text-sm font-semibold">{car.km} km</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-base leading-none mt-0.5">🎨</span>
                       <div>
-                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Colore</p>
+                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Colour</p>
                         <p className="text-white text-sm font-semibold">{car.color}</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-2 col-span-2">
                       <span className="text-base leading-none mt-0.5">🇮🇹</span>
                       <div>
-                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Origine</p>
+                        <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Origin</p>
                         <p className="text-white text-sm font-semibold leading-tight">{car.origin}</p>
                       </div>
                     </div>
@@ -323,8 +324,8 @@ export default function IconicCarsPage() {
               Looking for the Perfect Backdrop?
             </h2>
             <p className="text-[rgba(255,255,255,0.55)] mb-8 leading-relaxed">
-              Looking for the perfect backdrop for your vehicle shoot?
-              Browse our 48+ scouted locations across Italy — from medieval citadels to coastal roads and mountain passes.
+              Browse our 48+ scouted locations across Italy — from medieval citadels to coastal roads
+              and mountain passes. Find the ideal setting for your vehicle shoot.
             </p>
             <Link
               href="/locations"
@@ -351,7 +352,8 @@ export default function IconicCarsPage() {
               Interested in One of These Vehicles?
             </h2>
             <p className="text-[rgba(255,255,255,0.55)] mb-8 leading-relaxed">
-              Contact us with your project details and we&apos;ll get back to you within 24 hours.
+              Contact us with your production details and insurance documentation.
+              We&apos;ll confirm availability and terms within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
