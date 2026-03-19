@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getAllLocations, getLocationBySlug } from '@/lib/locations'
-import { GoldButton } from '@/components/ui/GoldButton'
 import { ImageGallery } from './ImageGallery'
 
 interface Props {
@@ -95,7 +94,7 @@ export default async function LocationPage({ params }: Props) {
       <div className="max-w-4xl mx-auto px-6 py-16">
         {/* Tags */}
         {location.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div className="flex flex-wrap gap-2 mb-8">
             {location.tags.map((tag) => (
               <span
                 key={tag}
@@ -107,23 +106,29 @@ export default async function LocationPage({ params }: Props) {
           </div>
         )}
 
+        {/* PDF Download */}
+        {location.pdfUrl && (
+          <div className="mb-10 flex flex-col items-start gap-2">
+            <a
+              href={location.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#c9a84c] to-[#e8d5a0] text-[#0a0f1e] font-bold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(201,168,76,0.5)] text-sm md:text-base"
+            >
+              <span>⬇</span>
+              Download Scouting Report PDF
+            </a>
+            <p className="text-[rgba(255,255,255,0.3)] text-xs tracking-wide pl-1">
+              High-resolution photography &middot; Professional documentation
+            </p>
+          </div>
+        )}
+
         {/* Excerpt */}
         {location.excerpt && (
           <p className="text-[rgba(255,255,255,0.75)] text-lg leading-relaxed mb-10 border-l-2 border-[rgba(201,168,76,0.5)] pl-5">
             {location.excerpt}
           </p>
-        )}
-
-        {/* PDF Download */}
-        {location.pdfUrl && (
-          <div className="mb-12 flex flex-col items-start gap-2">
-            <GoldButton href={location.pdfUrl} filled external className="text-base px-8 py-4">
-              ⬇&nbsp;&nbsp;Download Scouting Report PDF
-            </GoldButton>
-            <p className="text-[rgba(255,255,255,0.3)] text-xs tracking-wide pl-1">
-              High-resolution photography report &middot; Professional documentation
-            </p>
-          </div>
         )}
 
         {/* MDX Content */}
