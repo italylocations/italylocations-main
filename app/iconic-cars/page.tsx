@@ -24,6 +24,10 @@ const cars = [
       'Elegante cabrio nera con capotte in tela, iscritta ASI. Tagliandi rete ufficiale, ultimo dicembre 2025. Una vettura in condizioni eccellenti per produzioni che richiedono stile e autenticità.',
     features: ['Cerchi 19"', 'Scarico sportivo', 'PCM', 'Frangivento', 'Iscrizione ASI', 'Tagliandi ufficiali'],
     perfectFor: ['Automotive commercial', 'Fashion editorial', 'Cabrio scenes', 'Luxury lifestyle'],
+    image: {
+      src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/porsche-997-carrera-s-cabrio-2006.jpg',
+      alt: 'Porsche 997 Carrera S Cabriolet 2006 black - available for advertising and film productions Italy',
+    },
   },
   {
     id: 'lamborghini-gallardo-lp560-4',
@@ -58,6 +62,10 @@ const cars = [
       '315CV con il lussuoso pacchetto AMG Sport. Sospensioni ABC revisionate, Airscarf, frangivento elettrico. Un grand tourer cabrio dall\'eleganza senza tempo, perfetto per scene di guida e lifestyle.',
     features: ['315 CV', 'Cerchi 19"', 'Airscarf', 'Sospensioni ABC', 'Sedili elettrici con memoria', 'Cruise control', 'Frangivento elettrico'],
     perfectFor: ['Cabrio elegance', 'Fashion editorial', 'Luxury lifestyle', 'Automotive campaigns'],
+    image: {
+      src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/mercedes-sl350-amg-2009.jpg',
+      alt: 'Mercedes SL 350 AMG Sport 2009 silver - available for film and advertising productions in Italy',
+    },
   },
   {
     id: 'porsche-997-carrera-4s-coupe',
@@ -73,6 +81,10 @@ const cars = [
       'Bianca Carrara con interni neri — contrasto cromatico perfetto per l\'obiettivo. Prima vernice originale, fattura d\'acquisto da nuova. Impianto Bose, fari Xenon PDLS, tetto apribile.',
     features: ['Cerchi 19" neri', 'Scarico sportivo', 'Fari Xenon PDLS', 'Impianto Bose', 'Tetto apribile', 'PCM', 'Prima vernice'],
     perfectFor: ['Automotive', 'Fashion editorial', 'Luxury campaigns', 'Urban production'],
+    image: {
+      src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/porsche-997-carrera-4s-2010.jpg',
+      alt: 'Porsche 997 Carrera 4S Coupe 2010 Carrara White - available for film productions in Italy',
+    },
   },
 ]
 
