@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 
@@ -136,17 +137,19 @@ export default function AboutPage() {
 
           {/* Photo + Stats */}
           <AnimateOnScroll delay={150}>
-            {/* Photo placeholder */}
+            {/* Profile photo */}
             <div
               className="relative w-full rounded-2xl overflow-hidden border border-[rgba(201,168,76,0.3)] mb-4"
               style={{ paddingBottom: '133.33%' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a2744] to-[#0a0f1e] flex flex-col items-center justify-center gap-3">
-                <span className="text-[rgba(255,255,255,0.15)] text-6xl">[ Photo ]</span>
-                <span className="text-[rgba(255,255,255,0.1)] text-sm tracking-widest uppercase">
-                  Professional portrait
-                </span>
-              </div>
+              <Image
+                src="/images/nicolas-vanegas-sanchez.jpg"
+                alt="Nicolas Vanegas Sanchez - Founder, Italy Locations - Professional Film Location Scout in Italy"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
 
             {/* Caption */}
