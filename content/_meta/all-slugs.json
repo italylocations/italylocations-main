@@ -1,0 +1,326 @@
+[
+  {
+    "slug": "contact",
+    "original_url": "https://italylocations.com/contact/",
+    "next_url": "/contact",
+    "type": "page"
+  },
+  {
+    "slug": "about",
+    "original_url": "https://italylocations.com/about/",
+    "next_url": "/about",
+    "type": "page"
+  },
+  {
+    "slug": "home",
+    "original_url": "https://italylocations.com/",
+    "next_url": "/home",
+    "type": "page"
+  },
+  {
+    "slug": "faq",
+    "original_url": "https://italylocations.com/faq/",
+    "next_url": "/faq",
+    "type": "page"
+  },
+  {
+    "slug": "scouting-service-rates",
+    "original_url": "https://italylocations.com/scouting-service-rates/",
+    "next_url": "/scouting-service-rates",
+    "type": "page"
+  },
+  {
+    "slug": "bologna-street-locations-scouting",
+    "original_url": "https://italylocations.com/bologna-street-locations-scouting/",
+    "next_url": "/locations/bologna-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "parma-street-locations-scouting",
+    "original_url": "https://italylocations.com/parma-street-locations-scouting/",
+    "next_url": "/locations/parma-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "reggio-emilia-street-locations-scouting",
+    "original_url": "https://italylocations.com/reggio-emilia-street-locations-scouting/",
+    "next_url": "/locations/reggio-emilia-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "rimini-street-locations-scouting",
+    "original_url": "https://italylocations.com/rimini-street-locations-scouting/",
+    "next_url": "/locations/rimini-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "nepi-tuscia-street-locations-scouting",
+    "original_url": "https://italylocations.com/nepi-tuscia-street-locations-scouting/",
+    "next_url": "/locations/nepi-tuscia-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "caprarola-tuscia-street-locations-scouting",
+    "original_url": "https://italylocations.com/caprarola-tuscia-street-locations-scouting/",
+    "next_url": "/locations/caprarola-tuscia-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "tarquinia-tuscia-street-locations-scouting",
+    "original_url": "https://italylocations.com/tarquinia-tuscia-street-locations-scouting/",
+    "next_url": "/locations/tarquinia-tuscia-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "amalfi-coast-street-locations-scouting",
+    "original_url": "https://italylocations.com/amalfi-coast-street-locations-scouting/",
+    "next_url": "/locations/amalfi-coast-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "atrani-coast-street-locations-scouting",
+    "original_url": "https://italylocations.com/atrani-coast-street-locations-scouting/",
+    "next_url": "/locations/atrani-coast-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "cetara-coast-street-locations-scouting",
+    "original_url": "https://italylocations.com/cetara-coast-street-locations-scouting/",
+    "next_url": "/locations/cetara-coast-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "maiori-coast-street-locations-scouting",
+    "original_url": "https://italylocations.com/maiori-coast-street-locations-scouting/",
+    "next_url": "/locations/maiori-coast-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "ravello-coast-street-locations-scouting",
+    "original_url": "https://italylocations.com/ravello-coast-street-locations-scouting/",
+    "next_url": "/locations/ravello-coast-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "vietri-coast-street-locations-scouting",
+    "original_url": "https://italylocations.com/vietri-coast-street-locations-scouting/",
+    "next_url": "/locations/vietri-coast-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting",
+    "original_url": "https://italylocations.com/umbria-locations-scouting/",
+    "next_url": "/locations/umbria-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "rome-colosseum-street-locations-scouting",
+    "original_url": "https://italylocations.com/rome-colosseum-street-locations-scouting/",
+    "next_url": "/locations/rome-colosseum-street-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting-2",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-2/",
+    "next_url": "/locations/umbria-locations-scouting-2",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting-2-2",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-2-2/",
+    "next_url": "/locations/umbria-locations-scouting-2-2",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting-2-2-2",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-2-2-2/",
+    "next_url": "/locations/umbria-locations-scouting-2-2-2",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting-montefalco",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-montefalco/",
+    "next_url": "/locations/umbria-locations-scouting-montefalco",
+    "type": "post"
+  },
+  {
+    "slug": "services",
+    "original_url": "https://italylocations.com/services/",
+    "next_url": "/services",
+    "type": "page"
+  },
+  {
+    "slug": "umbria-locations-scouting-rasiglia",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-rasiglia/",
+    "next_url": "/locations/umbria-locations-scouting-rasiglia",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting-spoleto",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-spoleto/",
+    "next_url": "/locations/umbria-locations-scouting-spoleto",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-rieti-locations-scouting",
+    "original_url": "https://italylocations.com/lazio-rieti-locations-scouting/",
+    "next_url": "/locations/lazio-rieti-locations-scouting",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-tuscia-bomarzo-viterbo",
+    "original_url": "https://italylocations.com/lazio-tuscia-bomarzo-viterbo/",
+    "next_url": "/locations/lazio-tuscia-bomarzo-viterbo",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-tuscia-bolsena-lake",
+    "original_url": "https://italylocations.com/lazio-tuscia-bolsena-lake/",
+    "next_url": "/locations/lazio-tuscia-bolsena-lake",
+    "type": "post"
+  },
+  {
+    "slug": "abruzzo-san-domenico-lake",
+    "original_url": "https://italylocations.com/abruzzo-san-domenico-lake/",
+    "next_url": "/locations/abruzzo-san-domenico-lake",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-assisi",
+    "original_url": "https://italylocations.com/umbria-assisi/",
+    "next_url": "/locations/umbria-assisi",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-orvieto",
+    "original_url": "https://italylocations.com/umbria-orvieto/",
+    "next_url": "/locations/umbria-orvieto",
+    "type": "post"
+  },
+  {
+    "slug": "abruzzo-pescara-adriatic-seaside",
+    "original_url": "https://italylocations.com/abruzzo-pescara-adriatic-seaside/",
+    "next_url": "/locations/abruzzo-pescara-adriatic-seaside",
+    "type": "post"
+  },
+  {
+    "slug": "abruzzo-sulmona",
+    "original_url": "https://italylocations.com/abruzzo-sulmona/",
+    "next_url": "/locations/abruzzo-sulmona",
+    "type": "post"
+  },
+  {
+    "slug": "torino-piemonte",
+    "original_url": "https://italylocations.com/torino-piemonte/",
+    "next_url": "/locations/torino-piemonte",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-tuscia-viterbo",
+    "original_url": "https://italylocations.com/lazio-tuscia-viterbo/",
+    "next_url": "/locations/lazio-tuscia-viterbo",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-tuscia-viterbo-tuscania",
+    "original_url": "https://italylocations.com/lazio-tuscia-viterbo-tuscania/",
+    "next_url": "/locations/lazio-tuscia-viterbo-tuscania",
+    "type": "post"
+  },
+  {
+    "slug": "sardegna-beach-chia",
+    "original_url": "https://italylocations.com/sardegna-beach-chia/",
+    "next_url": "/locations/sardegna-beach-chia",
+    "type": "post"
+  },
+  {
+    "slug": "sardegna-quarry-mars",
+    "original_url": "https://italylocations.com/sardegna-quarry-mars/",
+    "next_url": "/locations/sardegna-quarry-mars",
+    "type": "post"
+  },
+  {
+    "slug": "sardegna-cagliari-salt-pans",
+    "original_url": "https://italylocations.com/sardegna-cagliari-salt-pans/",
+    "next_url": "/locations/sardegna-cagliari-salt-pans",
+    "type": "post"
+  },
+  {
+    "slug": "sardegna-bosa-sardinia",
+    "original_url": "https://italylocations.com/sardegna-bosa-sardinia/",
+    "next_url": "/locations/sardegna-bosa-sardinia",
+    "type": "post"
+  },
+  {
+    "slug": "sardegna-castelsardo-sardinia",
+    "original_url": "https://italylocations.com/sardegna-castelsardo-sardinia/",
+    "next_url": "/locations/sardegna-castelsardo-sardinia",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-ponza-island",
+    "original_url": "https://italylocations.com/lazio-ponza-island/",
+    "next_url": "/locations/lazio-ponza-island",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-latina-automotive-location",
+    "original_url": "https://italylocations.com/lazio-latina-automotive-location/",
+    "next_url": "/locations/lazio-latina-automotive-location",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-roma-appia-antica",
+    "original_url": "https://italylocations.com/lazio-roma-appia-antica/",
+    "next_url": "/locations/lazio-roma-appia-antica",
+    "type": "post"
+  },
+  {
+    "slug": "lazio-roma-gazometro-industrial-location",
+    "original_url": "https://italylocations.com/lazio-roma-gazometro-industrial-location/",
+    "next_url": "/locations/lazio-roma-gazometro-industrial-location",
+    "type": "post"
+  },
+  {
+    "slug": "dolomiti-cortina-dampezzo-alps",
+    "original_url": "https://italylocations.com/dolomiti-cortina-dampezzo-alps/",
+    "next_url": "/locations/dolomiti-cortina-dampezzo-alps",
+    "type": "post"
+  },
+  {
+    "slug": "todi-medieval-film-location-umbria",
+    "original_url": "https://italylocations.com/todi-medieval-film-location-umbria/",
+    "next_url": "/locations/todi-medieval-film-location-umbria",
+    "type": "post"
+  },
+  {
+    "slug": "umbria-locations-scouting-amelia",
+    "original_url": "https://italylocations.com/umbria-locations-scouting-amelia/",
+    "next_url": "/locations/umbria-locations-scouting-amelia",
+    "type": "post"
+  },
+  {
+    "slug": "dolomites-alpine-automotive-filming-locations",
+    "original_url": "https://italylocations.com/dolomites-alpine-automotive-filming-locations/",
+    "next_url": "/locations/dolomites-alpine-automotive-filming-locations",
+    "type": "post"
+  },
+  {
+    "slug": "rome-white-marble-fashion-locations",
+    "original_url": "https://italylocations.com/rome-white-marble-fashion-locations/",
+    "next_url": "/locations/rome-white-marble-fashion-locations",
+    "type": "post"
+  },
+  {
+    "slug": "northeast-italy-rivers-filming-locations",
+    "original_url": "https://italylocations.com/northeast-italy-rivers-filming-locations/",
+    "next_url": "/locations/northeast-italy-rivers-filming-locations",
+    "type": "post"
+  },
+  {
+    "slug": "veneto-chioggia-venice-alternative",
+    "original_url": "https://italylocations.com/veneto-chioggia-venice-alternative/",
+    "next_url": "/locations/veneto-chioggia-venice-alternative",
+    "type": "post"
+  }
+]
