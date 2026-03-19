@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getAllLocations, getLocationBySlug } from '@/lib/locations'
+import { GoldButton } from '@/components/ui/GoldButton'
 import { ImageGallery } from './ImageGallery'
 
 interface Props {
@@ -111,6 +112,18 @@ export default async function LocationPage({ params }: Props) {
           <p className="text-[rgba(255,255,255,0.75)] text-lg leading-relaxed mb-10 border-l-2 border-[rgba(201,168,76,0.5)] pl-5">
             {location.excerpt}
           </p>
+        )}
+
+        {/* PDF Download */}
+        {location.pdfUrl && (
+          <div className="mb-12 flex flex-col items-start gap-2">
+            <GoldButton href={location.pdfUrl} filled external className="text-base px-8 py-4">
+              ⬇&nbsp;&nbsp;Download Scouting Report PDF
+            </GoldButton>
+            <p className="text-[rgba(255,255,255,0.3)] text-xs tracking-wide pl-1">
+              High-resolution photography report &middot; Professional documentation
+            </p>
+          </div>
         )}
 
         {/* MDX Content */}

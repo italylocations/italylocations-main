@@ -16,6 +16,7 @@ export interface LocationFrontmatter {
   date: string
   seoTitle?: string
   seoDescription?: string
+  pdfUrl?: string
 }
 
 export interface LocationWithContent extends LocationFrontmatter {
@@ -43,6 +44,7 @@ export function getAllLocations(): LocationFrontmatter[] {
       date: data.date ?? '',
       seoTitle: data.seoTitle ?? data.title ?? '',
       seoDescription: data.seoDescription ?? data.excerpt ?? '',
+      pdfUrl: data.pdfUrl ?? '',
     } satisfies LocationFrontmatter
   })
 
@@ -72,6 +74,7 @@ export function getLocationBySlug(slug: string): LocationWithContent | null {
         date: data.date ?? '',
         seoTitle: data.seoTitle ?? data.title ?? '',
         seoDescription: data.seoDescription ?? data.excerpt ?? '',
+        pdfUrl: data.pdfUrl ?? '',
         content,
       }
     }
