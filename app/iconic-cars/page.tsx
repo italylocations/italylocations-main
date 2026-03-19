@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 
 export const metadata: Metadata = {
@@ -38,6 +39,10 @@ const cars = [
       'Esemplare unico per colorazione e condizioni. Una delle supercar più iconiche di sempre, con soli 26.000 km. Perfetta per produzioni ad alto impatto visivo e campagne premium.',
     features: ['LP-560 hp', '26.000 km', 'Colorazione esclusiva', 'Condizioni eccezionali'],
     perfectFor: ['Supercar campaigns', 'Music video', 'Luxury fashion', 'Premium automotive'],
+    image: {
+      src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/lamborghini-gallardo-lp560-2013.avif',
+      alt: 'Lamborghini Gallardo LP-560 4 2013 matte grey - available for film and advertising productions in Italy',
+    },
   },
   {
     id: 'mercedes-sl350-amg-sport',
@@ -145,12 +150,25 @@ export default function IconicCarsPage() {
             <AnimateOnScroll key={car.id} delay={i * 80}>
               <div className="rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(201,168,76,0.35)] transition-all duration-300 overflow-hidden group">
 
-                {/* Photo placeholder */}
-                <div className="relative w-full aspect-video bg-gradient-to-br from-[#0d1526] to-[#1a2744] flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[rgba(201,168,76,0.04)] to-transparent" />
-                  <p className="text-[rgba(255,255,255,0.18)] text-sm font-medium tracking-wide text-center px-4">
-                    [ Photo — {car.brand} {car.model} ]
-                  </p>
+                {/* Photo */}
+                <div className="relative w-full aspect-video bg-gradient-to-br from-[#0d1526] to-[#1a2744] overflow-hidden">
+                  {'image' in car && car.image ? (
+                    <Image
+                      src={car.image.src}
+                      alt={car.image.alt}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      unoptimized
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[rgba(201,168,76,0.04)] to-transparent" />
+                      <p className="absolute inset-0 flex items-center justify-center text-[rgba(255,255,255,0.18)] text-sm font-medium tracking-wide text-center px-4">
+                        [ Photo — {car.brand} {car.model} ]
+                      </p>
+                    </>
+                  )}
                 </div>
 
                 <div className="p-6">
