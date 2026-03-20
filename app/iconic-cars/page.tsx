@@ -74,6 +74,22 @@ const cars = [
       alt: 'Porsche 997 Carrera 4S Coupe 2010 Carrara White - available for film productions in Italy',
     },
   },
+  {
+    id: 'porsche-911-32-carrera-targa-1986',
+    brand: 'Porsche',
+    model: '911 3.2 Carrera Targa',
+    year: 1986,
+    color: 'Apple Green (Daphne Grün) — Special Order',
+    origin: 'Special order color, extremely rare',
+    productionType: 'Vintage · Special Order',
+    description:
+      'One of a kind. This 1986 Porsche 911 3.2 Carrera Targa in Apple Green (Daphne Grün) was a rare special order color — virtually impossible to find today. An air-cooled icon that turns heads on any set. Perfect for vintage automotive campaigns, fashion editorials and productions requiring a genuinely unique hero vehicle.',
+    features: ['Air-cooled', 'Targa roof', 'Special order color', 'Vintage icon', '3.2 Carrera'],
+    image: {
+      src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/cars/porsche-911-32-carrera-targa-1986.jpg',
+      alt: 'Porsche 911 3.2 Carrera Targa 1986 Apple Green Daphne Grün special order - iconic vintage car for film productions Italy',
+    },
+  },
 ]
 
 const steps = [
