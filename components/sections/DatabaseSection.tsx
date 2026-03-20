@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { Check } from 'lucide-react'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { BlueButton } from '@/components/ui/BlueButton'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
@@ -61,7 +62,7 @@ export function DatabaseSection() {
                       key={feature}
                       className="flex items-start gap-3 p-4 rounded-xl bg-[rgba(201,168,76,0.10)] border border-[rgba(201,168,76,0.25)]"
                     >
-                      <span className="text-[#c9a84c] mt-0.5 text-lg leading-none flex-shrink-0">✓</span>
+                      <Check className="text-[#c9a84c] mt-0.5 flex-shrink-0" size={16} strokeWidth={2} />
                       <span className="text-sm text-[rgba(255,255,255,0.85)] leading-snug">
                         {feature}
                       </span>

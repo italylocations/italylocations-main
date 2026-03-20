@@ -1,8 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import { Mail, FileText, UserCheck, FolderOpen } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
+
+const STEP_ICONS: LucideIcon[] = [Mail, FileText, UserCheck, FolderOpen]
 
 const INCLUDES = [
   '10 hours expert scouting',
@@ -296,21 +300,19 @@ export function RatesContent() {
               }}
             />
 
-            {p.bookingSteps.map((text, i) => (
+            {p.bookingSteps.map((text, i) => {
+              const StepIcon = STEP_ICONS[i]
+              return (
               <div key={i} className="flex flex-col items-center text-center gap-4 relative">
                 <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 border border-[rgba(201,168,76,0.4)] bg-[rgba(201,168,76,0.08)] z-10">
-                  <span
-                    className="text-xl font-bold gold-text"
-                    style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
-                  >
-                    {i + 1}
-                  </span>
+                  <StepIcon className="text-[#c9a84c]" size={20} strokeWidth={1.5} />
                 </div>
                 <p className="text-[rgba(255,255,255,0.65)] text-sm leading-relaxed max-w-[160px]">
                   {text}
                 </p>
               </div>
-            ))}
+              )
+            })}
           </div>
         </AnimateOnScroll>
       </section>

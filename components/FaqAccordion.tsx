@@ -1,9 +1,13 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { MapPin, FileText, Car, Database } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { useLanguage } from '@/contexts/LanguageContext'
+
+const CATEGORY_ICONS: LucideIcon[] = [MapPin, FileText, Car, Database]
 
 interface FaqItem {
   q: string
@@ -233,6 +237,7 @@ export function FaqAccordion() {
         {filteredData.map((cat, catIdx) => {
           const originalIdx = FAQ_DATA.findIndex((c) => c.id === cat.id)
           const categoryTitle = fp.categories[originalIdx] ?? cat.title
+          const CategoryIcon = CATEGORY_ICONS[originalIdx]
           return (
           <AnimateOnScroll key={cat.id} delay={catIdx * 100}>
             <div>
@@ -245,6 +250,9 @@ export function FaqAccordion() {
                   {cat.label}
                 </span>
                 <div className="flex-1 h-px bg-[rgba(201,168,76,0.15)]" />
+                {CategoryIcon && (
+                  <CategoryIcon className="text-[#c9a84c]" size={20} strokeWidth={1.5} />
+                )}
                 <h2
                   className="text-xl md:text-2xl font-bold text-white"
                   style={{

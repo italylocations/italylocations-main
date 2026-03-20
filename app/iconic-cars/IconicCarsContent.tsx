@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { AlertTriangle, ClipboardList, Handshake, Film } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -88,21 +90,21 @@ const cars = [
   },
 ]
 
-const steps = [
+const steps: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    icon: '📋',
+    icon: ClipboardList,
     title: 'Send Your Brief',
     description:
       "Tell us about your production, shooting date and creative vision. Include your production insurance documentation. We'll confirm availability within 24 hours.",
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'We Handle Everything',
     description:
       'From paperwork to on-set coordination. The vehicle arrives ready to shoot, fully prepared and insured.',
   },
   {
-    icon: '🎬',
+    icon: Film,
     title: 'Shoot with Confidence',
     description:
       'Professional support throughout the day. Insurance and logistics fully managed by our team.',
@@ -165,7 +167,7 @@ export function IconicCarsContent() {
         <AnimateOnScroll>
           <div className="max-w-6xl mx-auto">
             <div className="flex items-start gap-4 p-6 rounded-2xl bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.35)]">
-              <span className="text-2xl flex-shrink-0 mt-0.5">⚠️</span>
+              <AlertTriangle className="text-[#c9a84c] flex-shrink-0 mt-0.5" size={20} strokeWidth={1.5} />
               <div>
                 <h2 className="text-base font-bold text-[#e8d5a0] mb-1">{p.bannerTitle}</h2>
                 <p className="text-[rgba(255,255,255,0.55)] text-sm leading-relaxed">
@@ -288,10 +290,14 @@ export function IconicCarsContent() {
           </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step, i) => (
+            {steps.map((step, i) => {
+              const StepIcon = step.icon
+              return (
               <AnimateOnScroll key={step.title} delay={i * 100}>
                 <div className="text-center p-8 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
-                  <div className="text-4xl mb-5">{step.icon}</div>
+                  <div className="mb-5 flex justify-center">
+                    <StepIcon className="text-[#c9a84c]" size={24} strokeWidth={1.5} />
+                  </div>
                   <div className="text-xs font-semibold tracking-widest text-[rgba(201,168,76,0.6)] uppercase mb-3">
                     Step {i + 1}
                   </div>
@@ -306,7 +312,8 @@ export function IconicCarsContent() {
                   </p>
                 </div>
               </AnimateOnScroll>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

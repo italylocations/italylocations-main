@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { Map, Globe, Camera, MessageSquare, Languages, UserCheck, Network } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -14,45 +16,19 @@ const EQUIPMENT = [
   'Nanlite LED',
 ]
 
-const STRENGTHS_STATIC = [
-  {
-    emoji: '💬',
-    description:
-      'Direct communication in fluent English and Spanish. No middlemen, no misunderstandings — every brief understood exactly as intended.',
-  },
-  {
-    emoji: '🎯',
-    description:
-      'One person handles scouting, permits, logistics and local crew. You have one number to call for everything.',
-  },
-  {
-    emoji: '🤝',
-    description:
-      'Local authorities, private property owners, location managers and experienced crew — built over a decade of on-the-ground work.',
-  },
+const STRENGTH_ICONS: LucideIcon[] = [Languages, UserCheck, Network]
+const STRENGTH_DESCS = [
+  'Direct communication in fluent English and Spanish. No middlemen, no misunderstandings — every brief understood exactly as intended.',
+  'One person handles scouting, permits, logistics and local crew. You have one number to call for everything.',
+  'Local authorities, private property owners, location managers and experienced crew — built over a decade of on-the-ground work.',
 ]
 
-const PILLARS_STATIC = [
-  {
-    emoji: '🗺️',
-    description:
-      "Over 12 years scouting every corner of Italy — from Rome's hidden courtyards to remote Alpine passes. We know the locations that don't appear on Google.",
-  },
-  {
-    emoji: '🌍',
-    description:
-      'We have worked with crews from the US, UK, Germany, France, Spain and beyond. We understand your workflow, your timeline, and your creative language.',
-  },
-  {
-    emoji: '📸',
-    description:
-      'Every location is photographed professionally. You receive high-resolution images, drone footage where available, and detailed technical reports — everything you need before committing.',
-  },
-  {
-    emoji: '🗣️',
-    description:
-      'English, Italian and Spanish. We handle all local communications, negotiations and paperwork — you focus on the creative.',
-  },
+const PILLAR_ICONS: LucideIcon[] = [Map, Globe, Camera, MessageSquare]
+const PILLAR_DESCS = [
+  "Over 12 years scouting every corner of Italy — from Rome's hidden courtyards to remote Alpine passes. We know the locations that don't appear on Google.",
+  'We have worked with crews from the US, UK, Germany, France, Spain and beyond. We understand your workflow, your timeline, and your creative language.',
+  'Every location is photographed professionally. You receive high-resolution images, drone footage where available, and detailed technical reports — everything you need before committing.',
+  'English, Italian and Spanish. We handle all local communications, negotiations and paperwork — you focus on the creative.',
 ]
 
 export function AboutContent() {
@@ -187,10 +163,10 @@ export function AboutContent() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {PILLARS_STATIC.map((pillar, i) => (
+          {PILLAR_ICONS.map((Icon, i) => (
             <AnimateOnScroll key={i} delay={i * 80}>
               <div className="h-full p-7 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl transition-all duration-300 hover:border-[rgba(201,168,76,0.3)] hover:-translate-y-0.5">
-                <span className="text-3xl mb-4 block">{pillar.emoji}</span>
+                <Icon className="text-[#c9a84c] mb-4" size={24} strokeWidth={1.5} />
                 <h3
                   className="text-white font-bold text-xl mb-3"
                   style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
@@ -198,7 +174,7 @@ export function AboutContent() {
                   {p.pillarTitles[i]}
                 </h3>
                 <p className="text-[rgba(255,255,255,0.55)] text-sm leading-relaxed">
-                  {pillar.description}
+                  {PILLAR_DESCS[i]}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -260,10 +236,10 @@ export function AboutContent() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {STRENGTHS_STATIC.map((s, i) => (
+          {STRENGTH_ICONS.map((Icon, i) => (
             <AnimateOnScroll key={i} delay={i * 100}>
               <div className="flex flex-col items-center text-center p-8 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl h-full transition-all duration-300 hover:border-[rgba(201,168,76,0.3)]">
-                <span className="text-4xl mb-5">{s.emoji}</span>
+                <Icon className="text-[#c9a84c] mb-5" size={24} strokeWidth={1.5} />
                 <h3
                   className="text-white font-bold text-lg mb-3"
                   style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
@@ -271,7 +247,7 @@ export function AboutContent() {
                   {p.strengthTitles[i]}
                 </h3>
                 <p className="text-[rgba(255,255,255,0.5)] text-sm leading-relaxed">
-                  {s.description}
+                  {STRENGTH_DESCS[i]}
                 </p>
               </div>
             </AnimateOnScroll>

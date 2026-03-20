@@ -1,13 +1,16 @@
 'use client'
 
 import Link from 'next/link'
+import { MapPin, FileText, Truck, Users, Camera, Building2, Plane, Home } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
+
+const SERVICE_ICONS: LucideIcon[] = [MapPin, FileText, Truck, Users, Camera, Building2, Plane, Home]
 
 const SERVICE_STATIC = [
   {
     number: '01',
-    emoji: '🗺️',
     subtitle: "Discover Italy's Hidden Cinematic Treasures",
     description:
       "Our expert location scouts research and identify the perfect filming locations based on your creative brief and production requirements. From Rome's iconic marble monuments to the dramatic Alpine passes and hidden coastal gems, we provide comprehensive location documentation with high-resolution photography, detailed technical specifications, and site accessibility reports.",
@@ -22,7 +25,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '02',
-    emoji: '📋',
     subtitle: 'Navigate Italian Bureaucracy with Confidence',
     description:
       'Securing filming permits in Italy requires specialized knowledge of local regulations and bureaucratic processes. Our permit specialists handle complete permit acquisition for commercial and film productions, ensuring full compliance with Italian filming regulations and local authority requirements.',
@@ -38,7 +40,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '03',
-    emoji: '🎬',
     subtitle: 'Seamless On-Site Production Support',
     description:
       'Professional production logistics coordination ensures your Italian shoot runs smoothly from pre-production through wrap. Our local expertise eliminates common production challenges and provides comprehensive on-site support for international filming teams.',
@@ -55,7 +56,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '04',
-    emoji: '👥',
     subtitle: "Connect with Italy's Top Film Professionals",
     description:
       'Access our vetted network of Italian film professionals with international production experience. Our crew database includes experienced technicians who understand both Italian working methods and international production standards. All crew members are pre-screened for technical competence, international experience, and English language proficiency.',
@@ -72,7 +72,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '05',
-    emoji: '📷',
     subtitle: 'Professional Photography and Video Equipment',
     description:
       "Send us your equipment list for a detailed quotation. Our Rome warehouse stocks premium professional equipment for fashion campaigns, commercial shoots, and film productions, with Italy-wide delivery and optional technical support. Inventory includes Profoto flash systems, Sony mirrorless cameras, Nanlite LED systems, and underwater housing for Sony FX3.",
@@ -89,7 +88,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '06',
-    emoji: '🏛️',
     subtitle: 'Premium White Limbo Studios Across Italy',
     description:
       "Looking for professional photography studios with white limbo backgrounds for e-commerce shoots and commercial videos? We maintain relationships with Italy's best-equipped photography studios, ensuring access to premium facilities nationwide. We handle studio booking, logistics coordination, and ensure your chosen facility meets all technical requirements.",
@@ -104,7 +102,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '07',
-    emoji: '🚁',
     subtitle: 'Certified Aerial Photography and Videography',
     description:
       'Capture stunning aerial footage with our certified drone pilots and professional equipment. All flights comply with Italian aviation regulations (ENAC) and include complete permit coordination for commercial aerial filming.',
@@ -120,7 +117,6 @@ const SERVICE_STATIC = [
   },
   {
     number: '08',
-    emoji: '🏠',
     subtitle: 'International Property Investment Support',
     description:
       'Planning to buy property in Italy while living abroad? Our property scouting services provide comprehensive property evaluation with detailed photography, aerial footage, and complete assessment reports, giving you clear insights before visiting Italy in person.',
@@ -140,7 +136,7 @@ const SERVICE_STATIC = [
 
 interface ServiceData {
   number: string
-  emoji: string
+  icon: LucideIcon
   title: string
   subtitle: string
   description: string
@@ -150,6 +146,7 @@ interface ServiceData {
 }
 
 function ServiceCard({ service }: { service: ServiceData }) {
+  const Icon = service.icon
   return (
     <div className="relative group bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 hover:border-[rgba(201,168,76,0.35)] hover:gold-border-glow p-8 md:p-10">
       <span
@@ -167,7 +164,7 @@ function ServiceCard({ service }: { service: ServiceData }) {
       </span>
 
       <div className="flex items-center gap-3 mb-5">
-        <span className="text-3xl">{service.emoji}</span>
+        <Icon className="text-[#c9a84c]" size={24} strokeWidth={1.5} />
         <span className="text-xs font-semibold tracking-[0.18em] uppercase gold-text">
           {service.number}
         </span>
@@ -261,6 +258,7 @@ export function ServicesContent() {
             <ServiceCard
               service={{
                 ...svc,
+                icon: SERVICE_ICONS[i],
                 title: p.serviceTitles[i] ?? svc.number,
                 serviceIncludes: p.serviceIncludes,
               }}
