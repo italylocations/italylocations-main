@@ -1,110 +1,122 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
+import { ContactFormWrapper } from '@/components/ContactFormWrapper'
 
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Italy Locations. Tell us about your project and we\'ll respond within 48 hours.',
+    "Get in touch with Italy Locations. Tell us about your project and we'll get back to you within 24 hours.",
 }
+
+const CONTACT_INFO = [
+  { icon: '✉', label: 'Email', value: 'info@italylocations.com', href: 'mailto:info@italylocations.com' },
+  { icon: '📱', label: 'WhatsApp', value: '+39 389 536 5864', href: 'https://wa.me/393895365864' },
+  { icon: '📍', label: 'Based in', value: 'Rome, Italy', href: null },
+  { icon: '🌐', label: 'Languages', value: 'English, Italian, Spanish', href: null },
+]
+
+const SERVICES = [
+  { icon: '📍', title: 'Location Scouting', desc: 'Find the perfect backdrop for your production across Italy.' },
+  { icon: '🚗', title: 'Iconic Cars', desc: 'Vintage and exotic production vehicles for your shoot.' },
+  { icon: '🏠', title: 'Private Locations', desc: 'Exclusive database access — villas, castles, and more.' },
+]
 
 export default function ContactPage() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 px-6 py-20">
-      <div className="max-w-2xl w-full">
-        <div className="text-center mb-12">
+    <main className="min-h-screen pt-24 pb-20 px-6">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Hero */}
+        <div className="text-center mb-16">
           <SectionLabel>Get In Touch</SectionLabel>
           <h1
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 mb-4"
             style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
           >
-            Start Your Project
+            Let&apos;s Work Together
           </h1>
-          <p className="text-[rgba(255,255,255,0.60)] leading-relaxed">
-            Tell us about your production and we&apos;ll find the perfect Italian locations within 48 hours.
+          <p className="text-[rgba(255,255,255,0.60)] text-lg max-w-xl mx-auto leading-relaxed">
+            Tell us about your project. We&apos;ll get back to you within 24 hours.
           </p>
         </div>
 
-        <GlassCard goldBorder className="p-8 md:p-10">
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-2">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] rounded-xl px-4 py-3 text-white placeholder-[rgba(255,255,255,0.25)] focus:outline-none focus:border-[rgba(201,168,76,0.40)] transition-colors text-sm"
-                  placeholder="John"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-2">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] rounded-xl px-4 py-3 text-white placeholder-[rgba(255,255,255,0.25)] focus:outline-none focus:border-[rgba(201,168,76,0.40)] transition-colors text-sm"
-                  placeholder="Smith"
-                />
-              </div>
+        {/* 2-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+
+          {/* LEFT — Contact info */}
+          <div className="lg:col-span-2 space-y-8">
+
+            {/* Contact details */}
+            <GlassCard className="p-6 space-y-4">
+              <h2
+                className="text-xl font-bold text-white mb-4"
+                style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
+              >
+                Contact Details
+              </h2>
+              {CONTACT_INFO.map(({ icon, label, value, href }) => (
+                <div key={label} className="flex items-start gap-3">
+                  <span className="text-xl mt-0.5">{icon}</span>
+                  <div>
+                    <p className="text-xs text-[rgba(255,255,255,0.40)] uppercase tracking-widest mb-0.5">{label}</p>
+                    {href ? (
+                      <a
+                        href={href}
+                        target={href.startsWith('http') ? '_blank' : undefined}
+                        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-[rgba(255,255,255,0.85)] hover:text-white transition-colors text-sm"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-[rgba(255,255,255,0.85)] text-sm">{value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </GlassCard>
+
+            {/* Services cards */}
+            <div className="space-y-3">
+              {SERVICES.map(({ icon, title, desc }) => (
+                <GlassCard key={title} className="p-5 flex items-start gap-4">
+                  <span className="text-2xl">{icon}</span>
+                  <div>
+                    <p className="text-white font-semibold text-sm">{title}</p>
+                    <p className="text-[rgba(255,255,255,0.50)] text-xs mt-0.5 leading-relaxed">{desc}</p>
+                  </div>
+                </GlassCard>
+              ))}
             </div>
 
-            <div>
-              <label className="block text-xs font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] rounded-xl px-4 py-3 text-white placeholder-[rgba(255,255,255,0.25)] focus:outline-none focus:border-[rgba(201,168,76,0.40)] transition-colors text-sm"
-                placeholder="john@production.com"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-2">
-                Production Type
-              </label>
-              <select className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] rounded-xl px-4 py-3 text-[rgba(255,255,255,0.70)] focus:outline-none focus:border-[rgba(201,168,76,0.40)] transition-colors text-sm">
-                <option value="" className="bg-[#111827]">Select production type</option>
-                <option value="film" className="bg-[#111827]">Feature Film</option>
-                <option value="commercial" className="bg-[#111827]">TV Commercial</option>
-                <option value="photo" className="bg-[#111827]">Photo Shoot</option>
-                <option value="documentary" className="bg-[#111827]">Documentary</option>
-                <option value="music" className="bg-[#111827]">Music Video</option>
-                <option value="other" className="bg-[#111827]">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-2">
-                Project Description
-              </label>
-              <textarea
-                rows={5}
-                className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.10)] rounded-xl px-4 py-3 text-white placeholder-[rgba(255,255,255,0.25)] focus:outline-none focus:border-[rgba(201,168,76,0.40)] transition-colors text-sm resize-none"
-                placeholder="Tell us about your project: locations you're interested in, shoot dates, crew size..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-[#3b82f6] to-[#2563eb] text-white font-semibold py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] text-sm tracking-wide"
-            >
-              Send Message →
-            </button>
-          </form>
-
-          <div className="mt-8 pt-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row justify-center gap-6 text-sm text-[rgba(255,255,255,0.40)]">
-            <a href="mailto:info@italylocations.com" className="flex items-center gap-2 hover:text-white transition-colors">
-              <span>✉</span> info@italylocations.com
-            </a>
-            <a href="https://wa.me/393895365864" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
-              <span>📱</span> +39 389 536 5864
-            </a>
           </div>
-        </GlassCard>
+
+          {/* RIGHT — Form */}
+          <div className="lg:col-span-3">
+            <Suspense fallback={<div className="text-[rgba(255,255,255,0.40)] text-sm">Loading form…</div>}>
+              <ContactFormWrapper />
+            </Suspense>
+          </div>
+        </div>
+
+        {/* WhatsApp CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-[rgba(255,255,255,0.50)] text-sm">
+            Prefer a faster response?{' '}
+            <a
+              href="https://wa.me/393895365864"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[rgba(201,168,76,0.9)] hover:text-[#e8d5a0] transition-colors font-medium"
+            >
+              Message us directly on WhatsApp →
+            </a>
+          </p>
+        </div>
+
       </div>
-    </section>
+    </main>
   )
 }

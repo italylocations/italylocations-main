@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1011.0",
+    "@marsidev/react-turnstile": "^1.4.2",
     "gray-matter": "^4.0.3",
     "next": "16.1.7",
     "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "resend": "^6.9.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
