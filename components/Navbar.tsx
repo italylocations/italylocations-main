@@ -41,14 +41,15 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0">
+        <Link href="/" className="flex-shrink-0 overflow-visible">
           <Image
             src="/logo-horizontal.svg"
             alt="Italy Locations"
-            width={185}
+            width={240}
             height={32}
             priority
             unoptimized
+            style={{ overflow: 'visible' }}
           />
         </Link>
 
