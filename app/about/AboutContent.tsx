@@ -17,19 +17,7 @@ const EQUIPMENT = [
 ]
 
 const STRENGTH_ICONS: LucideIcon[] = [Languages, UserCheck, Network]
-const STRENGTH_DESCS = [
-  'Direct communication in fluent English and Spanish. No middlemen, no misunderstandings — every brief understood exactly as intended.',
-  'One person handles scouting, permits, logistics and local crew. You have one number to call for everything.',
-  'Local authorities, private property owners, location managers and experienced crew — built over a decade of on-the-ground work.',
-]
-
 const PILLAR_ICONS: LucideIcon[] = [Map, Globe, Camera, MessageSquare]
-const PILLAR_DESCS = [
-  "Over 12 years scouting every corner of Italy — from Rome's hidden courtyards to remote Alpine passes. We know the locations that don't appear on Google.",
-  'We have worked with crews from the US, UK, Germany, France, Spain and beyond. We understand your workflow, your timeline, and your creative language.',
-  'Every location is photographed professionally. You receive high-resolution images, drone footage where available, and detailed technical reports — everything you need before committing.',
-  'English, Italian and Spanish. We handle all local communications, negotiations and paperwork — you focus on the creative.',
-]
 
 export function AboutContent() {
   const { t } = useLanguage()
@@ -80,24 +68,9 @@ export function AboutContent() {
               {p.storyH2}
             </h2>
             <div className="space-y-5 text-[rgba(255,255,255,0.65)] leading-relaxed text-base md:text-lg">
-              <p>
-                Italy Locations was founded by{' '}
-                <span className="text-white font-semibold">Nicolas Vanegas Sanchez</span>, an
-                Italian photographer and filmmaker of Colombian heritage who has been scouting
-                locations across Italy since 2014.
-              </p>
-              <p>
-                With over a decade of experience working exclusively with international productions
-                — from advertising campaigns to documentary crews, from fashion shoots to automotive
-                films — Nicolas built Italy Locations to solve a specific problem: international
-                teams need someone on the ground who understands both the creative language of
-                production and the complexity of the Italian territory.
-              </p>
-              <p>
-                Speaking fluent English, Italian and Spanish, Nicolas bridges the gap between
-                international creative vision and local Italian knowledge — from hidden locations no
-                tourist map shows, to permits, logistics and local contacts built over 12 years.
-              </p>
+              {p.bio.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
             </div>
           </AnimateOnScroll>
 
@@ -174,7 +147,7 @@ export function AboutContent() {
                   {p.pillarTitles[i]}
                 </h3>
                 <p className="text-[rgba(255,255,255,0.55)] text-sm leading-relaxed">
-                  {PILLAR_DESCS[i]}
+                  {p.pillarDescs[i]}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -210,8 +183,7 @@ export function AboutContent() {
                   ))}
                 </div>
                 <p className="text-[rgba(255,255,255,0.4)] text-sm leading-relaxed">
-                  Professional photography and video equipment available for productions requiring
-                  on-site visual documentation.
+                  {p.gearNote}
                 </p>
               </div>
             </div>
@@ -247,7 +219,7 @@ export function AboutContent() {
                   {p.strengthTitles[i]}
                 </h3>
                 <p className="text-[rgba(255,255,255,0.5)] text-sm leading-relaxed">
-                  {STRENGTH_DESCS[i]}
+                  {p.strengthDescs[i]}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -269,7 +241,7 @@ export function AboutContent() {
               {p.ctaH2}
             </h2>
             <p className="text-[rgba(255,255,255,0.6)] mb-8 text-lg leading-relaxed">
-              Tell us about your project. We&apos;ll find the right locations.
+              {p.ctaSubtitle}
             </p>
             <Link
               href="/contact"

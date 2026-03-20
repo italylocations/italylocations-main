@@ -7,16 +7,7 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const STEP_ICONS: LucideIcon[] = [Mail, FileText, UserCheck, FolderOpen]
-
-const INCLUDES = [
-  '10 hours expert scouting',
-  'All transportation costs',
-  'High-resolution photo documentation',
-  'Detailed location reports',
-  'GPS coordinates & driving directions',
-  'Moodboard matching',
-  'Alternative options included',
-]
+const ADDITIONAL_SERVICE_ICONS: LucideIcon[] = [Plane, RotateCw, FileText, BarChart2]
 
 const PRICING_STATIC = [
   {
@@ -45,33 +36,6 @@ const PRICING_STATIC = [
   },
 ]
 
-const ADDITIONAL_SERVICES: { icon: LucideIcon; title: string; description: string }[] = [
-  {
-    icon: Plane,
-    title: 'Drone Photography',
-    description:
-      'Aerial views and footage for a comprehensive understanding of locations. Subject to local regulations and permit requirements.',
-  },
-  {
-    icon: RotateCw,
-    title: '360° Virtual Tours',
-    description:
-      'Immersive virtual tours for complete spatial understanding. Pricing based on number of locations and complexity.',
-  },
-  {
-    icon: FileText,
-    title: 'Filming Permits',
-    description:
-      'Complete permit acquisition and local authority liaison. Included in our standard scouting consultation.',
-  },
-  {
-    icon: BarChart2,
-    title: 'Technical Reports',
-    description:
-      'In-depth analysis of location feasibility for specific shooting requirements. Complexity-based pricing.',
-  },
-]
-
 interface PricingCardProps {
   price: string
   period: string
@@ -81,9 +45,10 @@ interface PricingCardProps {
   locations: string
   planName: string
   requestQuote: string
+  includes: string[]
 }
 
-function PricingCard({ price, period, badge, popular, regions, locations, planName, requestQuote }: PricingCardProps) {
+function PricingCard({ price, period, badge, popular, regions, locations, planName, requestQuote, includes }: PricingCardProps) {
   return (
     <div
       className={`
@@ -142,7 +107,7 @@ function PricingCard({ price, period, badge, popular, regions, locations, planNa
           Includes
         </p>
         <ul className="flex flex-col gap-2.5">
-          {INCLUDES.map((item) => (
+          {includes.map((item) => (
             <li key={item} className="flex items-start gap-2.5 text-sm text-[rgba(255,255,255,0.65)]">
               <span
                 className="mt-0.5 shrink-0 text-xs font-bold"
@@ -220,6 +185,7 @@ export function RatesContent() {
                 {...card}
                 planName={p.planNames[i] ?? card.locations}
                 requestQuote={p.requestQuote}
+                includes={p.includes}
               />
             </AnimateOnScroll>
           ))}
@@ -227,8 +193,7 @@ export function RatesContent() {
 
         <AnimateOnScroll delay={300}>
           <p className="text-center text-[rgba(255,255,255,0.35)] text-sm mt-8 max-w-2xl mx-auto leading-relaxed">
-            Daily rate includes 10 hours scouting + all transportation within the area +
-            high-resolution photo and video documentation of every potential location.
+            {p.dailyNote}
           </p>
         </AnimateOnScroll>
       </section>
@@ -250,8 +215,8 @@ export function RatesContent() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {ADDITIONAL_SERVICES.map((svc, i) => {
-            const SvcIcon = svc.icon
+          {p.additionalServices.map((svc, i) => {
+            const SvcIcon = ADDITIONAL_SERVICE_ICONS[i]
             return (
             <AnimateOnScroll key={svc.title} delay={i * 80}>
               <div className="flex gap-5 p-6 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl transition-all duration-300 hover:border-[rgba(201,168,76,0.3)]">
@@ -264,7 +229,7 @@ export function RatesContent() {
                     {svc.title}
                   </h3>
                   <p className="text-[rgba(255,255,255,0.5)] text-sm leading-relaxed mb-3">
-                    {svc.description}
+                    {svc.desc}
                   </p>
                   <span className="text-xs font-semibold gold-text tracking-wide">
                     Contact for pricing
@@ -334,7 +299,7 @@ export function RatesContent() {
               {p.ctaH2}
             </h2>
             <p className="text-[rgba(255,255,255,0.6)] mb-8 text-lg leading-relaxed">
-              Contact us with your brief and we&apos;ll get back to you within 24 hours.
+              {p.ctaSubtitle}
             </p>
             <Link
               href="/contact"

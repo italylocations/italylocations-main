@@ -90,26 +90,7 @@ const cars = [
   },
 ]
 
-const steps: { icon: LucideIcon; title: string; description: string }[] = [
-  {
-    icon: ClipboardList,
-    title: 'Send Your Brief',
-    description:
-      "Tell us about your production, shooting date and creative vision. Include your production insurance documentation. We'll confirm availability within 24 hours.",
-  },
-  {
-    icon: Handshake,
-    title: 'We Handle Everything',
-    description:
-      'From paperwork to on-set coordination. The vehicle arrives ready to shoot, fully prepared and insured.',
-  },
-  {
-    icon: Film,
-    title: 'Shoot with Confidence',
-    description:
-      'Professional support throughout the day. Insurance and logistics fully managed by our team.',
-  },
-]
+const STEP_ICONS: LucideIcon[] = [ClipboardList, Handshake, Film]
 
 export function IconicCarsContent() {
   const { t } = useLanguage()
@@ -137,8 +118,7 @@ export function IconicCarsContent() {
           </AnimateOnScroll>
           <AnimateOnScroll delay={200}>
             <p className="text-[rgba(255,255,255,0.60)] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-              A curated selection of exceptional vehicles available for photo shoots, advertising campaigns,
-              music videos and film productions across Italy.
+              {p.heroSubtitle}
             </p>
           </AnimateOnScroll>
         </div>
@@ -148,16 +128,11 @@ export function IconicCarsContent() {
       <section className="px-6 pb-20">
         <AnimateOnScroll>
           <div className="max-w-3xl mx-auto">
-            <p className="text-[rgba(255,255,255,0.55)] text-base md:text-lg leading-relaxed border-l-2 border-[rgba(201,168,76,0.4)] pl-6">
-              Every vehicle in our fleet is available exclusively as a production prop for advertising
-              campaigns, photo shoots, music videos and film productions. These vehicles are{' '}
-              <span className="text-white font-semibold">NOT available for rental or personal driving</span>{' '}
-              under any circumstances.
-              <br /><br />
-              All bookings require full production documentation, valid insurance coverage for the vehicle
-              and professional liability. Italy Locations manages every booking directly to ensure the
-              safety and integrity of each vehicle.
-            </p>
+            <div className="text-[rgba(255,255,255,0.55)] text-base md:text-lg leading-relaxed border-l-2 border-[rgba(201,168,76,0.4)] pl-6 space-y-4">
+              {p.introParagraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           </div>
         </AnimateOnScroll>
       </section>
@@ -217,7 +192,7 @@ export function IconicCarsContent() {
                   </h2>
 
                   <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-[rgba(251,146,60,0.12)] text-[rgba(251,146,60,0.9)] border border-[rgba(251,146,60,0.3)] mb-5">
-                    Production Prop Only
+                    {p.propOnly}
                   </span>
 
                   <div className="grid grid-cols-2 gap-3 mb-5">
@@ -278,20 +253,20 @@ export function IconicCarsContent() {
           <AnimateOnScroll>
             <div className="text-center mb-14">
               <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-[#c9a84c] mb-4">
-                Process
+                {p.processLabel}
               </span>
               <h2
                 className="text-3xl md:text-4xl font-bold text-white"
                 style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
               >
-                How It Works
+                {p.processH2}
               </h2>
             </div>
           </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step, i) => {
-              const StepIcon = step.icon
+            {p.steps.map((step, i) => {
+              const StepIcon = STEP_ICONS[i]
               return (
               <AnimateOnScroll key={step.title} delay={i * 100}>
                 <div className="text-center p-8 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)]">
@@ -299,7 +274,7 @@ export function IconicCarsContent() {
                     <StepIcon className="text-[#c9a84c]" size={24} strokeWidth={1.5} />
                   </div>
                   <div className="text-xs font-semibold tracking-widest text-[rgba(201,168,76,0.6)] uppercase mb-3">
-                    Step {i + 1}
+                    {p.stepLabel} {i + 1}
                   </div>
                   <h3
                     className="text-lg font-bold text-white mb-3"
@@ -323,24 +298,22 @@ export function IconicCarsContent() {
         <AnimateOnScroll>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-[rgba(255,255,255,0.45)] text-sm uppercase tracking-widest font-medium mb-4">
-              Complete Your Production
+              {p.alsoLabel}
             </p>
             <h2
               className="text-2xl md:text-3xl font-bold text-white mb-4"
               style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
             >
-              Looking for the Perfect Backdrop?
+              {p.alsoH2}
             </h2>
             <p className="text-[rgba(255,255,255,0.55)] mb-8 leading-relaxed">
-              Browse our 48+ scouted locations across Italy — from medieval citadels to coastal roads
-              and mountain passes. Find the ideal setting for your vehicle shoot.
+              {p.alsoDesc}
             </p>
             <Link
               href="/locations"
               className="inline-flex items-center gap-2 text-[#c9a84c] hover:text-[#e8d5a0] font-semibold transition-colors duration-200"
             >
-              Explore Filming Locations
-              <span>→</span>
+              {p.alsoCta}
             </Link>
           </div>
         </AnimateOnScroll>
@@ -351,7 +324,7 @@ export function IconicCarsContent() {
         <AnimateOnScroll>
           <div className="max-w-2xl mx-auto text-center p-10 rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(201,168,76,0.2)]">
             <p className="text-[rgba(255,255,255,0.45)] text-xs uppercase tracking-widest font-medium mb-3">
-              Ready to book?
+              {p.finalReadyLabel}
             </p>
             <h2
               className="text-2xl md:text-3xl font-bold text-white mb-4"
@@ -360,8 +333,7 @@ export function IconicCarsContent() {
               {p.finalH2}
             </h2>
             <p className="text-[rgba(255,255,255,0.55)] mb-8 leading-relaxed">
-              Contact us with your production details and insurance documentation.
-              We&apos;ll confirm availability and terms within 24 hours.
+              {p.finalSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
