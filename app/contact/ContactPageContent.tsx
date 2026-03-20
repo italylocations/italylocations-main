@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense } from 'react'
-import { Mail, Phone, MapPin, Globe, Car, Home } from 'lucide-react'
+import { Mail, MessageSquare, MapPin, Globe, Car, Home } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
@@ -10,7 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const CONTACT_INFO: { icon: LucideIcon; label: string; value: string; href: string | null }[] = [
   { icon: Mail,  label: 'Email',     value: 'info@italylocations.com', href: 'mailto:info@italylocations.com' },
-  { icon: Phone, label: 'WhatsApp',  value: '+39 389 536 5864',        href: 'https://wa.me/393895365864' },
+  { icon: MessageSquare, label: 'WhatsApp',  value: '+39 389 536 5864', href: 'https://wa.me/393895365864' },
   { icon: MapPin, label: 'Based in', value: 'Rome, Italy',             href: null },
   { icon: Globe, label: 'Languages', value: 'English, Italian, Spanish', href: null },
 ]
