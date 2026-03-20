@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const regions = [
   'Roma', 'Costiera Amalfitana', 'Umbria', 'Dolomiti', 'Sardegna',
@@ -9,16 +12,19 @@ const regions = [
 ]
 
 export function RegionsSection() {
+  const { t } = useLanguage()
+  const r = t.home.regions
+
   return (
     <section className="py-20 px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll className="text-center mb-14">
-          <SectionLabel>Where We Operate</SectionLabel>
+          <SectionLabel>{r.label}</SectionLabel>
           <h2
             className="text-3xl md:text-4xl font-bold text-white"
             style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
           >
-            Every Corner of Italy
+            {r.h2}
           </h2>
         </AnimateOnScroll>
 
@@ -37,11 +43,15 @@ export function RegionsSection() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={200} className="text-center">
-          <p className="text-[rgba(255,255,255,0.55)] max-w-3xl mx-auto leading-relaxed">
-            From the rolling hills of Tuscany to the dramatic Dolomites, from Rome&apos;s ancient
-            streets to Sicily&apos;s baroque towns — we know every corner of Italy that makes
-            productions extraordinary.
+          <p className="text-[rgba(255,255,255,0.55)] max-w-3xl mx-auto leading-relaxed mb-6">
+            {r.subtitle}
           </p>
+          <Link
+            href="/locations"
+            className="inline-flex items-center gap-2 text-sm font-semibold gold-text hover:opacity-80 transition-opacity"
+          >
+            {r.cta}
+          </Link>
         </AnimateOnScroll>
       </div>
     </section>

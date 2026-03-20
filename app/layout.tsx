@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -132,10 +133,12 @@ export default function RootLayout({
         className="antialiased"
         style={{ fontFamily: 'var(--font-dm-sans), "DM Sans", sans-serif' }}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <LanguageProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </LanguageProvider>
       </body>
 
       {/* Google Analytics GA4 */}

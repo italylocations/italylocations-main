@@ -1,10 +1,16 @@
+'use client'
+
 import Image from 'next/image'
 import { BlueButton } from '@/components/ui/BlueButton'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const BG_IMAGE = 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/2025_03_cortina-locations-italy-alps-0161.jpg'
 
 export function CtaSection() {
+  const { t } = useLanguage()
+  const c = t.home.cta
+
   return (
     <section className="relative py-24 px-6 lg:px-8 overflow-hidden">
       {/* Background photo */}
@@ -34,15 +40,15 @@ export function CtaSection() {
             className="text-3xl md:text-5xl font-bold text-white mb-5"
             style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
           >
-            Ready to Shoot in Italy?
+            {c.h2}
           </h2>
 
           <p className="text-lg text-[rgba(255,255,255,0.70)] mb-10 leading-relaxed">
-            Tell us about your project and we&apos;ll find the perfect locations within 48 hours.
+            {c.subtitle}
           </p>
 
           <BlueButton href="/contact" className="text-base px-12 py-4 mb-8">
-            Start Your Project →
+            {c.cta}
           </BlueButton>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-[rgba(255,255,255,0.50)]">

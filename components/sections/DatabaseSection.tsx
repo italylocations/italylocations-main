@@ -1,19 +1,24 @@
+'use client'
+
 import Image from 'next/image'
-import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { BlueButton } from '@/components/ui/BlueButton'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const BG_IMAGE = 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/2024_02_Caprarola-drone-vista-location-scouting-italy.jpg'
 
-const features = [
-  'Curated selection based on your brief',
-  'Tailored PDF proposal within 48h',
-  'Full privacy — addresses never shared',
-  'Locations not available on any public platform',
-]
-
 export function DatabaseSection() {
+  const { t } = useLanguage()
+  const d = t.home.database
+
+  const features = [
+    'Curated selection based on your brief',
+    'Tailored PDF proposal within 48h',
+    'Full privacy — addresses never shared',
+    'Locations not available on any public platform',
+  ]
+
   return (
     <section className="py-20 px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -40,9 +45,9 @@ export function DatabaseSection() {
                 {/* Text */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <SectionLabel>Exclusive</SectionLabel>
+                    <SectionLabel>{d.label}</SectionLabel>
                     <span className="text-xs font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#e8d5a0] text-[#0a0f1e]">
-                      By Invitation Only
+                      {d.badge}
                     </span>
                   </div>
 
@@ -50,18 +55,15 @@ export function DatabaseSection() {
                     className="text-3xl md:text-4xl font-bold text-white mb-5"
                     style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
                   >
-                    Private Location Database
+                    {d.h2}
                   </h2>
 
                   <p className="text-[rgba(255,255,255,0.75)] leading-relaxed mb-8">
-                    Our curated database of 200+ verified private properties is accessible by
-                    invitation only. Send us your creative brief or moodboard and we&apos;ll handpick
-                    the perfect locations for your production — presented in a tailored PDF proposal
-                    within 48 hours.
+                    {d.subtitle}
                   </p>
 
                   <BlueButton href="/contact">
-                    Request a Location Proposal →
+                    {d.cta}
                   </BlueButton>
                 </div>
 

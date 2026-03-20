@@ -1,12 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const locationsLinks = [
   { label: 'Rome & Lazio', href: '/locations' },
-  { label: 'Tuscany', href: '/locations' },
   { label: 'Amalfi Coast', href: '/locations' },
-  { label: 'Sicily', href: '/locations' },
   { label: 'Dolomites', href: '/locations' },
+  { label: 'Sardinia', href: '/locations' },
   { label: 'All Regions', href: '/locations' },
 ]
 
@@ -27,6 +29,9 @@ const legalLinks = [
 ]
 
 export function Footer() {
+  const { t } = useLanguage()
+  const year = new Date().getFullYear()
+
   return (
     <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[rgba(0,0,0,0.4)] backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
@@ -42,7 +47,7 @@ export function Footer() {
               className="mb-3"
             />
             <p className="text-sm text-[rgba(255,255,255,0.50)] leading-relaxed mb-6">
-              Professional Film Location Scouting in Italy
+              {t.footer.tagline}
             </p>
             <a
               href="https://locations.italylocations.com"
@@ -57,15 +62,12 @@ export function Footer() {
           {/* Locations */}
           <div>
             <h3 className="text-sm font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-5">
-              Locations
+              {t.nav.locations}
             </h3>
             <ul className="space-y-3">
               {locationsLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -76,25 +78,17 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-sm font-semibold tracking-[0.15em] uppercase text-[rgba(255,255,255,0.40)] mb-5">
-              Services
+              {t.nav.services}
             </h3>
             <ul className="space-y-3">
               {servicesLinks.map((link) => (
                 <li key={link.label}>
                   {'external' in link && link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors"
-                    >
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
                       {link.label}
                     </a>
                   ) : (
-                    <Link
-                      href={link.href}
-                      className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors"
-                    >
+                    <Link href={link.href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
                       {link.label}
                     </Link>
                   )}
@@ -111,32 +105,20 @@ export function Footer() {
             <ul className="space-y-3 mb-8">
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-
             <div className="space-y-2 text-xs text-[rgba(255,255,255,0.35)]">
               <p>
-                <a
-                  href="mailto:info@italylocations.com"
-                  className="hover:text-[rgba(255,255,255,0.70)] transition-colors"
-                >
+                <a href="mailto:info@italylocations.com" className="hover:text-[rgba(255,255,255,0.70)] transition-colors">
                   info@italylocations.com
                 </a>
               </p>
               <p>
-                <a
-                  href="https://wa.me/393895365864"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[rgba(255,255,255,0.70)] transition-colors"
-                >
+                <a href="https://wa.me/393895365864" target="_blank" rel="noopener noreferrer" className="hover:text-[rgba(255,255,255,0.70)] transition-colors">
                   +39 389 536 5864
                 </a>
               </p>
@@ -147,11 +129,11 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[rgba(255,255,255,0.30)]">
-            © 2025 Italy Locations. All rights reserved.
+            © {year} Italy Locations. {t.footer.rights}.
           </p>
           <div className="flex items-center gap-6 text-xs text-[rgba(255,255,255,0.30)]">
-            <span>P.IVA IT02345678901</span>
-            <span className="hidden md:inline">Via del Cinema 12, 00100 Roma, Italy</span>
+            <span>P.IVA 14296561005</span>
+            <span className="hidden md:inline">Roma, Italy</span>
           </div>
         </div>
       </div>
