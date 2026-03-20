@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { MapPin } from 'lucide-react'
 import type { LocationFrontmatter } from '@/lib/locations'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -132,7 +133,7 @@ function LocationCard({ location, index }: { location: LocationFrontmatter; inde
             />
           ) : (
             <div className="absolute inset-0 bg-[rgba(255,255,255,0.04)] flex items-center justify-center">
-              <span className="text-[rgba(255,255,255,0.2)] text-4xl">📍</span>
+              <MapPin className="text-[rgba(255,255,255,0.2)]" size={32} strokeWidth={1.5} />
             </div>
           )}
           {/* Gradient overlay */}

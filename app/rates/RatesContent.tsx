@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, FileText, UserCheck, FolderOpen } from 'lucide-react'
+import { Mail, FileText, UserCheck, FolderOpen, Plane, RotateCw, BarChart2 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -45,27 +45,27 @@ const PRICING_STATIC = [
   },
 ]
 
-const ADDITIONAL_SERVICES = [
+const ADDITIONAL_SERVICES: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    emoji: '🚁',
+    icon: Plane,
     title: 'Drone Photography',
     description:
       'Aerial views and footage for a comprehensive understanding of locations. Subject to local regulations and permit requirements.',
   },
   {
-    emoji: '🔄',
+    icon: RotateCw,
     title: '360° Virtual Tours',
     description:
       'Immersive virtual tours for complete spatial understanding. Pricing based on number of locations and complexity.',
   },
   {
-    emoji: '📋',
+    icon: FileText,
     title: 'Filming Permits',
     description:
       'Complete permit acquisition and local authority liaison. Included in our standard scouting consultation.',
   },
   {
-    emoji: '📊',
+    icon: BarChart2,
     title: 'Technical Reports',
     description:
       'In-depth analysis of location feasibility for specific shooting requirements. Complexity-based pricing.',
@@ -250,10 +250,12 @@ export function RatesContent() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {ADDITIONAL_SERVICES.map((svc, i) => (
+          {ADDITIONAL_SERVICES.map((svc, i) => {
+            const SvcIcon = svc.icon
+            return (
             <AnimateOnScroll key={svc.title} delay={i * 80}>
               <div className="flex gap-5 p-6 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl transition-all duration-300 hover:border-[rgba(201,168,76,0.3)]">
-                <span className="text-3xl shrink-0">{svc.emoji}</span>
+                <SvcIcon className="text-[#c9a84c] shrink-0 mt-0.5" size={24} strokeWidth={1.5} />
                 <div>
                   <h3
                     className="text-white font-semibold text-lg mb-1"
@@ -270,7 +272,8 @@ export function RatesContent() {
                 </div>
               </div>
             </AnimateOnScroll>
-          ))}
+            )
+          })}
         </div>
       </section>
 

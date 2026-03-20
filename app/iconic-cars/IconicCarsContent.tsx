@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { AlertTriangle, ClipboardList, Handshake, Film } from 'lucide-react'
+import { AlertTriangle, ClipboardList, Handshake, Film, Calendar, Palette, Flag, MessageCircle } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -222,21 +222,21 @@ export function IconicCarsContent() {
 
                   <div className="grid grid-cols-2 gap-3 mb-5">
                     <div className="flex items-start gap-2">
-                      <span className="text-base leading-none mt-0.5">🗓</span>
+                      <Calendar className="text-[#c9a84c] shrink-0 mt-0.5" size={16} strokeWidth={1.5} />
                       <div>
                         <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Year</p>
                         <p className="text-white text-sm font-semibold">{car.year}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-base leading-none mt-0.5">🎨</span>
+                      <Palette className="text-[#c9a84c] shrink-0 mt-0.5" size={16} strokeWidth={1.5} />
                       <div>
                         <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Colour</p>
                         <p className="text-white text-sm font-semibold">{car.color}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2 col-span-2">
-                      <span className="text-base leading-none mt-0.5">🇮🇹</span>
+                      <Flag className="text-[#c9a84c] shrink-0 mt-0.5" size={16} strokeWidth={1.5} />
                       <div>
                         <p className="text-[rgba(255,255,255,0.35)] text-xs uppercase tracking-wide font-medium">Origin</p>
                         <p className="text-white text-sm font-semibold leading-tight">{car.origin}</p>
@@ -376,7 +376,7 @@ export function IconicCarsContent() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-[rgba(255,255,255,0.55)] hover:text-white transition-colors duration-200"
               >
-                <span className="text-base">💬</span>
+                <MessageCircle className="text-[#c9a84c]" size={16} strokeWidth={1.5} />
                 WhatsApp: +39 389 536 5864
               </a>
             </div>
