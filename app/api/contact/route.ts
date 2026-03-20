@@ -68,6 +68,69 @@ function buildEmailHtml(fields: {
 </html>`
 }
 
+function buildConfirmationHtml(fields: {
+  name: string
+  projectType: string
+  shootingDate?: string
+  message: string
+}): string {
+  const summaryRow = (label: string, value?: string) =>
+    value
+      ? `<tr>
+          <td style="padding:8px 16px;color:#9ca3af;font-size:13px;white-space:nowrap;vertical-align:top;">${label}</td>
+          <td style="padding:8px 16px;color:#f9fafb;font-size:14px;line-height:1.6;">${value}</td>
+        </tr>`
+      : ''
+
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="background:#0a0f1e;margin:0;padding:32px;font-family:'Segoe UI',Arial,sans-serif;">
+  <div style="max-width:560px;margin:0 auto;background:#111827;border-radius:16px;overflow:hidden;border:1px solid rgba(201,168,76,0.25);">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#1a2744,#0a0f1e);padding:28px 32px;border-bottom:1px solid rgba(201,168,76,0.2);text-align:center;">
+      <p style="margin:0 0 8px;color:#c9a84c;font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;">ITALY LOCATIONS</p>
+      <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);margin:0 auto;"></div>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:32px;">
+      <h1 style="margin:0 0 16px;color:#ffffff;font-size:24px;font-weight:700;">Thank you, ${fields.name}!</h1>
+      <p style="margin:0 0 8px;color:#d1d5db;font-size:15px;line-height:1.65;">We have received your project inquiry and will get back to you within <strong style="color:#ffffff;">24 hours</strong>.</p>
+      <p style="margin:0 0 24px;color:#d1d5db;font-size:15px;line-height:1.65;">Here&apos;s a summary of what you sent us:</p>
+
+      <!-- Summary box -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;margin-bottom:28px;">
+        <table style="width:100%;border-collapse:collapse;">
+          ${summaryRow('Project Type', fields.projectType)}
+          ${summaryRow('Shooting Date', fields.shootingDate)}
+          ${summaryRow('Message', fields.message.replace(/\n/g, '<br>'))}
+        </table>
+      </div>
+
+      <!-- Urgency -->
+      <p style="margin:0 0 20px;color:#9ca3af;font-size:14px;line-height:1.65;">Need a faster response? For urgent requests, contact us directly on WhatsApp:</p>
+
+      <!-- WhatsApp button -->
+      <div style="text-align:center;margin-bottom:8px;">
+        <a href="https://wa.me/393895365864" style="display:inline-block;background:#25D366;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700;padding:14px 32px;border-radius:999px;letter-spacing:0.03em;">
+          Chat on WhatsApp → +39 389 536 5864
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:20px 32px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;">
+      <p style="margin:0 0 4px;color:#6b7280;font-size:12px;">Italy Locations — <a href="https://italylocations.com" style="color:#c9a84c;text-decoration:none;">italylocations.com</a></p>
+      <p style="margin:0 0 4px;color:#6b7280;font-size:12px;">Professional Film Location Scouting in Italy</p>
+      <p style="margin:0;color:#4b5563;font-size:11px;">noreply@italylocations.com</p>
+    </div>
+  </div>
+</body>
+</html>`
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
@@ -97,6 +160,19 @@ export async function POST(req: NextRequest) {
       subject: `New inquiry: ${projectType} — ${name}`,
       html: buildEmailHtml({ name, email, company, projectType, shootingDate, message, budgetRange }),
     })
+
+    // Confirmation email to sender — non-blocking
+    try {
+      await resend.emails.send({
+        from: 'Italy Locations <noreply@italylocations.com>',
+        to: email,
+        replyTo: 'info@italylocations.com',
+        subject: 'We received your inquiry — Italy Locations',
+        html: buildConfirmationHtml({ name, projectType, shootingDate, message }),
+      })
+    } catch (err) {
+      console.error('[contact] confirmation email failed:', err)
+    }
 
     return NextResponse.json({ success: true })
   } catch {
