@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const locationsLinks = [
   { label: 'Rome & Lazio', href: '/locations' },
@@ -32,12 +33,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <span
-              className="block text-xl font-bold tracking-[0.2em] uppercase gold-text mb-3"
-              style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
-            >
-              Italy Locations
-            </span>
+            <Image
+              src="/logo.svg"
+              alt="Italy Locations"
+              width={60}
+              height={60}
+              unoptimized
+              className="mb-3"
+            />
             <p className="text-sm text-[rgba(255,255,255,0.50)] leading-relaxed mb-6">
               Professional Film Location Scouting in Italy
             </p>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
   { label: 'Locations', href: '/locations' },
@@ -34,12 +35,14 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <span
-            className="font-playfair text-xl font-bold tracking-[0.2em] uppercase gold-text"
-            style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
-          >
-            Italy Locations
-          </span>
+          <Image
+            src="/logo-horizontal.svg"
+            alt="Italy Locations"
+            width={185}
+            height={32}
+            priority
+            unoptimized
+          />
         </Link>
 
         {/* Desktop nav */}

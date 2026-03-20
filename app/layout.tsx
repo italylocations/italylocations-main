@@ -84,6 +84,9 @@ export const metadata: Metadata = {
       'it': 'https://italylocations.com/it',
     },
   },
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 const jsonLd = {
