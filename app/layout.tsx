@@ -64,10 +64,10 @@ export const metadata: Metadata = {
       'Expert film location scouting across Italy. Exclusive access to 500+ locations from Rome to Sicily. Filming permits, production support, transparent pricing from €600/day.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/2024_02_rome-aerial-shot-drone-scouting-locations-italy.jpg',
         width: 1200,
-        height: 630,
-        alt: 'Italy Locations — Professional Film Location Scouting',
+        height: 800,
+        alt: 'Italy Locations - Professional Film Location Scouting Services',
       },
     ],
   },
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: 'Italy Locations | Professional Film Location Scouting Services',
     description:
       'Expert film location scouting across Italy. Exclusive access to 500+ locations from Rome to Sicily.',
-    images: ['/og-image.jpg'],
+    images: ['https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/2024_02_rome-aerial-shot-drone-scouting-locations-italy.jpg'],
   },
   alternates: {
     canonical: 'https://italylocations.com',
