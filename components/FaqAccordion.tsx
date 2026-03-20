@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { GlassCard } from '@/components/ui/GlassCard'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface FaqItem {
   q: string
@@ -163,6 +164,8 @@ function AccordionItem({
 }
 
 export function FaqAccordion() {
+  const { t } = useLanguage()
+  const fp = t.pages.faq
   // Track open items: "categoryId-index"
   const [openItems, setOpenItems] = useState<Set<string>>(
     new Set(['scouting-0'])
@@ -204,7 +207,7 @@ export function FaqAccordion() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search questions..."
+          placeholder={fp.searchPlaceholder}
           className="flex-1 bg-transparent text-white placeholder-[rgba(255,255,255,0.35)] focus:outline-none text-sm"
         />
         {query && (
@@ -227,7 +230,10 @@ export function FaqAccordion() {
 
       {/* Categories */}
       <div className="space-y-14">
-        {filteredData.map((cat, catIdx) => (
+        {filteredData.map((cat, catIdx) => {
+          const originalIdx = FAQ_DATA.findIndex((c) => c.id === cat.id)
+          const categoryTitle = fp.categories[originalIdx] ?? cat.title
+          return (
           <AnimateOnScroll key={cat.id} delay={catIdx * 100}>
             <div>
               {/* Category header */}
@@ -245,7 +251,7 @@ export function FaqAccordion() {
                     fontFamily: 'var(--font-playfair), "Playfair Display", serif',
                   }}
                 >
-                  {cat.title}
+                  {categoryTitle}
                 </h2>
               </div>
 
@@ -265,7 +271,8 @@ export function FaqAccordion() {
               </div>
             </div>
           </AnimateOnScroll>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

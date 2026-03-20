@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { LocationFrontmatter } from '@/lib/locations'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const REGIONS = [
   'All',
@@ -52,6 +53,8 @@ interface Props {
 }
 
 export function LocationsGrid({ locations }: Props) {
+  const { t } = useLanguage()
+  const allFilter = t.pages.locations.allFilter
   const [activeRegion, setActiveRegion] = useState('All')
 
   const filtered = locations.filter((l) => matchesRegion(l, activeRegion))
@@ -75,7 +78,7 @@ export function LocationsGrid({ locations }: Props) {
                 }
               `}
             >
-              {region}
+              {region === 'All' ? allFilter : region}
               {region === 'All' ? (
                 <span className="ml-1.5 text-[rgba(255,255,255,0.35)]">({locations.length})</span>
               ) : null}
@@ -87,7 +90,7 @@ export function LocationsGrid({ locations }: Props) {
       {/* Count */}
       <p className="text-center text-[rgba(255,255,255,0.35)] text-sm mb-8">
         {filtered.length} location{filtered.length !== 1 ? 's' : ''}
-        {activeRegion !== 'All' ? ` in ${activeRegion}` : ' across Italy'}
+        {activeRegion !== 'All' ? ` in ${activeRegion}` : ''}
       </p>
 
       {/* Grid */}

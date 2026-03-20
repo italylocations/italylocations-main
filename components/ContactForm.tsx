@@ -4,15 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Turnstile } from '@marsidev/react-turnstile'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-
-const PROJECT_TYPES = [
-  'Location Scouting',
-  'Iconic Cars for Production',
-  'Private Location Database',
-  'Filming Permits',
-  'Production Logistics',
-  'Other',
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const BUDGET_RANGES = [
   'Under €1,000',
@@ -28,6 +20,9 @@ const inputCls =
 const labelCls = 'block text-sm font-medium text-[rgba(255,255,255,0.70)] mb-2'
 
 export function ContactForm({ vehicle }: { vehicle?: string }) {
+  const { t } = useLanguage()
+  const p = t.pages.contact
+  const PROJECT_TYPES = p.projectTypes
   const [projectType, setProjectType] = useState('')
   const [message, setMessage] = useState('')
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
@@ -87,12 +82,12 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
         className="text-2xl font-bold text-white mb-6"
         style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}
       >
-        Tell Us About Your Project
+        {p.formTitle}
       </h2>
 
       {status === 'success' && (
         <div className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
-          Message sent! We&apos;ll get back to you within 24 hours.
+          {p.successMsg}
         </div>
       )}
 
@@ -110,7 +105,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Name */}
         <div>
-          <label className={labelCls}>Name *</label>
+          <label className={labelCls}>{p.fields.name} *</label>
           <input
             name="name"
             type="text"
@@ -122,7 +117,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Email */}
         <div>
-          <label className={labelCls}>Email *</label>
+          <label className={labelCls}>{p.fields.email} *</label>
           <input
             name="email"
             type="email"
@@ -134,7 +129,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Company */}
         <div>
-          <label className={labelCls}>Company / Production House</label>
+          <label className={labelCls}>{p.fields.company}</label>
           <input
             name="company"
             type="text"
@@ -145,7 +140,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Project Type */}
         <div>
-          <label className={labelCls}>Project Type *</label>
+          <label className={labelCls}>{p.fields.projectType} *</label>
           <select
             required
             value={projectType}
@@ -161,7 +156,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Shooting Date */}
         <div>
-          <label className={labelCls}>Shooting Date</label>
+          <label className={labelCls}>{p.fields.shootingDate}</label>
           <input
             name="shootingDate"
             type="date"
@@ -171,7 +166,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Message */}
         <div>
-          <label className={labelCls}>Message * <span className="text-[rgba(255,255,255,0.40)]">(min 50 characters)</span></label>
+          <label className={labelCls}>{p.fields.message} * <span className="text-[rgba(255,255,255,0.40)]">(min 50 characters)</span></label>
           <textarea
             name="message"
             required
@@ -187,7 +182,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
 
         {/* Budget */}
         <div>
-          <label className={labelCls}>Budget Range</label>
+          <label className={labelCls}>{p.fields.budget}</label>
           <select name="budgetRange" className={inputCls}>
             <option value="" className="bg-[#111827] text-white">Select budget range</option>
             {BUDGET_RANGES.map((b) => (
@@ -222,7 +217,7 @@ export function ContactForm({ vehicle }: { vehicle?: string }) {
               Sending...
             </>
           ) : (
-            'Send Message →'
+            p.sendButton
           )}
         </button>
       </form>
