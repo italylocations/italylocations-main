@@ -167,7 +167,7 @@ const en = {
 
 const it: typeof en = {
   nav: {
-    locations: 'Location',
+    locations: 'Locations',
     cars: 'Auto',
     services: 'Servizi',
     rates: 'Tariffe',
