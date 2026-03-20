@@ -4,33 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 
-const locationsLinks = [
-  { label: 'Rome & Lazio', href: '/locations' },
-  { label: 'Amalfi Coast', href: '/locations' },
-  { label: 'Dolomites', href: '/locations' },
-  { label: 'Sardinia', href: '/locations' },
-  { label: 'All Regions', href: '/locations' },
-]
-
-const servicesLinks = [
-  { label: 'Location Scouting', href: '/services' },
-  { label: 'Filming Permits', href: '/services' },
-  { label: 'Production Logistics', href: '/services' },
-  { label: 'Drone Services', href: '/services' },
-  { label: 'Pricing', href: '/rates' },
-  { label: 'Private Database', href: 'https://locations.italylocations.com', external: true },
-]
-
-const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Cookie Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
-  { label: 'FAQ', href: '/faq' },
-]
+const LOCATIONS_HREFS = ['/locations', '/locations', '/locations', '/locations', '/locations']
+const SERVICES_HREFS = ['/services', '/services', '/services', '/services', '/rates', 'https://locations.italylocations.com']
+const LEGAL_HREFS = ['#', '#', '#', '/faq']
 
 export function Footer() {
   const { t } = useLanguage()
   const year = new Date().getFullYear()
+  const links = t.footer.links
 
   return (
     <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[rgba(0,0,0,0.4)] backdrop-blur-sm">
@@ -65,10 +46,10 @@ export function Footer() {
               {t.nav.locations}
             </h3>
             <ul className="space-y-3">
-              {locationsLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
-                    {link.label}
+              {links.locations.map((label, i) => (
+                <li key={label}>
+                  <Link href={LOCATIONS_HREFS[i]} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -81,19 +62,23 @@ export function Footer() {
               {t.nav.services}
             </h3>
             <ul className="space-y-3">
-              {servicesLinks.map((link) => (
-                <li key={link.label}>
-                  {'external' in link && link.external ? (
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link href={link.href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
+              {links.services.map((label, i) => {
+                const href = SERVICES_HREFS[i]
+                const isExternal = href.startsWith('http')
+                return (
+                  <li key={label}>
+                    {isExternal ? (
+                      <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
+                        {label}
+                      </a>
+                    ) : (
+                      <Link href={href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
+                        {label}
+                      </Link>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           </div>
 
@@ -103,10 +88,10 @@ export function Footer() {
               Legal
             </h3>
             <ul className="space-y-3 mb-8">
-              {legalLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
-                    {link.label}
+              {links.legal.map((label, i) => (
+                <li key={label}>
+                  <Link href={LEGAL_HREFS[i]} className="text-sm text-[rgba(255,255,255,0.55)] hover:text-white transition-colors">
+                    {label}
                   </Link>
                 </li>
               ))}

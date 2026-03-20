@@ -67,9 +67,7 @@ export function PricingSection() {
             {p.h2}
           </h2>
           <p className="text-[rgba(255,255,255,0.60)] max-w-2xl mx-auto leading-relaxed">
-            Our location scouting service means we do the legwork for you: we research, travel,
-            photograph and document the exact locations that match your creative brief and
-            moodboard — so your production team arrives knowing precisely where to shoot.
+            {p.intro}
           </p>
         </AnimateOnScroll>
 

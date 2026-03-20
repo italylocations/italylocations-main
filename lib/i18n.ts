@@ -3,7 +3,7 @@ export type Lang = 'en' | 'it' | 'es'
 const en = {
   nav: {
     locations: 'Locations',
-    cars: 'Cars',
+    cars: 'Iconic Cars',
     services: 'Services',
     rates: 'Rates',
     about: 'About',
@@ -66,6 +66,8 @@ const en = {
     pricing: {
       label: 'TRANSPARENT PRICING',
       h2: 'Clear Rates. No Surprises.',
+      intro:
+        'Our location scouting service means we do the legwork for you: we research, travel, photograph and document the exact locations that match your creative brief and moodboard — so your production team arrives knowing precisely where to shoot.',
       plans: [
         { title: 'Central Italy', contact: false },
         { title: 'North & South Italy', contact: false },
@@ -99,12 +101,36 @@ const en = {
       h2: 'Private Location Database',
       subtitle:
         "Our curated database of 200+ verified private properties. Send us your creative brief and we'll handpick the perfect locations — presented in a tailored PDF proposal within 48 hours.",
+      features: [
+        'Curated selection based on your brief',
+        'Tailored PDF proposal within 48h',
+        'Full privacy — addresses never shared',
+        'Locations not available on any public platform',
+      ],
       cta: 'Browse Private Locations →',
     },
     owners: {
       label: 'FOR PROPERTY OWNERS',
       h2: 'Do You Have a Private Location in Italy?',
-      cta: 'Register Your Location →',
+      subtitle:
+        'List your property in our exclusive database and start earning from photo shoots, commercials and film productions.',
+      benefits: [
+        {
+          title: 'Free Registration',
+          desc: 'No costs, no exclusive commitment. Sign up in 5 minutes.',
+        },
+        {
+          title: 'Guaranteed Earnings',
+          desc: '€1,000 - €7,500+ per day. 100% payment in advance before the shoot.',
+        },
+        {
+          title: 'Full Protection',
+          desc: 'Mandatory damage insurance, regular contract, professional supervision.',
+        },
+      ],
+      cta: 'Submit Your Location →',
+      finePrint:
+        'Private locations in Italy only · Villas, castles, farmhouses, industrial spaces and more',
     },
     cta: {
       h2: 'Ready to Shoot in Italy?',
@@ -115,6 +141,18 @@ const en = {
   footer: {
     tagline: 'Professional Film Location Scouting in Italy',
     rights: 'All Rights Reserved',
+    links: {
+      locations: ['Rome & Lazio', 'Amalfi Coast', 'Dolomites', 'Sardinia', 'All Regions'],
+      services: [
+        'Location Scouting',
+        'Filming Permits',
+        'Production Logistics',
+        'Drone Services',
+        'Pricing',
+        'Private Database',
+      ],
+      legal: ['Privacy Policy', 'Cookie Policy', 'Terms of Service', 'FAQ'],
+    },
   },
   pages: {
     locations: { h1: 'Filming Locations Across Italy' },
@@ -193,6 +231,8 @@ const it: typeof en = {
     pricing: {
       label: 'PREZZI TRASPARENTI',
       h2: 'Tariffe Chiare. Nessuna Sorpresa.',
+      intro:
+        "Il nostro servizio di location scouting significa che facciamo noi il lavoro sul campo: ricerchiamo, viaggiamo, fotografiamo e documentiamo le location esatte che corrispondono al tuo brief creativo e moodboard — così il tuo team di produzione arriva sapendo esattamente dove girare.",
       plans: [
         { title: 'Italia Centrale', contact: false },
         { title: 'Italia Nord e Sud', contact: false },
@@ -226,12 +266,36 @@ const it: typeof en = {
       h2: 'Database Location Private',
       subtitle:
         "Il nostro database curato di oltre 200 proprietà private verificate. Inviaci il tuo brief creativo e selezioneremo le location perfette — in una proposta PDF personalizzata entro 48 ore.",
+      features: [
+        'Selezione personalizzata in base al tuo brief',
+        'Proposta PDF su misura entro 48h',
+        'Totale riservatezza — indirizzi mai condivisi',
+        'Location non disponibili su nessuna piattaforma pubblica',
+      ],
       cta: 'Esplora le Location Private →',
     },
     owners: {
       label: 'PER I PROPRIETARI',
       h2: 'Hai una Location Privata in Italia?',
-      cta: 'Registra la Tua Location →',
+      subtitle:
+        'Registra gratuitamente la tua proprietà nel nostro database riservato e inizia a guadagnare con riprese fotografiche, pubblicitarie e cinematografiche.',
+      benefits: [
+        {
+          title: 'Registrazione Gratuita',
+          desc: 'Nessun costo, nessun vincolo esclusivo. Ti registri in 5 minuti.',
+        },
+        {
+          title: 'Guadagno Garantito',
+          desc: '€1.000 - €7.500+ al giorno. Pagamento 100% anticipato prima delle riprese.',
+        },
+        {
+          title: 'Massima Tutela',
+          desc: 'Polizza danni obbligatoria, contratto regolare, supervisione professionale.',
+        },
+      ],
+      cta: 'Proponi la Tua Location →',
+      finePrint:
+        'Solo location private in Italia · Ville, castelli, casali, spazi industriali e molto altro',
     },
     cta: {
       h2: 'Pronto a Girare in Italia?',
@@ -242,6 +306,18 @@ const it: typeof en = {
   footer: {
     tagline: 'Scouting Professionale di Location Cinematografiche in Italia',
     rights: 'Tutti i Diritti Riservati',
+    links: {
+      locations: ['Roma & Lazio', 'Costiera Amalfitana', 'Dolomiti', 'Sardegna', 'Tutte le Regioni'],
+      services: [
+        'Location Scouting',
+        'Permessi di Ripresa',
+        'Logistica di Produzione',
+        'Servizi Drone',
+        'Tariffe',
+        'Database Privato',
+      ],
+      legal: ['Privacy Policy', 'Cookie Policy', 'Termini di Servizio', 'FAQ'],
+    },
   },
   pages: {
     locations: { h1: 'Location Cinematografiche in Tutta Italia' },
@@ -256,8 +332,8 @@ const it: typeof en = {
 
 const es: typeof en = {
   nav: {
-    locations: 'Localizaciones',
-    cars: 'Coches',
+    locations: 'Locations',
+    cars: 'Iconic Cars',
     services: 'Servicios',
     rates: 'Tarifas',
     about: 'Nosotros',
@@ -266,11 +342,11 @@ const es: typeof en = {
   },
   home: {
     hero: {
-      eyebrow: 'Scouting Profesional de Localizaciones',
-      h1: 'Descubre las Localizaciones de Rodaje Más Exclusivas de Italia',
+      eyebrow: 'Scouting Profesional de Locations',
+      h1: 'Descubre las Film Locations Más Exclusivas de Italia',
       subtitle:
-        'Scouting profesional de localizaciones para producciones de cine, publicidad y fotografía en toda Italia.',
-      cta1: 'Explorar Localizaciones',
+        'Scouting profesional de locations para producciones de cine, publicidad y fotografía en toda Italia.',
+      cta1: 'Explore Locations',
       cta2: 'Solicitar Presupuesto',
       badges: [
         'Más de 10 Años de Experiencia',
@@ -282,7 +358,7 @@ const es: typeof en = {
     stats: {
       items: [
         { label: 'Regiones Italianas' },
-        { label: 'Localizaciones Documentadas' },
+        { label: 'Locations Documentadas' },
         { label: 'Años de Experiencia' },
         { label: 'Tarifa Diaria desde' },
       ],
@@ -292,8 +368,8 @@ const es: typeof en = {
       h2: 'Soporte Completo a la Producción',
       items: [
         {
-          title: 'Scouting de Localizaciones',
-          desc: 'Recorremos Italia para encontrar y documentar localizaciones que se ajustan a tu brief creativo. Cada scouting incluye fotos de alta resolución, coordenadas GPS, notas de acceso e informes de condiciones de luz.',
+          title: 'Location Scouting',
+          desc: 'Recorremos Italia para encontrar y documentar locations que se ajustan a tu brief creativo. Cada scouting incluye fotos de alta resolución, coordenadas GPS, notas de acceso e informes de condiciones de luz.',
         },
         {
           title: 'Permisos de Rodaje',
@@ -315,11 +391,13 @@ const es: typeof en = {
       h2: 'Cada Rincón de Italia',
       subtitle:
         'Desde las colinas de la Toscana hasta los Dolomitas, desde las calles antiguas de Roma hasta las costas salvajes de Cerdeña — conocemos cada rincón de Italia que hace cine.',
-      cta: 'Ver Todas las Localizaciones →',
+      cta: 'Ver Todas las Locations →',
     },
     pricing: {
       label: 'PRECIOS TRANSPARENTES',
       h2: 'Tarifas Claras. Sin Sorpresas.',
+      intro:
+        'Nuestro servicio de location scouting significa que hacemos el trabajo de campo por ti: investigamos, viajamos, fotografiamos y documentamos las locations exactas que se ajustan a tu brief creativo y moodboard — para que tu equipo llegue al set sabiendo exactamente dónde rodar.',
       plans: [
         { title: 'Italia Central', contact: false },
         { title: 'Italia Norte y Sur', contact: false },
@@ -350,33 +428,69 @@ const es: typeof en = {
     database: {
       label: 'EXCLUSIVO',
       badge: 'NUEVO',
-      h2: 'Base de Datos de Localizaciones Privadas',
+      h2: 'Base de Datos de Locations Privadas',
       subtitle:
-        'Nuestra base de datos curada de más de 200 propiedades privadas verificadas. Envíanos tu brief creativo y seleccionaremos las localizaciones perfectas — en una propuesta PDF personalizada en 48 horas.',
-      cta: 'Explorar Localizaciones Privadas →',
+        'Nuestra base de datos curada de más de 200 propiedades privadas verificadas. Envíanos tu brief creativo y seleccionaremos las locations perfectas — en una propuesta PDF personalizada en 48 horas.',
+      features: [
+        'Selección personalizada según tu brief',
+        'Propuesta PDF personalizada en 48h',
+        'Total privacidad — direcciones nunca compartidas',
+        'Locations no disponibles en ninguna plataforma pública',
+      ],
+      cta: 'Explore Private Locations →',
     },
     owners: {
       label: 'PARA PROPIETARIOS',
-      h2: '¿Tienes una Localización Privada en Italia?',
-      cta: 'Registra Tu Localización →',
+      h2: '¿Tienes una Location Privada en Italia?',
+      subtitle:
+        'Registra gratuitamente tu propiedad en nuestra base de datos exclusiva y empieza a ganar con rodajes fotográficos, publicitarios y cinematográficos.',
+      benefits: [
+        {
+          title: 'Registro Gratuito',
+          desc: 'Sin costes, sin exclusividad. Registro en 5 minutos.',
+        },
+        {
+          title: 'Ingresos Garantizados',
+          desc: '€1.000 - €7.500+ al día. Pago 100% anticipado antes del rodaje.',
+        },
+        {
+          title: 'Máxima Protección',
+          desc: 'Seguro obligatorio, contrato regular, supervisión profesional.',
+        },
+      ],
+      cta: 'Propón Tu Location →',
+      finePrint:
+        'Solo locations privadas en Italia · Villas, castillos, masías, espacios industriales y más',
     },
     cta: {
       h2: '¿Listo para Rodar en Italia?',
-      subtitle: 'Cuéntanos tu proyecto y encontraremos las localizaciones perfectas en 48 horas.',
+      subtitle: 'Cuéntanos tu proyecto y encontraremos las locations perfectas en 48 horas.',
       cta: 'Inicia Tu Proyecto →',
     },
   },
   footer: {
-    tagline: 'Scouting Profesional de Localizaciones Cinematográficas en Italia',
+    tagline: 'Scouting Profesional de Locations Cinematográficas en Italia',
     rights: 'Todos los Derechos Reservados',
+    links: {
+      locations: ['Roma & Lazio', 'Costa Amalfitana', 'Dolomitas', 'Cerdeña', 'Todas las Regiones'],
+      services: [
+        'Location Scouting',
+        'Permisos de Rodaje',
+        'Logística de Producción',
+        'Servicios de Dron',
+        'Tarifas',
+        'Base de Datos Privada',
+      ],
+      legal: ['Privacy Policy', 'Cookie Policy', 'Términos de Servicio', 'FAQ'],
+    },
   },
   pages: {
-    locations: { h1: 'Localizaciones de Rodaje en Toda Italia' },
-    services:  { h1: 'Servicios Profesionales de Scouting de Localizaciones' },
+    locations: { h1: 'Film Locations en Toda Italia' },
+    services:  { h1: 'Servicios Profesionales de Location Scouting' },
     rates:     { h1: 'Precios Transparentes para Producciones Profesionales' },
     about:     { h1: 'Tu Experto Local en Italia' },
     contact:   { label: 'CONTACTO', h1: 'Trabajemos Juntos', subtitle: 'Cuéntanos tu proyecto. Te responderemos en 24 horas.' },
-    faq:       { label: 'FAQ', h1: 'Preguntas Frecuentes', subtitle: 'Todo lo que necesitas saber sobre nuestros servicios de scouting de localizaciones en Italia.' },
+    faq:       { label: 'FAQ', h1: 'Preguntas Frecuentes', subtitle: 'Todo lo que necesitas saber sobre nuestros servicios de location scouting en Italia.' },
     cars:      { h1: 'Coches Icónicos para Producciones Cinematográficas y Publicitarias' },
   },
 }

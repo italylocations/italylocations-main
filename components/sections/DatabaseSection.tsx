@@ -12,20 +12,11 @@ export function DatabaseSection() {
   const { t } = useLanguage()
   const d = t.home.database
 
-  const features = [
-    'Curated selection based on your brief',
-    'Tailored PDF proposal within 48h',
-    'Full privacy — addresses never shared',
-    'Locations not available on any public platform',
-  ]
-
   return (
     <section className="py-20 px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <AnimateOnScroll>
-          {/* Card with background image */}
           <div className="relative overflow-hidden rounded-2xl border border-[rgba(201,168,76,0.35)] gold-border-glow">
-            {/* Background photo */}
             <Image
               src={BG_IMAGE}
               alt="Aerial drone view of Palazzo Farnese Caprarola Tuscia - exclusive private filming location Italy"
@@ -33,16 +24,13 @@ export function DatabaseSection() {
               quality={85}
               style={{ objectFit: 'cover' }}
             />
-            {/* Dark overlay */}
             <div
               className="absolute inset-0"
               style={{ background: 'rgba(0,0,0,0.70)' }}
             />
 
-            {/* Content on top */}
             <div className="relative z-10 p-10 md:p-14">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Text */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <SectionLabel>{d.label}</SectionLabel>
@@ -67,9 +55,8 @@ export function DatabaseSection() {
                   </BlueButton>
                 </div>
 
-                {/* Feature list */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {features.map((feature) => (
+                  {d.features.map((feature) => (
                     <div
                       key={feature}
                       className="flex items-start gap-3 p-4 rounded-xl bg-[rgba(201,168,76,0.10)] border border-[rgba(201,168,76,0.25)]"
@@ -81,7 +68,6 @@ export function DatabaseSection() {
                     </div>
                   ))}
 
-                  {/* Stats mini */}
                   <div className="sm:col-span-2 mt-2 flex items-center gap-6 text-sm">
                     <div className="text-center">
                       <div className="text-2xl font-bold gold-text" style={{ fontFamily: 'var(--font-playfair), "Playfair Display", serif' }}>200+</div>
