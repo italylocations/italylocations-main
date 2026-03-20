@@ -32,10 +32,18 @@ export function getAllLocations(): LocationFrontmatter[] {
     const raw = fs.readFileSync(filePath, 'utf-8')
     const { data } = matter(raw)
 
+    const decodeHtml = (str: string) =>
+      str
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&#8212;/g, '—')
+        .replace(/&#038;/g, '&')
+
     return {
       slug: data.slug ?? slug,
-      title: data.title ?? '',
-      excerpt: data.excerpt ?? '',
+      title: decodeHtml(data.title ?? ''),
+      excerpt: decodeHtml(data.excerpt ?? ''),
       region: data.region ?? '',
       locationType: data.locationType ?? '',
       tags: Array.isArray(data.tags) ? data.tags : [],
@@ -62,10 +70,18 @@ export function getLocationBySlug(slug: string): LocationWithContent | null {
 
     const fileSlug = data.slug ?? filename.replace(/\.mdx$/, '')
     if (fileSlug === slug) {
+      const decodeHtml = (str: string) =>
+        str
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&#8212;/g, '—')
+          .replace(/&#038;/g, '&')
+
       return {
         slug: fileSlug,
-        title: data.title ?? '',
-        excerpt: data.excerpt ?? '',
+        title: decodeHtml(data.title ?? ''),
+        excerpt: decodeHtml(data.excerpt ?? ''),
         region: data.region ?? '',
         locationType: data.locationType ?? '',
         tags: Array.isArray(data.tags) ? data.tags : [],
