@@ -3,9 +3,9 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 
 const regions = [
-  'Roma', 'Costa Amalfitana', 'Umbria', 'Dolomiti', 'Sardegna',
+  'Roma', 'Costiera Amalfitana', 'Umbria', 'Dolomiti', 'Sardegna',
   'Puglia', 'Lazio', "Cortina d'Ampezzo", 'Tuscia',
-  'Abruzzo', 'Ponza', 'Emilia-Romagna', 'Piemonte',
+  'Abruzzo', 'Isola di Ponza', 'Emilia-Romagna', 'Piemonte',
 ]
 
 export function RegionsSection() {
