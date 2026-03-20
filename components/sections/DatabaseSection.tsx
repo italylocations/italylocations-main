@@ -50,7 +50,7 @@ export function DatabaseSection() {
                     {d.subtitle}
                   </p>
 
-                  <BlueButton href="/contact">
+                  <BlueButton href="https://locations.italylocations.com" external>
                     {d.cta}
                   </BlueButton>
                 </div>
