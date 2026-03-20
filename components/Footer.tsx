@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const LOCATIONS_HREFS = ['/locations', '/locations', '/locations', '/locations', '/locations']
 const SERVICES_HREFS = ['/services', '/services', '/services', '/services', '/rates', 'https://locations.italylocations.com']
-const LEGAL_HREFS = ['#', '#', '#', '/faq']
+const LEGAL_HREFS = ['#', '/cookie-policy', '#', '/faq']
 
 export function Footer() {
   const { t } = useLanguage()
