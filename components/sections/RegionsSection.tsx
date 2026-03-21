@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -52,6 +53,31 @@ export function RegionsSection() {
           >
             {r.cta}
           </Link>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll delay={300}>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-10">
+            {[
+              { src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/regions/rome-street.jpg', alt: 'Rome street location scouting Italy' },
+              { src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/regions/venice-canal.jpg', alt: 'Venice canal night filming location Italy' },
+              { src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/regions/caprarola-drone.jpg', alt: 'Palazzo Farnese Caprarola aerial drone location Italy' },
+              { src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/regions/rome-aerial.jpg', alt: 'Rome Piazza del Popolo aerial drone filming location' },
+              { src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/regions/villa-medici.jpg', alt: 'Villa Medici Rome aerial gardens filming location' },
+              { src: 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/regions/ponza-sea.jpg', alt: 'Ponza island crystal sea drone filming location Italy' },
+            ].map((photo) => (
+              <div key={photo.src} className="relative aspect-[4/3] overflow-hidden rounded-lg group">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={600}
+                  height={450}
+                  quality={75}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </AnimateOnScroll>
       </div>
     </section>
