@@ -167,6 +167,7 @@ export function IconicCarsContent() {
                     alt={car.image.alt}
                     fill
                     style={{ objectFit: 'cover' }}
+                    className="scale-[1.15]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     unoptimized
                   />
