@@ -8,7 +8,6 @@ const STAT_VALUES = [
   { value: 20, suffix: '+', prefix: undefined },
   { value: 500, suffix: '+', prefix: undefined },
   { value: 10, suffix: '+', prefix: undefined },
-  { value: 600, suffix: undefined, prefix: '€' },
 ]
 
 export function StatsSection() {
@@ -20,7 +19,7 @@ export function StatsSection() {
       <AnimateOnScroll>
         <div className="max-w-6xl mx-auto">
           <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(201,168,76,0.20)] backdrop-blur-sm rounded-2xl px-6 py-8 md:py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-0">
               {STAT_VALUES.map((stat, index) => (
                 <div key={index} className="relative text-center">
                   {index < STAT_VALUES.length - 1 && (

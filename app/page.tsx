@@ -2,11 +2,10 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { StatsSection } from '@/components/sections/StatsSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { RegionsSection } from '@/components/sections/RegionsSection'
-import { PricingSection } from '@/components/sections/PricingSection'
+import { LatestWorkSection } from '@/components/sections/LatestWorkSection'
 import { WhySection } from '@/components/sections/WhySection'
-import { DatabaseSection } from '@/components/sections/DatabaseSection'
-import { OwnersSection } from '@/components/sections/OwnersSection'
 import { CtaSection } from '@/components/sections/CtaSection'
+import { OwnersSection } from '@/components/sections/OwnersSection'
 
 export default function HomePage() {
   return (
@@ -15,11 +14,10 @@ export default function HomePage() {
       <StatsSection />
       <ServicesSection />
       <RegionsSection />
-      <PricingSection />
+      <LatestWorkSection />
       <WhySection />
-      <DatabaseSection />
-      <OwnersSection />
       <CtaSection />
+      <OwnersSection />
     </>
   )
 }
