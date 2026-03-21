@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { BlueButton } from '@/components/ui/BlueButton'
 import { GoldButton } from '@/components/ui/GoldButton'
+import { Film, MapPin, Globe, LayoutGrid } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const HERO_IMAGE = 'https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/2024_02_rome-aerial-shot-drone-scouting-locations-italy.jpg'
@@ -69,9 +70,9 @@ export function HeroSection() {
 
         {/* Credibility badges */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 flex-wrap">
-          {(['🎬', '📍', '🌍', '🗺️'] as const).map((icon, i) => (
+          {([Film, MapPin, Globe, LayoutGrid] as const).map((Icon, i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-[rgba(255,255,255,0.65)]">
-              <span>{icon}</span>
+              <Icon size={16} strokeWidth={1.5} color="#c9a84c" />
               <span>{h.badges[i]}</span>
             </div>
           ))}
