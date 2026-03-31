@@ -13,8 +13,8 @@ export default function HomePage() {
       <HeroSection />
       <StatsSection />
       <ServicesSection />
-      <RegionsSection />
       <LatestWorkSection />
+      <RegionsSection />
       <WhySection />
       <CtaSection />
       <OwnersSection />
