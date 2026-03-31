@@ -15,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact', priority: 0.7 as const, changeFrequency: 'monthly' as const },
     { path: '/faq', priority: 0.5 as const, changeFrequency: 'monthly' as const },
     { path: '/location-scouting-milan', priority: 0.8 as const, changeFrequency: 'monthly' as const },
+    { path: '/location-scouting-rome', priority: 0.8 as const, changeFrequency: 'monthly' as const },
+    { path: '/location-scouting-florence', priority: 0.8 as const, changeFrequency: 'monthly' as const },
+    { path: '/location-scouting-naples', priority: 0.8 as const, changeFrequency: 'monthly' as const },
   ]
 
   const locations = getAllLocations()

@@ -2,12 +2,12 @@
 
 import { Suspense } from 'react'
 import {
-  Shirt,
-  Factory,
   Landmark,
-  Waves,
-  Building2,
+  MapPin,
   Castle,
+  Home,
+  Camera,
+  Globe,
   CheckCircle2,
   MessageSquare,
   Search,
@@ -22,62 +22,62 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const TRANSLATIONS = {
   en: {
-    badge: 'MILANO • ITALIA',
+    badge: 'FLORENCE \u2022 TUSCANY',
     h1pre: 'Location Scouting in',
-    h1city: 'Milan',
+    h1city: 'Florence',
     subtitle:
-      "Italy\u2019s capital of design and fashion is also one of Europe\u2019s most versatile filming destinations. From brutalist lofts to Baroque palaces, we unlock the Milan that productions dream about.",
-    whyLabel: 'WHY MILAN',
-    whyHeading: 'A City of Contrasts \u2014 On Camera',
+      'Renaissance perfection meets Tuscan countryside. Florence and its surroundings offer the most iconic Italian aesthetic for fashion, automotive and film productions.',
+    whyLabel: 'WHY FLORENCE',
+    whyHeading: 'Aesthetic Perfection \u2014 On Camera',
     whatLabel: 'WHAT WE FIND FOR YOU',
-    whatHeading: 'Location Types We Scout in Milan',
+    whatHeading: 'Location Types We Scout in Florence',
     whatDesc:
-      'Our Milan network spans private owners, property agencies and institutional contacts built over years of on-the-ground work. We access locations that are never advertised publicly.',
+      'Our Florence and Tuscany network spans private villa owners, noble families, agricultural estates and institutional contacts built over years of on-the-ground work. We access locations that are never advertised publicly.',
     processLabel: 'THE PROCESS',
     processHeading: 'How It Works',
     contactLabel: 'GET IN TOUCH',
-    contactHeading: 'Tell Us About Your Milan Project',
+    contactHeading: 'Tell Us About Your Florence Project',
     contactSubtitle:
       "Send us your brief and we\u2019ll get back within 24 hours with location options tailored to your production.",
     waDesc: 'Need a faster response? Reach us directly on WhatsApp.',
     waBtn: 'WhatsApp Us Now',
     whyCards: [
       {
-        title: 'Fashion & Design District',
-        desc: 'Brera and Porta Nuova offer sleek showrooms, avant-garde galleries and designer courtyards ideal for editorial and commercial shoots.',
+        title: 'Historic Center',
+        desc: 'The Duomo, Ponte Vecchio and Uffizi area form the most iconic Renaissance backdrop in existence \u2014 instantly recognisable and endlessly versatile for fashion and film.',
       },
       {
-        title: 'Industrial Loft Spaces',
-        desc: 'Lambrate and Isola hide converted factories with raw concrete, exposed brick and dramatic natural light \u2014 perfect for editorial and music video productions.',
+        title: 'Tuscan Countryside',
+        desc: "Val d\u2019Orcia, Chianti and the classic cypress-lined roads: the quintessential Italian rural aesthetic that dominates global luxury and automotive advertising.",
       },
       {
-        title: 'Liberty Architecture',
-        desc: 'Belle \u00C9poque villas with ornate facades, frescoed interiors and manicured gardens that evoke old-world European elegance.',
+        title: 'Noble Palaces',
+        desc: 'Private historic residences with frescoed salons, stone courtyards and centuries of aristocratic history \u2014 accessible exclusively through our professional network.',
       },
       {
-        title: 'Navigli Canals',
-        desc: "Milan\u2019s canal district: cobbled towpaths, vine-covered trattorias and reflective water surfaces that shift from moody dawn mist to golden-hour glow.",
+        title: 'Oltrarno',
+        desc: "Florence\u2019s artisan quarter: craft workshops, antique studios and an authentic neighbourhood character that retains the spirit of medieval Florence.",
       },
       {
-        title: 'Modern Architecture',
-        desc: "CityLife\u2019s twisting towers and Porta Nuova\u2019s glass-and-steel skyline provide a contemporary Milan backdrop unlike any other Italian city.",
+        title: 'Fashion & Editorial',
+        desc: "Florence\u2019s perfect natural light, Renaissance proportions and aesthetic heritage make it the ideal city for fashion campaigns and high-end editorial productions.",
       },
       {
-        title: 'Historic Palaces & Courtyards',
-        desc: 'Noble residences dating from the Renaissance to the 19th century, with frescoed halls, stone arcades and private gardens rarely seen by outsiders.',
+        title: 'Villa & Gardens',
+        desc: 'Medici villas, formal Italian gardens and cypress avenues surrounding Florence \u2014 iconic settings for luxury, fashion and period productions.',
       },
     ],
     locationTypes: [
-      'Modern minimalist villas with panoramic terraces',
-      'Converted industrial lofts (Lambrate, Isola, NoLo)',
-      'Liberty-style historic residences and villas',
-      'Rooftop terraces with city skyline views',
-      'Design showrooms and concept stores',
-      'Private courtyards and internal gardens',
-      'Navigli-side properties and canal-front venues',
-      'Contemporary art galleries and creative spaces',
-      'Luxury hotel suites and boutique properties',
-      'Corporate headquarters with architectural interiors',
+      'Historic center streets and piazzas (Duomo, Signoria area)',
+      'Ponte Vecchio and Arno riverside locations',
+      "Tuscan countryside with cypress roads (Val d\u2019Orcia, Chianti)",
+      'Private noble palaces with frescoed interiors',
+      'Oltrarno artisan workshops and medieval streets',
+      'Medici villas and Italian formal gardens',
+      'Fashion boutiques and concept stores',
+      'Rooftop terraces overlooking the Duomo',
+      'Farmhouses and agriturismo properties (Chianti, Mugello)',
+      'Contemporary art spaces and converted historic buildings',
     ],
     howItWorks: [
       {
@@ -86,7 +86,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'We scout and present options',
-        desc: 'Our team researches and visits Milan locations on your behalf \u2014 delivering a curated selection with high-res photos, GPS coordinates and access notes.',
+        desc: 'Our team researches and visits Florence locations on your behalf \u2014 delivering a curated selection with high-res photos, GPS coordinates and access notes.',
       },
       {
         title: 'We handle permits and logistics',
@@ -95,62 +95,62 @@ const TRANSLATIONS = {
     ],
   },
   it: {
-    badge: 'MILANO \u2022 ITALIA',
+    badge: 'FIRENZE \u2022 TOSCANA',
     h1pre: 'Location Scouting a',
-    h1city: 'Milano',
+    h1city: 'Firenze',
     subtitle:
-      'La capitale italiana del design e della moda \u00e8 anche una delle destinazioni cinematografiche pi\u00f9 versatili d\u2019Europa. Dai loft brutalisti ai palazzi barocchi, sveliamo la Milano che le produzioni sognano.',
-    whyLabel: 'PERCH\u00c9 MILANO',
-    whyHeading: 'Una Citt\u00e0 di Contrasti \u2014 In Camera',
+      'La perfezione rinascimentale incontra la campagna toscana. Firenze e dintorni offrono l\u2019estetica italiana pi\u00f9 iconica per produzioni di moda, automotive e cinematografiche.',
+    whyLabel: 'PERCH\u00c9 FIRENZE',
+    whyHeading: 'La Perfezione Estetica \u2014 In Camera',
     whatLabel: 'COSA TROVIAMO PER TE',
-    whatHeading: 'Tipologie di Location che Scouting a Milano',
+    whatHeading: 'Tipologie di Location che Scouting a Firenze',
     whatDesc:
-      'La nostra rete milanese comprende proprietari privati, agenzie immobiliari e contatti istituzionali costruiti in anni di lavoro sul campo. Accediamo a location che non vengono mai pubblicizzate.',
+      'La nostra rete a Firenze e in Toscana comprende proprietari privati di ville, famiglie nobiliari, tenute agricole e contatti istituzionali costruiti in anni di lavoro sul campo. Accediamo a location che non vengono mai pubblicizzate.',
     processLabel: 'IL PROCESSO',
     processHeading: 'Come Funziona',
     contactLabel: 'CONTATTACI',
-    contactHeading: 'Raccontaci il Tuo Progetto a Milano',
+    contactHeading: 'Raccontaci il Tuo Progetto a Firenze',
     contactSubtitle:
       'Inviaci il tuo brief e ti risponderemo entro 24 ore con opzioni di location su misura per la tua produzione.',
     waDesc: 'Hai bisogno di una risposta pi\u00f9 rapida? Scrivici direttamente su WhatsApp.',
     waBtn: 'Scrivici su WhatsApp',
     whyCards: [
       {
-        title: 'Distretto della Moda e del Design',
-        desc: 'Brera e Porta Nuova offrono showroom eleganti, gallerie d\u2019avanguardia e cortili di designer ideali per shooting editoriali e commerciali.',
+        title: 'Centro Storico',
+        desc: 'Il Duomo, Ponte Vecchio e l\u2019area degli Uffizi formano lo sfondo rinascimentale pi\u00f9 iconico al mondo \u2014 immediatamente riconoscibile e infinitamente versatile per moda e cinema.',
       },
       {
-        title: 'Spazi Loft Industriali',
-        desc: 'Lambrate e Isola nascondono fabbriche riconvertite con cemento grezzo, mattoni a vista e luce naturale drammatica \u2014 perfette per produzioni editoriali e video musicali.',
+        title: 'Campagna Toscana',
+        desc: 'Val d\u2019Orcia, Chianti e le classiche strade fiancheggiate da cipressi: l\u2019estetica rurale italiana per eccellenza che domina la pubblicit\u00e0 globale di lusso e automotive.',
       },
       {
-        title: 'Architettura Liberty',
-        desc: 'Ville Belle \u00c9poque con facciate ornate, interni affrescati e giardini curati che evocano l\u2019eleganza europea del passato.',
+        title: 'Palazzi Nobiliari',
+        desc: 'Residenze storiche private con saloni affrescati, cortili in pietra e secoli di storia aristocratica \u2014 accessibili esclusivamente attraverso la nostra rete professionale.',
       },
       {
-        title: 'Navigli',
-        desc: 'Il quartiere dei canali di Milano: alzaie acciottolate, trattorie ricoperte di viti e superfici d\u2019acqua riflettenti che vanno dalla nebbia mattutina alle luci dorate del tramonto.',
+        title: 'Oltrarno',
+        desc: 'Il quartiere artigianale di Firenze: botteghe artigiane, studi d\u2019antiquariato e un carattere autentico di quartiere che conserva lo spirito della Firenze medievale.',
       },
       {
-        title: 'Architettura Moderna',
-        desc: 'Le torri tortuose di CityLife e lo skyline di vetro e acciaio di Porta Nuova offrono uno sfondo contemporaneo unico rispetto a qualsiasi altra citt\u00e0 italiana.',
+        title: 'Moda e Editoriale',
+        desc: 'La luce naturale perfetta di Firenze, le proporzioni rinascimentali e il patrimonio estetico la rendono la citt\u00e0 ideale per campagne moda e produzioni editoriali di alta gamma.',
       },
       {
-        title: 'Palazzi Storici e Cortili',
-        desc: 'Dimore nobiliari dal Rinascimento al XIX secolo, con sale affrescate, arcate in pietra e giardini privati raramente visibili dall\u2019esterno.',
+        title: 'Ville e Giardini',
+        desc: 'Ville medicee, giardini all\u2019italiana formali e viali di cipressi intorno a Firenze \u2014 location iconiche per produzioni di lusso, moda e in costume.',
       },
     ],
     locationTypes: [
-      'Ville minimaliste moderne con terrazze panoramiche',
-      'Loft industriali riconvertiti (Lambrate, Isola, NoLo)',
-      'Residenze e ville storiche in stile Liberty',
-      'Terrazze sui tetti con vista sullo skyline',
-      'Showroom di design e concept store',
-      'Cortili privati e giardini interni',
-      'Propriet\u00e0 sul Naviglio e locali fronte canale',
-      'Gallerie d\u2019arte contemporanea e spazi creativi',
-      'Suite di hotel di lusso e boutique property',
-      'Sedi aziendali con interni architettonici',
+      'Strade e piazze del centro storico (Duomo, area della Signoria)',
+      'Ponte Vecchio e location lungo l\u2019Arno',
+      'Campagna toscana con strade di cipressi (Val d\u2019Orcia, Chianti)',
+      'Palazzi nobiliari privati con interni affrescati',
+      'Botteghe artigiane e strade medievali dell\u2019Oltrarno',
+      'Ville medicee e giardini formali all\u2019italiana',
+      'Boutique di moda e concept store',
+      'Terrazze panoramiche con vista sul Duomo',
+      'Casali e agriturismi (Chianti, Mugello)',
+      'Spazi d\u2019arte contemporanea e edifici storici riconvertiti',
     ],
     howItWorks: [
       {
@@ -159,7 +159,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Scouting e presentazione delle opzioni',
-        desc: 'Il nostro team ricerca e visita le location di Milano per te \u2014 consegnando una selezione curata con foto ad alta risoluzione, coordinate GPS e note di accesso.',
+        desc: 'Il nostro team ricerca e visita le location di Firenze per te \u2014 consegnando una selezione curata con foto ad alta risoluzione, coordinate GPS e note di accesso.',
       },
       {
         title: 'Gestione permessi e logistica',
@@ -168,62 +168,62 @@ const TRANSLATIONS = {
     ],
   },
   es: {
-    badge: 'MIL\u00c1N \u2022 ITALIA',
+    badge: 'FLORENCIA \u2022 TOSCANA',
     h1pre: 'Location Scouting en',
-    h1city: 'Mil\u00e1n',
+    h1city: 'Florencia',
     subtitle:
-      'La capital italiana del dise\u00f1o y la moda es tambi\u00e9n uno de los destinos cinematogr\u00e1ficos m\u00e1s vers\u00e1tiles de Europa. Desde lofts brutalistas hasta palacios barrocos, revelamos el Mil\u00e1n que las producciones sue\u00f1an.',
-    whyLabel: 'POR QU\u00c9 MIL\u00c1N',
-    whyHeading: 'Una Ciudad de Contrastes \u2014 En C\u00e1mara',
+      'La perfecci\u00f3n renacentista se encuentra con la campi\u00f1a toscana. Florencia y sus alrededores ofrecen la est\u00e9tica italiana m\u00e1s ic\u00f3nica para producciones de moda, automoci\u00f3n y cine.',
+    whyLabel: 'POR QU\u00c9 FLORENCIA',
+    whyHeading: 'La Perfecci\u00f3n Est\u00e9tica \u2014 En C\u00e1mara',
     whatLabel: 'QU\u00c9 ENCONTRAMOS PARA TI',
-    whatHeading: 'Tipos de Locaciones que Buscamos en Mil\u00e1n',
+    whatHeading: 'Tipos de Locaciones que Buscamos en Florencia',
     whatDesc:
-      'Nuestra red en Mil\u00e1n abarca propietarios privados, agencias inmobiliarias y contactos institucionales construidos durante a\u00f1os de trabajo sobre el terreno. Accedemos a locaciones que nunca se anuncian p\u00fablicamente.',
+      'Nuestra red en Florencia y Toscana abarca propietarios privados de villas, familias nobles, fincas agr\u00edcolas y contactos institucionales construidos durante a\u00f1os de trabajo sobre el terreno. Accedemos a locaciones que nunca se anuncian p\u00fablicamente.',
     processLabel: 'EL PROCESO',
     processHeading: 'C\u00f3mo Funciona',
     contactLabel: 'CONT\u00c1CTANOS',
-    contactHeading: 'Cu\u00e9ntanos tu Proyecto en Mil\u00e1n',
+    contactHeading: 'Cu\u00e9ntanos tu Proyecto en Florencia',
     contactSubtitle:
       'Env\u00edanos tu brief y te responderemos en 24 horas con opciones de locaci\u00f3n adaptadas a tu producci\u00f3n.',
-    waDesc: '\u00bfNecesitas una respuesta m\u00e1s r\u00e1pida? Esr\u00edbbenos directamente por WhatsApp.',
-    waBtn: 'Esr\u00edbbenos por WhatsApp',
+    waDesc: '\u00bfNecesitas una respuesta m\u00e1s r\u00e1pida? Escr\u00edbenos directamente por WhatsApp.',
+    waBtn: 'Escr\u00edbenos por WhatsApp',
     whyCards: [
       {
-        title: 'Distrito de Moda y Dise\u00f1o',
-        desc: 'Brera y Porta Nuova ofrecen showrooms sofisticados, galer\u00edas de vanguardia y patios de dise\u00f1adores ideales para rodajes editoriales y comerciales.',
+        title: 'Centro Hist\u00f3rico',
+        desc: 'El Duomo, el Ponte Vecchio y la zona de los Uffizi forman el tel\u00f3n de fondo renacentista m\u00e1s ic\u00f3nico del mundo \u2014 inmediatamente reconocible e infinitamente vers\u00e1til para moda y cine.',
       },
       {
-        title: 'Espacios Loft Industriales',
-        desc: 'Lambrate e Isola esconden f\u00e1bricas reconvertidas con hormig\u00f3n crudo, ladrillo visto y luz natural dram\u00e1tica \u2014 perfectas para producci\u00f3n editorial y videoclips.',
+        title: 'Campi\u00f1a Toscana',
+        desc: "Val d\u2019Orcia, Chianti y las cl\u00e1sicas carreteras bordeadas de cipreses: la est\u00e9tica rural italiana por excelencia que domina la publicidad global de lujo y automoci\u00f3n.",
       },
       {
-        title: 'Arquitectura Modernista',
-        desc: 'Villas Belle \u00c9poque con fachadas ornamentadas, interiores con frescos y jardines cuidados que evocan la elegancia europea de anta\u00f1o.',
+        title: 'Palacios Nobiliarios',
+        desc: 'Residencias hist\u00f3ricas privadas con salones fresqueados, patios de piedra y siglos de historia aristocr\u00e1tica \u2014 accesibles exclusivamente a trav\u00e9s de nuestra red profesional.',
       },
       {
-        title: 'Canales de los Navigli',
-        desc: 'El barrio de los canales de Mil\u00e1n: caminos adoquinados, trattorias cubiertas de enredaderas y superficies acu\u00e1ticas que van desde la niebla matutina al resplandor dorado del atardecer.',
+        title: 'Oltrarno',
+        desc: 'El barrio artesanal de Florencia: talleres artesanales, estudios de antig\u00fcedades y un car\u00e1cter aut\u00e9ntico de barrio que conserva el esp\u00edritu de la Florencia medieval.',
       },
       {
-        title: 'Arquitectura Moderna',
-        desc: 'Las torres retorcidas de CityLife y el skyline de cristal y acero de Porta Nuova proporcionan un tel\u00f3n de fondo contempor\u00e1neo \u00fanico entre las ciudades italianas.',
+        title: 'Moda y Editorial',
+        desc: 'La perfecta luz natural de Florencia, las proporciones renacentistas y el patrimonio est\u00e9tico la convierten en la ciudad ideal para campa\u00f1as de moda y producciones editoriales de alto nivel.',
       },
       {
-        title: 'Palacios Hist\u00f3ricos y Patios',
-        desc: 'Residencias nobiliarias del Renacimiento al siglo XIX, con salones con frescos, arcadas de piedra y jardines privados raramente visibles desde el exterior.',
+        title: 'Villas y Jardines',
+        desc: 'Villas mediceas, jardines formales a la italiana y avenidas de cipreses alrededor de Florencia \u2014 escenarios ic\u00f3nicos para producciones de lujo, moda y de \u00e9poca.',
       },
     ],
     locationTypes: [
-      'Villas minimalistas modernas con terrazas panor\u00e1micas',
-      'Lofts industriales reconvertidos (Lambrate, Isola, NoLo)',
-      'Residencias hist\u00f3ricas y villas estilo Liberty',
-      'Terrazas en azoteas con vistas al skyline',
-      'Showrooms de dise\u00f1o y concept stores',
-      'Patios privados y jardines interiores',
-      'Propiedades junto al Naviglio y locales frente al canal',
-      'Galer\u00edas de arte contempor\u00e1neo y espacios creativos',
-      'Suites de hotel de lujo y propiedades boutique',
-      'Sedes corporativas con interiores arquitect\u00f3nicos',
+      'Calles y plazas del centro hist\u00f3rico (Duomo, \u00e1rea de la Signoria)',
+      'Ponte Vecchio y ubicaciones junto al Arno',
+      "Campi\u00f1a toscana con carreteras de cipreses (Val d\u2019Orcia, Chianti)",
+      'Palacios nobiliarios privados con interiores fresqueados',
+      'Talleres artesanales y calles medievales del Oltrarno',
+      'Villas mediceas y jardines formales italianos',
+      'Boutiques de moda y concept stores',
+      'Terrazas panor\u00e1micas con vistas al Duomo',
+      'Caser\u00edos y agriturismos (Chianti, Mugello)',
+      'Espacios de arte contempor\u00e1neo y edificios hist\u00f3ricos reconvertidos',
     ],
     howItWorks: [
       {
@@ -232,7 +232,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Investigamos y presentamos opciones',
-        desc: 'Nuestro equipo investiga y visita las locaciones de Mil\u00e1n en tu nombre \u2014 entregando una selecci\u00f3n curada con fotos de alta resoluci\u00f3n, coordenadas GPS y notas de acceso.',
+        desc: 'Nuestro equipo investiga y visita las locaciones de Florencia en tu nombre \u2014 entregando una selecci\u00f3n curada con fotos de alta resoluci\u00f3n, coordenadas GPS y notas de acceso.',
       },
       {
         title: 'Gestionamos permisos y log\u00edstica',
@@ -243,9 +243,9 @@ const TRANSLATIONS = {
 } as const
 
 const HOW_IT_WORKS_ICONS = [MessageSquare, Search, FileCheck]
-const WHY_MILAN_ICONS = [Shirt, Factory, Landmark, Waves, Building2, Castle]
+const WHY_FLORENCE_ICONS = [Landmark, MapPin, Castle, Home, Camera, Globe]
 
-export function MilanContent() {
+export function FlorenceContent() {
   const { lang } = useLanguage()
   const tr = TRANSLATIONS[lang] ?? TRANSLATIONS.en
 
@@ -273,7 +273,7 @@ export function MilanContent() {
         </div>
       </section>
 
-      {/* ── WHY MILAN ── */}
+      {/* ── WHY FLORENCE ── */}
       <section className="px-6 py-20 border-t border-[rgba(255,255,255,0.06)]">
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll className="text-center mb-14">
@@ -288,7 +288,7 @@ export function MilanContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tr.whyCards.map(({ title, desc }, i) => {
-              const Icon = WHY_MILAN_ICONS[i]
+              const Icon = WHY_FLORENCE_ICONS[i]
               return (
                 <GlassCard key={title} className="p-6 flex flex-col gap-4">
                   <div className="w-11 h-11 rounded-xl bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.2)] flex items-center justify-center shrink-0">
@@ -363,9 +363,8 @@ export function MilanContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {tr.howItWorks.map(({ title, desc }, i) => {
               const Icon = HOW_IT_WORKS_ICONS[i]
-              const step = String(i + 1).padStart(2, '0')
               return (
-                <AnimateOnScroll key={step} delay={i * 100}>
+                <AnimateOnScroll key={i} delay={i * 100}>
                   <GlassCard className="p-8 text-center h-full flex flex-col items-center gap-4">
                     <div className="relative">
                       <div className="w-14 h-14 rounded-full bg-[rgba(201,168,76,0.10)] border border-[rgba(201,168,76,0.25)] flex items-center justify-center">

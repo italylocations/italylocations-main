@@ -1,0 +1,39 @@
+import type { Metadata } from 'next'
+import { RomeContent } from './RomeContent'
+
+interface Props {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+
+  if (locale === 'it') {
+    return {
+      title: 'Location Scouting a Roma | Film & Produzioni Commerciali | Italy Locations',
+      description:
+        'Servizio professionale di location scouting a Roma. Troviamo rovine antiche, palazzi nobiliari, ville storiche e spazi unici per produzioni cinematografiche, pubblicitarie e di moda.',
+      keywords: 'location scouting roma, location film roma, riprese a roma, shooting commerciale roma',
+    }
+  }
+
+  if (locale === 'es') {
+    return {
+      title: 'Location Scouting en Roma | Producciones Film y Comerciales | Italy Locations',
+      description:
+        'Servicio profesional de location scouting en Roma. Encontramos ruinas antiguas, palacios nobles, villas hist\u00f3ricas y espacios \u00fanicos para producciones de cine, publicidad y moda.',
+      keywords: 'location scouting roma, locaciones film roma, rodaje en roma, shooting comercial roma',
+    }
+  }
+
+  return {
+    title: 'Location Scouting Rome | Film & Commercial Production | Italy Locations',
+    description:
+      'Professional location scouting service in Rome. We find ancient ruins, noble palaces, historic villas and unique spaces for film, advertising and fashion productions.',
+    keywords: 'location scouting rome, film locations rome, filming in rome, commercial shoot rome',
+  }
+}
+
+export default function RomePage() {
+  return <RomeContent />
+}

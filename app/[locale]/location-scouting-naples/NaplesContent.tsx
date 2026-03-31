@@ -2,12 +2,12 @@
 
 import { Suspense } from 'react'
 import {
-  Shirt,
-  Factory,
   Landmark,
   Waves,
+  Map,
+  Globe,
+  Home,
   Building2,
-  Castle,
   CheckCircle2,
   MessageSquare,
   Search,
@@ -22,62 +22,62 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const TRANSLATIONS = {
   en: {
-    badge: 'MILANO • ITALIA',
+    badge: 'NAPLES \u2022 CAMPANIA',
     h1pre: 'Location Scouting in',
-    h1city: 'Milan',
+    h1city: 'Naples',
     subtitle:
-      "Italy\u2019s capital of design and fashion is also one of Europe\u2019s most versatile filming destinations. From brutalist lofts to Baroque palaces, we unlock the Milan that productions dream about.",
-    whyLabel: 'WHY MILAN',
-    whyHeading: 'A City of Contrasts \u2014 On Camera',
+      'Raw energy, baroque grandeur and the world\u2019s most dramatic coastline. Naples and the Amalfi Coast offer a cinematic intensity found nowhere else in Italy.',
+    whyLabel: 'WHY NAPLES',
+    whyHeading: 'Pure Cinematic Intensity \u2014 On Camera',
     whatLabel: 'WHAT WE FIND FOR YOU',
-    whatHeading: 'Location Types We Scout in Milan',
+    whatHeading: 'Location Types We Scout in Naples',
     whatDesc:
-      'Our Milan network spans private owners, property agencies and institutional contacts built over years of on-the-ground work. We access locations that are never advertised publicly.',
+      'Our Naples and Amalfi Coast network spans private villa owners, historic palaces, Campania estates and coastal contacts built over years of on-the-ground work. We access locations that are never advertised publicly.',
     processLabel: 'THE PROCESS',
     processHeading: 'How It Works',
     contactLabel: 'GET IN TOUCH',
-    contactHeading: 'Tell Us About Your Milan Project',
+    contactHeading: 'Tell Us About Your Naples Project',
     contactSubtitle:
       "Send us your brief and we\u2019ll get back within 24 hours with location options tailored to your production.",
     waDesc: 'Need a faster response? Reach us directly on WhatsApp.',
     waBtn: 'WhatsApp Us Now',
     whyCards: [
       {
-        title: 'Fashion & Design District',
-        desc: 'Brera and Porta Nuova offer sleek showrooms, avant-garde galleries and designer courtyards ideal for editorial and commercial shoots.',
+        title: 'Historic Center',
+        desc: "Naples\u2019 UNESCO-listed historic centre \u2014 the Spanish Quarter, Spaccanapoli and ancient decumani \u2014 offers an unfiltered intensity that no other Italian city can match.",
       },
       {
-        title: 'Industrial Loft Spaces',
-        desc: 'Lambrate and Isola hide converted factories with raw concrete, exposed brick and dramatic natural light \u2014 perfect for editorial and music video productions.',
+        title: 'Amalfi Coast',
+        desc: 'Cliffside villages, serpentine coastal roads and turquoise waters: the world\u2019s most photographed coastline offers cinematic drama at every turn.',
       },
       {
-        title: 'Liberty Architecture',
-        desc: 'Belle \u00C9poque villas with ornate facades, frescoed interiors and manicured gardens that evoke old-world European elegance.',
+        title: 'Pompeii & Herculaneum',
+        desc: 'Ancient ruins frozen in time offer a unique worldwide backdrop for epic productions, documentary filmmaking and high-concept advertising.',
       },
       {
-        title: 'Navigli Canals',
-        desc: "Milan\u2019s canal district: cobbled towpaths, vine-covered trattorias and reflective water surfaces that shift from moody dawn mist to golden-hour glow.",
+        title: 'Posillipo & Marechiaro',
+        desc: 'Aristocratic seafront villas, panoramic terraces and private jetties overlooking the Gulf of Naples and Vesuvius \u2014 an unparalleled setting for luxury productions.',
       },
       {
-        title: 'Modern Architecture',
-        desc: "CityLife\u2019s twisting towers and Porta Nuova\u2019s glass-and-steel skyline provide a contemporary Milan backdrop unlike any other Italian city.",
+        title: 'Masserie & Countryside',
+        desc: 'Traditional Campania farmhouses, rural estates and olive groves provide an authentic southern Italian backdrop far from the tourist trail.',
       },
       {
-        title: 'Historic Palaces & Courtyards',
-        desc: 'Noble residences dating from the Renaissance to the 19th century, with frescoed halls, stone arcades and private gardens rarely seen by outsiders.',
+        title: 'Vesuvius & Volcanic Landscape',
+        desc: 'The dramatic volcanic backdrop of Vesuvius, the Campi Flegrei and volcanic coastlines provides a cinematic intensity found nowhere else in Western Europe.',
       },
     ],
     locationTypes: [
-      'Modern minimalist villas with panoramic terraces',
-      'Converted industrial lofts (Lambrate, Isola, NoLo)',
-      'Liberty-style historic residences and villas',
-      'Rooftop terraces with city skyline views',
-      'Design showrooms and concept stores',
-      'Private courtyards and internal gardens',
-      'Navigli-side properties and canal-front venues',
-      'Contemporary art galleries and creative spaces',
-      'Luxury hotel suites and boutique properties',
-      'Corporate headquarters with architectural interiors',
+      'UNESCO historic centre streets (Spanish Quarter, Spaccanapoli)',
+      'Amalfi Coast cliffside villages and coastal roads',
+      'Pompeii and Herculaneum ancient ruins (private access sessions)',
+      'Posillipo seafront villas with Gulf of Naples views',
+      'Panoramic terraces overlooking Vesuvius and the bay',
+      'Traditional masserie and rural estates in Campania',
+      'Underground Naples \u2014 ancient tunnels and cisterns',
+      'Historic Bourbon palaces and noble residences',
+      'Volcanic landscape and black-sand beaches',
+      'Seafront properties along the Lungomare Caracciolo',
     ],
     howItWorks: [
       {
@@ -86,7 +86,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'We scout and present options',
-        desc: 'Our team researches and visits Milan locations on your behalf \u2014 delivering a curated selection with high-res photos, GPS coordinates and access notes.',
+        desc: 'Our team researches and visits Naples and Amalfi locations on your behalf \u2014 delivering a curated selection with high-res photos, GPS coordinates and access notes.',
       },
       {
         title: 'We handle permits and logistics',
@@ -95,62 +95,62 @@ const TRANSLATIONS = {
     ],
   },
   it: {
-    badge: 'MILANO \u2022 ITALIA',
+    badge: 'NAPOLI \u2022 CAMPANIA',
     h1pre: 'Location Scouting a',
-    h1city: 'Milano',
+    h1city: 'Napoli',
     subtitle:
-      'La capitale italiana del design e della moda \u00e8 anche una delle destinazioni cinematografiche pi\u00f9 versatili d\u2019Europa. Dai loft brutalisti ai palazzi barocchi, sveliamo la Milano che le produzioni sognano.',
-    whyLabel: 'PERCH\u00c9 MILANO',
-    whyHeading: 'Una Citt\u00e0 di Contrasti \u2014 In Camera',
+      'Energia grezza, grandiosit\u00e0 barocca e la costiera pi\u00f9 drammatica al mondo. Napoli e la Costiera Amalfitana offrono un\u2019intensit\u00e0 cinematografica che non si trova da nessun\u2019altra parte in Italia.',
+    whyLabel: 'PERCH\u00c9 NAPOLI',
+    whyHeading: 'Intensit\u00e0 Cinematografica Pura \u2014 In Camera',
     whatLabel: 'COSA TROVIAMO PER TE',
-    whatHeading: 'Tipologie di Location che Scouting a Milano',
+    whatHeading: 'Tipologie di Location che Scouting a Napoli',
     whatDesc:
-      'La nostra rete milanese comprende proprietari privati, agenzie immobiliari e contatti istituzionali costruiti in anni di lavoro sul campo. Accediamo a location che non vengono mai pubblicizzate.',
+      'La nostra rete a Napoli e sulla Costiera Amalfitana comprende proprietari privati di ville, palazzi storici, tenute campane e contatti costieri costruiti in anni di lavoro sul campo. Accediamo a location che non vengono mai pubblicizzate.',
     processLabel: 'IL PROCESSO',
     processHeading: 'Come Funziona',
     contactLabel: 'CONTATTACI',
-    contactHeading: 'Raccontaci il Tuo Progetto a Milano',
+    contactHeading: 'Raccontaci il Tuo Progetto a Napoli',
     contactSubtitle:
       'Inviaci il tuo brief e ti risponderemo entro 24 ore con opzioni di location su misura per la tua produzione.',
     waDesc: 'Hai bisogno di una risposta pi\u00f9 rapida? Scrivici direttamente su WhatsApp.',
     waBtn: 'Scrivici su WhatsApp',
     whyCards: [
       {
-        title: 'Distretto della Moda e del Design',
-        desc: 'Brera e Porta Nuova offrono showroom eleganti, gallerie d\u2019avanguardia e cortili di designer ideali per shooting editoriali e commerciali.',
+        title: 'Centro Storico',
+        desc: 'Il centro storico di Napoli patrimonio UNESCO \u2014 i Quartieri Spagnoli, Spaccanapoli e gli antichi decumani \u2014 offre un\u2019intensit\u00e0 senza filtri che nessun\u2019altra citt\u00e0 italiana pu\u00f2 eguagliare.',
       },
       {
-        title: 'Spazi Loft Industriali',
-        desc: 'Lambrate e Isola nascondono fabbriche riconvertite con cemento grezzo, mattoni a vista e luce naturale drammatica \u2014 perfette per produzioni editoriali e video musicali.',
+        title: 'Costiera Amalfitana',
+        desc: 'Paesi aggrappati alle scogliere, strade costiere tortuose e acque turchesi: la costiera pi\u00f9 fotografata al mondo offre dramma cinematografico ad ogni curva.',
       },
       {
-        title: 'Architettura Liberty',
-        desc: 'Ville Belle \u00c9poque con facciate ornate, interni affrescati e giardini curati che evocano l\u2019eleganza europea del passato.',
+        title: 'Pompei ed Ercolano',
+        desc: 'Rovine antiche congelate nel tempo offrono uno sfondo unico al mondo per produzioni epiche, documentari e pubblicit\u00e0 ad alto concept.',
       },
       {
-        title: 'Navigli',
-        desc: 'Il quartiere dei canali di Milano: alzaie acciottolate, trattorie ricoperte di viti e superfici d\u2019acqua riflettenti che vanno dalla nebbia mattutina alle luci dorate del tramonto.',
+        title: 'Posillipo e Marechiaro',
+        desc: 'Ville aristocratiche sul lungomare, terrazze panoramiche e pontili privati che si affacciano sul Golfo di Napoli e il Vesuvio \u2014 una location senza pari per produzioni di lusso.',
       },
       {
-        title: 'Architettura Moderna',
-        desc: 'Le torri tortuose di CityLife e lo skyline di vetro e acciaio di Porta Nuova offrono uno sfondo contemporaneo unico rispetto a qualsiasi altra citt\u00e0 italiana.',
+        title: 'Masserie e Campagna',
+        desc: 'Masserie tradizionali campane, tenute rurali e uliveti offrono un\u2019autentica ambientazione del sud Italia lontana dalle rotte turistiche.',
       },
       {
-        title: 'Palazzi Storici e Cortili',
-        desc: 'Dimore nobiliari dal Rinascimento al XIX secolo, con sale affrescate, arcate in pietra e giardini privati raramente visibili dall\u2019esterno.',
+        title: 'Vesuvio e Paesaggio Vulcanico',
+        desc: 'Lo scenario vulcanico drammatico del Vesuvio, dei Campi Flegrei e delle coste vulcaniche offre un\u2019intensit\u00e0 cinematografica che non si trova da nessun\u2019altra parte in Europa occidentale.',
       },
     ],
     locationTypes: [
-      'Ville minimaliste moderne con terrazze panoramiche',
-      'Loft industriali riconvertiti (Lambrate, Isola, NoLo)',
-      'Residenze e ville storiche in stile Liberty',
-      'Terrazze sui tetti con vista sullo skyline',
-      'Showroom di design e concept store',
-      'Cortili privati e giardini interni',
-      'Propriet\u00e0 sul Naviglio e locali fronte canale',
-      'Gallerie d\u2019arte contemporanea e spazi creativi',
-      'Suite di hotel di lusso e boutique property',
-      'Sedi aziendali con interni architettonici',
+      'Strade del centro storico UNESCO (Quartieri Spagnoli, Spaccanapoli)',
+      'Paesi della Costiera Amalfitana e strade costiere',
+      'Rovine antiche di Pompei ed Ercolano (sessioni ad accesso privato)',
+      'Ville sul lungomare di Posillipo con vista sul Golfo di Napoli',
+      'Terrazze panoramiche con vista sul Vesuvio e la baia',
+      'Masserie tradizionali e tenute rurali in Campania',
+      'Napoli sotterranea \u2014 antichi tunnel e cisterne',
+      'Palazzi borbonici storici e residenze nobiliari',
+      'Paesaggio vulcanico e spiagge di sabbia nera',
+      'Propriet\u00e0 sul lungomare Caracciolo',
     ],
     howItWorks: [
       {
@@ -159,7 +159,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Scouting e presentazione delle opzioni',
-        desc: 'Il nostro team ricerca e visita le location di Milano per te \u2014 consegnando una selezione curata con foto ad alta risoluzione, coordinate GPS e note di accesso.',
+        desc: 'Il nostro team ricerca e visita le location di Napoli e della Costiera Amalfitana per te \u2014 consegnando una selezione curata con foto ad alta risoluzione, coordinate GPS e note di accesso.',
       },
       {
         title: 'Gestione permessi e logistica',
@@ -168,62 +168,62 @@ const TRANSLATIONS = {
     ],
   },
   es: {
-    badge: 'MIL\u00c1N \u2022 ITALIA',
+    badge: 'N\u00c1POLES \u2022 CAMPANIA',
     h1pre: 'Location Scouting en',
-    h1city: 'Mil\u00e1n',
+    h1city: 'N\u00e1poles',
     subtitle:
-      'La capital italiana del dise\u00f1o y la moda es tambi\u00e9n uno de los destinos cinematogr\u00e1ficos m\u00e1s vers\u00e1tiles de Europa. Desde lofts brutalistas hasta palacios barrocos, revelamos el Mil\u00e1n que las producciones sue\u00f1an.',
-    whyLabel: 'POR QU\u00c9 MIL\u00c1N',
-    whyHeading: 'Una Ciudad de Contrastes \u2014 En C\u00e1mara',
+      'Energ\u00eda cruda, grandiosidad barroca y la costa m\u00e1s dram\u00e1tica del mundo. N\u00e1poles y la Costa Amalfitana ofrecen una intensidad cinematogr\u00e1fica que no se encuentra en ning\u00fan otro lugar de Italia.',
+    whyLabel: 'POR QU\u00c9 N\u00c1POLES',
+    whyHeading: 'Intensidad Cinematogr\u00e1fica Pura \u2014 En C\u00e1mara',
     whatLabel: 'QU\u00c9 ENCONTRAMOS PARA TI',
-    whatHeading: 'Tipos de Locaciones que Buscamos en Mil\u00e1n',
+    whatHeading: 'Tipos de Locaciones que Buscamos en N\u00e1poles',
     whatDesc:
-      'Nuestra red en Mil\u00e1n abarca propietarios privados, agencias inmobiliarias y contactos institucionales construidos durante a\u00f1os de trabajo sobre el terreno. Accedemos a locaciones que nunca se anuncian p\u00fablicamente.',
+      'Nuestra red en N\u00e1poles y la Costa Amalfitana abarca propietarios privados de villas, palacios hist\u00f3ricos, fincas campanas y contactos costeros construidos durante a\u00f1os de trabajo sobre el terreno. Accedemos a locaciones que nunca se anuncian p\u00fablicamente.',
     processLabel: 'EL PROCESO',
     processHeading: 'C\u00f3mo Funciona',
     contactLabel: 'CONT\u00c1CTANOS',
-    contactHeading: 'Cu\u00e9ntanos tu Proyecto en Mil\u00e1n',
+    contactHeading: 'Cu\u00e9ntanos tu Proyecto en N\u00e1poles',
     contactSubtitle:
       'Env\u00edanos tu brief y te responderemos en 24 horas con opciones de locaci\u00f3n adaptadas a tu producci\u00f3n.',
-    waDesc: '\u00bfNecesitas una respuesta m\u00e1s r\u00e1pida? Esr\u00edbbenos directamente por WhatsApp.',
-    waBtn: 'Esr\u00edbbenos por WhatsApp',
+    waDesc: '\u00bfNecesitas una respuesta m\u00e1s r\u00e1pida? Escr\u00edbenos directamente por WhatsApp.',
+    waBtn: 'Escr\u00edbenos por WhatsApp',
     whyCards: [
       {
-        title: 'Distrito de Moda y Dise\u00f1o',
-        desc: 'Brera y Porta Nuova ofrecen showrooms sofisticados, galer\u00edas de vanguardia y patios de dise\u00f1adores ideales para rodajes editoriales y comerciales.',
+        title: 'Centro Hist\u00f3rico',
+        desc: 'El centro hist\u00f3rico de N\u00e1poles, patrimonio UNESCO \u2014 el barrio espa\u00f1ol, Spaccanapoli y los antiguos decumanos \u2014 ofrece una intensidad sin filtros que ninguna otra ciudad italiana puede igualar.',
       },
       {
-        title: 'Espacios Loft Industriales',
-        desc: 'Lambrate e Isola esconden f\u00e1bricas reconvertidas con hormig\u00f3n crudo, ladrillo visto y luz natural dram\u00e1tica \u2014 perfectas para producci\u00f3n editorial y videoclips.',
+        title: 'Costa Amalfitana',
+        desc: 'Pueblos en acantilados, carreteras costeras serpenteantes y aguas turquesas: la costa m\u00e1s fotografiada del mundo ofrece drama cinematogr\u00e1fico en cada curva.',
       },
       {
-        title: 'Arquitectura Modernista',
-        desc: 'Villas Belle \u00c9poque con fachadas ornamentadas, interiores con frescos y jardines cuidados que evocan la elegancia europea de anta\u00f1o.',
+        title: 'Pompeya y Herculano',
+        desc: 'Ruinas antiguas congeladas en el tiempo ofrecen un tel\u00f3n de fondo \u00fanico en el mundo para producciones \u00e9picas, documentales y publicidad de alto concepto.',
       },
       {
-        title: 'Canales de los Navigli',
-        desc: 'El barrio de los canales de Mil\u00e1n: caminos adoquinados, trattorias cubiertas de enredaderas y superficies acu\u00e1ticas que van desde la niebla matutina al resplandor dorado del atardecer.',
+        title: 'Posillipo y Marechiaro',
+        desc: 'Villas aristocr\u00e1ticas frente al mar, terrazas panor\u00e1micas y embarcaderos privados con vistas al Golfo de N\u00e1poles y el Vesubio \u2014 un escenario sin igual para producciones de lujo.',
       },
       {
-        title: 'Arquitectura Moderna',
-        desc: 'Las torres retorcidas de CityLife y el skyline de cristal y acero de Porta Nuova proporcionan un tel\u00f3n de fondo contempor\u00e1neo \u00fanico entre las ciudades italianas.',
+        title: 'Massar\u00edas y Campi\u00f1a',
+        desc: 'Masserie campanas tradicionales, fincas rurales y olivares proporcionan un aut\u00e9ntico tel\u00f3n de fondo del sur de Italia lejos de las rutas tur\u00edsticas.',
       },
       {
-        title: 'Palacios Hist\u00f3ricos y Patios',
-        desc: 'Residencias nobiliarias del Renacimiento al siglo XIX, con salones con frescos, arcadas de piedra y jardines privados raramente visibles desde el exterior.',
+        title: 'Vesubio y Paisaje Volc\u00e1nico',
+        desc: 'El dram\u00e1tico tel\u00f3n de fondo volc\u00e1nico del Vesubio, los Campos Fl\u00e9greos y las costas volc\u00e1nicas proporciona una intensidad cinematogr\u00e1fica que no se encuentra en ning\u00fan otro lugar de Europa occidental.',
       },
     ],
     locationTypes: [
-      'Villas minimalistas modernas con terrazas panor\u00e1micas',
-      'Lofts industriales reconvertidos (Lambrate, Isola, NoLo)',
-      'Residencias hist\u00f3ricas y villas estilo Liberty',
-      'Terrazas en azoteas con vistas al skyline',
-      'Showrooms de dise\u00f1o y concept stores',
-      'Patios privados y jardines interiores',
-      'Propiedades junto al Naviglio y locales frente al canal',
-      'Galer\u00edas de arte contempor\u00e1neo y espacios creativos',
-      'Suites de hotel de lujo y propiedades boutique',
-      'Sedes corporativas con interiores arquitect\u00f3nicos',
+      'Calles del centro hist\u00f3rico UNESCO (Barrio Espa\u00f1ol, Spaccanapoli)',
+      'Pueblos de la Costa Amalfitana y carreteras costeras',
+      'Ruinas antiguas de Pompeya y Herculano (sesiones de acceso privado)',
+      'Villas frente al mar en Posillipo con vistas al Golfo de N\u00e1poles',
+      'Terrazas panor\u00e1micas con vistas al Vesubio y la bah\u00eda',
+      'Masserie tradicionales y fincas rurales en Campania',
+      'N\u00e1poles subterr\u00e1nea \u2014 t\u00faneles y cisternas antiguas',
+      'Palacios borb\u00f3nicos hist\u00f3ricos y residencias nobiliarias',
+      'Paisaje volc\u00e1nico y playas de arena negra',
+      'Propiedades frente al mar en el Lungomare Caracciolo',
     ],
     howItWorks: [
       {
@@ -232,7 +232,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Investigamos y presentamos opciones',
-        desc: 'Nuestro equipo investiga y visita las locaciones de Mil\u00e1n en tu nombre \u2014 entregando una selecci\u00f3n curada con fotos de alta resoluci\u00f3n, coordenadas GPS y notas de acceso.',
+        desc: 'Nuestro equipo investiga y visita las locaciones de N\u00e1poles y la Costa Amalfitana en tu nombre \u2014 entregando una selecci\u00f3n curada con fotos de alta resoluci\u00f3n, coordenadas GPS y notas de acceso.',
       },
       {
         title: 'Gestionamos permisos y log\u00edstica',
@@ -243,9 +243,9 @@ const TRANSLATIONS = {
 } as const
 
 const HOW_IT_WORKS_ICONS = [MessageSquare, Search, FileCheck]
-const WHY_MILAN_ICONS = [Shirt, Factory, Landmark, Waves, Building2, Castle]
+const WHY_NAPLES_ICONS = [Landmark, Waves, Map, Globe, Home, Building2]
 
-export function MilanContent() {
+export function NaplesContent() {
   const { lang } = useLanguage()
   const tr = TRANSLATIONS[lang] ?? TRANSLATIONS.en
 
@@ -273,7 +273,7 @@ export function MilanContent() {
         </div>
       </section>
 
-      {/* ── WHY MILAN ── */}
+      {/* ── WHY NAPLES ── */}
       <section className="px-6 py-20 border-t border-[rgba(255,255,255,0.06)]">
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll className="text-center mb-14">
@@ -288,7 +288,7 @@ export function MilanContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tr.whyCards.map(({ title, desc }, i) => {
-              const Icon = WHY_MILAN_ICONS[i]
+              const Icon = WHY_NAPLES_ICONS[i]
               return (
                 <GlassCard key={title} className="p-6 flex flex-col gap-4">
                   <div className="w-11 h-11 rounded-xl bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.2)] flex items-center justify-center shrink-0">
@@ -363,9 +363,8 @@ export function MilanContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {tr.howItWorks.map(({ title, desc }, i) => {
               const Icon = HOW_IT_WORKS_ICONS[i]
-              const step = String(i + 1).padStart(2, '0')
               return (
-                <AnimateOnScroll key={step} delay={i * 100}>
+                <AnimateOnScroll key={i} delay={i * 100}>
                   <GlassCard className="p-8 text-center h-full flex flex-col items-center gap-4">
                     <div className="relative">
                       <div className="w-14 h-14 rounded-full bg-[rgba(201,168,76,0.10)] border border-[rgba(201,168,76,0.25)] flex items-center justify-center">

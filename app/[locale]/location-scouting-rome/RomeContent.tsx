@@ -2,11 +2,11 @@
 
 import { Suspense } from 'react'
 import {
-  Shirt,
-  Factory,
+  Map,
   Landmark,
-  Waves,
+  Home,
   Building2,
+  Globe,
   Castle,
   CheckCircle2,
   MessageSquare,
@@ -22,62 +22,62 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const TRANSLATIONS = {
   en: {
-    badge: 'MILANO • ITALIA',
+    badge: 'ROME \u2022 ITALY',
     h1pre: 'Location Scouting in',
-    h1city: 'Milan',
+    h1city: 'Rome',
     subtitle:
-      "Italy\u2019s capital of design and fashion is also one of Europe\u2019s most versatile filming destinations. From brutalist lofts to Baroque palaces, we unlock the Milan that productions dream about.",
-    whyLabel: 'WHY MILAN',
-    whyHeading: 'A City of Contrasts \u2014 On Camera',
+      'The Eternal City offers an unmatched variety of filming backdrops \u2014 from ancient ruins to Renaissance palaces, Baroque fountains to modern EUR architecture.',
+    whyLabel: 'WHY ROME',
+    whyHeading: 'Millennia of History \u2014 On Camera',
     whatLabel: 'WHAT WE FIND FOR YOU',
-    whatHeading: 'Location Types We Scout in Milan',
+    whatHeading: 'Location Types We Scout in Rome',
     whatDesc:
-      'Our Milan network spans private owners, property agencies and institutional contacts built over years of on-the-ground work. We access locations that are never advertised publicly.',
+      'Our Rome network spans private owners, noble families, archaeological contacts and institutional partners built over years of on-the-ground work. We access locations that are never advertised publicly.',
     processLabel: 'THE PROCESS',
     processHeading: 'How It Works',
     contactLabel: 'GET IN TOUCH',
-    contactHeading: 'Tell Us About Your Milan Project',
+    contactHeading: 'Tell Us About Your Rome Project',
     contactSubtitle:
       "Send us your brief and we\u2019ll get back within 24 hours with location options tailored to your production.",
     waDesc: 'Need a faster response? Reach us directly on WhatsApp.',
     waBtn: 'WhatsApp Us Now',
     whyCards: [
       {
-        title: 'Fashion & Design District',
-        desc: 'Brera and Porta Nuova offer sleek showrooms, avant-garde galleries and designer courtyards ideal for editorial and commercial shoots.',
+        title: 'Ancient Rome',
+        desc: 'Colosseum surroundings, Appia Antica and ancient aqueducts provide a monumental backdrop found nowhere else on Earth \u2014 perfect for epic productions and luxury advertising.',
       },
       {
-        title: 'Industrial Loft Spaces',
-        desc: 'Lambrate and Isola hide converted factories with raw concrete, exposed brick and dramatic natural light \u2014 perfect for editorial and music video productions.',
+        title: 'Baroque & Renaissance',
+        desc: 'Iconic piazzas, dramatic fountains and centuries-old churches provide Rome\u2019s most recognisable aesthetic \u2014 endlessly versatile for fashion, film and commercial productions.',
       },
       {
-        title: 'Liberty Architecture',
-        desc: 'Belle \u00C9poque villas with ornate facades, frescoed interiors and manicured gardens that evoke old-world European elegance.',
+        title: 'Trastevere & Pigneto',
+        desc: 'Authentic neighbourhood character: cobbled alleys, terracotta facades, ivy-clad walls and a cinematic atmosphere that no studio set could replicate.',
       },
       {
-        title: 'Navigli Canals',
-        desc: "Milan\u2019s canal district: cobbled towpaths, vine-covered trattorias and reflective water surfaces that shift from moody dawn mist to golden-hour glow.",
+        title: 'EUR \u2014 Rationalist Architecture',
+        desc: "Rome\u2019s modernist district features clean geometric forms, marble-clad symmetry and a surreal monumentality unique in the world \u2014 a favourite for contemporary and sci-fi productions.",
       },
       {
-        title: 'Modern Architecture',
-        desc: "CityLife\u2019s twisting towers and Porta Nuova\u2019s glass-and-steel skyline provide a contemporary Milan backdrop unlike any other Italian city.",
+        title: 'Rooftop Terraces',
+        desc: 'Panoramic terraces overlooking the Roman skyline \u2014 domes, bell towers and ancient roofscapes stretching to the horizon. Unmatched for luxury and fashion editorial work.',
       },
       {
-        title: 'Historic Palaces & Courtyards',
-        desc: 'Noble residences dating from the Renaissance to the 19th century, with frescoed halls, stone arcades and private gardens rarely seen by outsiders.',
+        title: 'Private Palaces & Villas',
+        desc: 'Historic noble residences with frescoed interiors, formal gardens and centuries of history. Accessible exclusively through our professional network \u2014 never advertised publicly.',
       },
     ],
     locationTypes: [
-      'Modern minimalist villas with panoramic terraces',
-      'Converted industrial lofts (Lambrate, Isola, NoLo)',
-      'Liberty-style historic residences and villas',
-      'Rooftop terraces with city skyline views',
-      'Design showrooms and concept stores',
-      'Private courtyards and internal gardens',
-      'Navigli-side properties and canal-front venues',
-      'Contemporary art galleries and creative spaces',
-      'Luxury hotel suites and boutique properties',
-      'Corporate headquarters with architectural interiors',
+      'Ancient ruins and archaeological sites (private access)',
+      'Baroque piazzas and fountain surroundings',
+      'Trastevere and Pigneto neighbourhood streets',
+      'EUR rationalist buildings and open spaces',
+      'Panoramic rooftop terraces over the Roman skyline',
+      'Private noble palaces and frescoed interiors',
+      'Historic villas with Italian gardens',
+      'Cobbled alleys and medieval courtyards',
+      'Modern architecture and glass-facade offices',
+      'Waterfront locations along the Tiber',
     ],
     howItWorks: [
       {
@@ -86,7 +86,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'We scout and present options',
-        desc: 'Our team researches and visits Milan locations on your behalf \u2014 delivering a curated selection with high-res photos, GPS coordinates and access notes.',
+        desc: 'Our team researches and visits Rome locations on your behalf \u2014 delivering a curated selection with high-res photos, GPS coordinates and access notes.',
       },
       {
         title: 'We handle permits and logistics',
@@ -95,62 +95,62 @@ const TRANSLATIONS = {
     ],
   },
   it: {
-    badge: 'MILANO \u2022 ITALIA',
+    badge: 'ROMA \u2022 ITALIA',
     h1pre: 'Location Scouting a',
-    h1city: 'Milano',
+    h1city: 'Roma',
     subtitle:
-      'La capitale italiana del design e della moda \u00e8 anche una delle destinazioni cinematografiche pi\u00f9 versatili d\u2019Europa. Dai loft brutalisti ai palazzi barocchi, sveliamo la Milano che le produzioni sognano.',
-    whyLabel: 'PERCH\u00c9 MILANO',
-    whyHeading: 'Una Citt\u00e0 di Contrasti \u2014 In Camera',
+      'La Citt\u00e0 Eterna offre una variet\u00e0 ineguagliabile di ambientazioni cinematografiche \u2014 dalle rovine antiche ai palazzi rinascimentali, dalle fontane barocche all\u2019architettura moderna dell\u2019EUR.',
+    whyLabel: 'PERCH\u00c9 ROMA',
+    whyHeading: 'Millenni di Storia \u2014 In Camera',
     whatLabel: 'COSA TROVIAMO PER TE',
-    whatHeading: 'Tipologie di Location che Scouting a Milano',
+    whatHeading: 'Tipologie di Location che Scouting a Roma',
     whatDesc:
-      'La nostra rete milanese comprende proprietari privati, agenzie immobiliari e contatti istituzionali costruiti in anni di lavoro sul campo. Accediamo a location che non vengono mai pubblicizzate.',
+      'La nostra rete romana comprende proprietari privati, famiglie nobiliari, contatti archeologici e partner istituzionali costruiti in anni di lavoro sul campo. Accediamo a location che non vengono mai pubblicizzate.',
     processLabel: 'IL PROCESSO',
     processHeading: 'Come Funziona',
     contactLabel: 'CONTATTACI',
-    contactHeading: 'Raccontaci il Tuo Progetto a Milano',
+    contactHeading: 'Raccontaci il Tuo Progetto a Roma',
     contactSubtitle:
       'Inviaci il tuo brief e ti risponderemo entro 24 ore con opzioni di location su misura per la tua produzione.',
     waDesc: 'Hai bisogno di una risposta pi\u00f9 rapida? Scrivici direttamente su WhatsApp.',
     waBtn: 'Scrivici su WhatsApp',
     whyCards: [
       {
-        title: 'Distretto della Moda e del Design',
-        desc: 'Brera e Porta Nuova offrono showroom eleganti, gallerie d\u2019avanguardia e cortili di designer ideali per shooting editoriali e commerciali.',
+        title: 'Roma Antica',
+        desc: 'I dintorni del Colosseo, l\u2019Appia Antica e gli antichi acquedotti offrono uno sfondo monumentale che non ha eguali al mondo \u2014 perfetto per produzioni epiche e pubblicit\u00e0 di lusso.',
       },
       {
-        title: 'Spazi Loft Industriali',
-        desc: 'Lambrate e Isola nascondono fabbriche riconvertite con cemento grezzo, mattoni a vista e luce naturale drammatica \u2014 perfette per produzioni editoriali e video musicali.',
+        title: 'Barocco e Rinascimento',
+        desc: 'Piazze iconiche, fontane drammatiche e chiese centenarie offrono l\u2019estetica pi\u00f9 riconoscibile di Roma \u2014 infinitamente versatile per moda, cinema e produzione commerciale.',
       },
       {
-        title: 'Architettura Liberty',
-        desc: 'Ville Belle \u00c9poque con facciate ornate, interni affrescati e giardini curati che evocano l\u2019eleganza europea del passato.',
+        title: 'Trastevere e Pigneto',
+        desc: 'Carattere di quartiere autentico: vicoli acciottolati, facciate in terracotta, muri ricoperti d\u2019edera e un\u2019atmosfera cinematografica che nessun set in studio potrebbe replicare.',
       },
       {
-        title: 'Navigli',
-        desc: 'Il quartiere dei canali di Milano: alzaie acciottolate, trattorie ricoperte di viti e superfici d\u2019acqua riflettenti che vanno dalla nebbia mattutina alle luci dorate del tramonto.',
+        title: 'EUR \u2014 Architettura Razionalista',
+        desc: 'Il quartiere modernista di Roma con forme geometriche pulite, simmetria rivestita in marmo e una monumentalit\u00e0 surreale unica al mondo \u2014 un favorito per produzioni contemporanee e sci-fi.',
       },
       {
-        title: 'Architettura Moderna',
-        desc: 'Le torri tortuose di CityLife e lo skyline di vetro e acciaio di Porta Nuova offrono uno sfondo contemporaneo unico rispetto a qualsiasi altra citt\u00e0 italiana.',
+        title: 'Terrazze Panoramiche',
+        desc: 'Terrazze panoramiche che si affacciano sullo skyline romano \u2014 cupole, campanili e tetti antichi fino all\u2019orizzonte. Insuperabili per editoriale di lusso e moda.',
       },
       {
-        title: 'Palazzi Storici e Cortili',
-        desc: 'Dimore nobiliari dal Rinascimento al XIX secolo, con sale affrescate, arcate in pietra e giardini privati raramente visibili dall\u2019esterno.',
+        title: 'Palazzi e Ville Private',
+        desc: 'Residenze nobiliari storiche con interni affrescati, giardini formali e secoli di storia. Accessibili esclusivamente attraverso la nostra rete professionale \u2014 mai pubblicizzate.',
       },
     ],
     locationTypes: [
-      'Ville minimaliste moderne con terrazze panoramiche',
-      'Loft industriali riconvertiti (Lambrate, Isola, NoLo)',
-      'Residenze e ville storiche in stile Liberty',
-      'Terrazze sui tetti con vista sullo skyline',
-      'Showroom di design e concept store',
-      'Cortili privati e giardini interni',
-      'Propriet\u00e0 sul Naviglio e locali fronte canale',
-      'Gallerie d\u2019arte contemporanea e spazi creativi',
-      'Suite di hotel di lusso e boutique property',
-      'Sedi aziendali con interni architettonici',
+      'Rovine antiche e siti archeologici (accesso privato)',
+      'Piazze barocche e dintorni delle fontane',
+      'Strade dei quartieri Trastevere e Pigneto',
+      'Edifici razionalisti e spazi aperti dell\u2019EUR',
+      'Terrazze panoramiche sui tetti di Roma',
+      'Palazzi nobiliari privati e interni affrescati',
+      'Ville storiche con giardini all\u2019italiana',
+      'Vicoli acciottolati e cortili medievali',
+      'Architettura moderna e uffici con facciate in vetro',
+      'Location sul lungofiume del Tevere',
     ],
     howItWorks: [
       {
@@ -159,7 +159,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Scouting e presentazione delle opzioni',
-        desc: 'Il nostro team ricerca e visita le location di Milano per te \u2014 consegnando una selezione curata con foto ad alta risoluzione, coordinate GPS e note di accesso.',
+        desc: 'Il nostro team ricerca e visita le location di Roma per te \u2014 consegnando una selezione curata con foto ad alta risoluzione, coordinate GPS e note di accesso.',
       },
       {
         title: 'Gestione permessi e logistica',
@@ -168,62 +168,62 @@ const TRANSLATIONS = {
     ],
   },
   es: {
-    badge: 'MIL\u00c1N \u2022 ITALIA',
+    badge: 'ROMA \u2022 ITALIA',
     h1pre: 'Location Scouting en',
-    h1city: 'Mil\u00e1n',
+    h1city: 'Roma',
     subtitle:
-      'La capital italiana del dise\u00f1o y la moda es tambi\u00e9n uno de los destinos cinematogr\u00e1ficos m\u00e1s vers\u00e1tiles de Europa. Desde lofts brutalistas hasta palacios barrocos, revelamos el Mil\u00e1n que las producciones sue\u00f1an.',
-    whyLabel: 'POR QU\u00c9 MIL\u00c1N',
-    whyHeading: 'Una Ciudad de Contrastes \u2014 En C\u00e1mara',
+      'La Ciudad Eterna ofrece una variedad inigualable de escenarios cinematogr\u00e1ficos \u2014 desde ruinas antiguas hasta palacios renacentistas, desde fuentes barrocas hasta la arquitectura moderna del EUR.',
+    whyLabel: 'POR QU\u00c9 ROMA',
+    whyHeading: 'Milenios de Historia \u2014 En C\u00e1mara',
     whatLabel: 'QU\u00c9 ENCONTRAMOS PARA TI',
-    whatHeading: 'Tipos de Locaciones que Buscamos en Mil\u00e1n',
+    whatHeading: 'Tipos de Locaciones que Buscamos en Roma',
     whatDesc:
-      'Nuestra red en Mil\u00e1n abarca propietarios privados, agencias inmobiliarias y contactos institucionales construidos durante a\u00f1os de trabajo sobre el terreno. Accedemos a locaciones que nunca se anuncian p\u00fablicamente.',
+      'Nuestra red en Roma abarca propietarios privados, familias nobles, contactos arqueol\u00f3gicos y socios institucionales construidos durante a\u00f1os de trabajo sobre el terreno. Accedemos a locaciones que nunca se anuncian p\u00fablicamente.',
     processLabel: 'EL PROCESO',
     processHeading: 'C\u00f3mo Funciona',
     contactLabel: 'CONT\u00c1CTANOS',
-    contactHeading: 'Cu\u00e9ntanos tu Proyecto en Mil\u00e1n',
+    contactHeading: 'Cu\u00e9ntanos tu Proyecto en Roma',
     contactSubtitle:
       'Env\u00edanos tu brief y te responderemos en 24 horas con opciones de locaci\u00f3n adaptadas a tu producci\u00f3n.',
-    waDesc: '\u00bfNecesitas una respuesta m\u00e1s r\u00e1pida? Esr\u00edbbenos directamente por WhatsApp.',
-    waBtn: 'Esr\u00edbbenos por WhatsApp',
+    waDesc: '\u00bfNecesitas una respuesta m\u00e1s r\u00e1pida? Escr\u00edbenos directamente por WhatsApp.',
+    waBtn: 'Escr\u00edbenos por WhatsApp',
     whyCards: [
       {
-        title: 'Distrito de Moda y Dise\u00f1o',
-        desc: 'Brera y Porta Nuova ofrecen showrooms sofisticados, galer\u00edas de vanguardia y patios de dise\u00f1adores ideales para rodajes editoriales y comerciales.',
+        title: 'Roma Antigua',
+        desc: 'Los alrededores del Coliseo, la Appia Antica y los acueductos romanos ofrecen un tel\u00f3n de fondo monumental sin igual en el mundo \u2014 perfecto para producciones \u00e9picas y publicidad de lujo.',
       },
       {
-        title: 'Espacios Loft Industriales',
-        desc: 'Lambrate e Isola esconden f\u00e1bricas reconvertidas con hormig\u00f3n crudo, ladrillo visto y luz natural dram\u00e1tica \u2014 perfectas para producci\u00f3n editorial y videoclips.',
+        title: 'Barroco y Renacimiento',
+        desc: 'Plazas ic\u00f3nicas, fuentes dram\u00e1ticas e iglesias centenarias ofrecen la est\u00e9tica m\u00e1s reconocible de Roma \u2014 infinitamente vers\u00e1til para moda, cine y producci\u00f3n comercial.',
       },
       {
-        title: 'Arquitectura Modernista',
-        desc: 'Villas Belle \u00c9poque con fachadas ornamentadas, interiores con frescos y jardines cuidados que evocan la elegancia europea de anta\u00f1o.',
+        title: 'Trastevere y Pigneto',
+        desc: 'Car\u00e1cter de barrio aut\u00e9ntico: callejones adoquinados, fachadas de terracota, muros cubiertos de hiedra y una atm\u00f3sfera cinematogr\u00e1fica que ning\u00fan plat\u00f3 podr\u00eda replicar.',
       },
       {
-        title: 'Canales de los Navigli',
-        desc: 'El barrio de los canales de Mil\u00e1n: caminos adoquinados, trattorias cubiertas de enredaderas y superficies acu\u00e1ticas que van desde la niebla matutina al resplandor dorado del atardecer.',
+        title: 'EUR \u2014 Arquitectura Racionalista',
+        desc: 'El distrito modernista de Roma ofrece formas geom\u00e9tricas limpias, simetr\u00eda revestida de m\u00e1rmol y una monumentalidad surrealista \u00fanica en el mundo \u2014 favorita para producciones contempor\u00e1neas y sci-fi.',
       },
       {
-        title: 'Arquitectura Moderna',
-        desc: 'Las torres retorcidas de CityLife y el skyline de cristal y acero de Porta Nuova proporcionan un tel\u00f3n de fondo contempor\u00e1neo \u00fanico entre las ciudades italianas.',
+        title: 'Terrazas Panor\u00e1micas',
+        desc: 'Terrazas panor\u00e1micas con vistas al skyline romano \u2014 c\u00fapulas, campanarios y tejados antiguos hasta el horizonte. Insuperables para editoriales de lujo y moda.',
       },
       {
-        title: 'Palacios Hist\u00f3ricos y Patios',
-        desc: 'Residencias nobiliarias del Renacimiento al siglo XIX, con salones con frescos, arcadas de piedra y jardines privados raramente visibles desde el exterior.',
+        title: 'Palacios y Villas Privadas',
+        desc: 'Residencias nobiliarias hist\u00f3ricas con interiores fresqueados, jardines formales y siglos de historia. Accesibles exclusivamente a trav\u00e9s de nuestra red profesional \u2014 nunca anunciadas p\u00fablicamente.',
       },
     ],
     locationTypes: [
-      'Villas minimalistas modernas con terrazas panor\u00e1micas',
-      'Lofts industriales reconvertidos (Lambrate, Isola, NoLo)',
-      'Residencias hist\u00f3ricas y villas estilo Liberty',
-      'Terrazas en azoteas con vistas al skyline',
-      'Showrooms de dise\u00f1o y concept stores',
-      'Patios privados y jardines interiores',
-      'Propiedades junto al Naviglio y locales frente al canal',
-      'Galer\u00edas de arte contempor\u00e1neo y espacios creativos',
-      'Suites de hotel de lujo y propiedades boutique',
-      'Sedes corporativas con interiores arquitect\u00f3nicos',
+      'Ruinas antiguas y sitios arqueol\u00f3gicos (acceso privado)',
+      'Plazas barrocas y entornos de fuentes',
+      'Calles de los barrios Trastevere y Pigneto',
+      'Edificios racionalistas y espacios abiertos del EUR',
+      'Terrazas panor\u00e1micas sobre el skyline de Roma',
+      'Palacios nobiliarios privados e interiores fresqueados',
+      'Villas hist\u00f3ricas con jardines italianos',
+      'Callejones adoquinados y patios medievales',
+      'Arquitectura moderna y oficinas con fachadas de cristal',
+      'Ubicaciones rib\u00e4re\u00f1as a lo largo del T\u00edber',
     ],
     howItWorks: [
       {
@@ -232,7 +232,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Investigamos y presentamos opciones',
-        desc: 'Nuestro equipo investiga y visita las locaciones de Mil\u00e1n en tu nombre \u2014 entregando una selecci\u00f3n curada con fotos de alta resoluci\u00f3n, coordenadas GPS y notas de acceso.',
+        desc: 'Nuestro equipo investiga y visita las locaciones de Roma en tu nombre \u2014 entregando una selecci\u00f3n curada con fotos de alta resoluci\u00f3n, coordenadas GPS y notas de acceso.',
       },
       {
         title: 'Gestionamos permisos y log\u00edstica',
@@ -243,9 +243,9 @@ const TRANSLATIONS = {
 } as const
 
 const HOW_IT_WORKS_ICONS = [MessageSquare, Search, FileCheck]
-const WHY_MILAN_ICONS = [Shirt, Factory, Landmark, Waves, Building2, Castle]
+const WHY_ROME_ICONS = [Map, Landmark, Home, Building2, Globe, Castle]
 
-export function MilanContent() {
+export function RomeContent() {
   const { lang } = useLanguage()
   const tr = TRANSLATIONS[lang] ?? TRANSLATIONS.en
 
@@ -273,7 +273,7 @@ export function MilanContent() {
         </div>
       </section>
 
-      {/* ── WHY MILAN ── */}
+      {/* ── WHY ROME ── */}
       <section className="px-6 py-20 border-t border-[rgba(255,255,255,0.06)]">
         <div className="max-w-6xl mx-auto">
           <AnimateOnScroll className="text-center mb-14">
@@ -288,7 +288,7 @@ export function MilanContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tr.whyCards.map(({ title, desc }, i) => {
-              const Icon = WHY_MILAN_ICONS[i]
+              const Icon = WHY_ROME_ICONS[i]
               return (
                 <GlassCard key={title} className="p-6 flex flex-col gap-4">
                   <div className="w-11 h-11 rounded-xl bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.2)] flex items-center justify-center shrink-0">
@@ -363,9 +363,8 @@ export function MilanContent() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {tr.howItWorks.map(({ title, desc }, i) => {
               const Icon = HOW_IT_WORKS_ICONS[i]
-              const step = String(i + 1).padStart(2, '0')
               return (
-                <AnimateOnScroll key={step} delay={i * 100}>
+                <AnimateOnScroll key={i} delay={i * 100}>
                   <GlassCard className="p-8 text-center h-full flex flex-col items-center gap-4">
                     <div className="relative">
                       <div className="w-14 h-14 rounded-full bg-[rgba(201,168,76,0.10)] border border-[rgba(201,168,76,0.25)] flex items-center justify-center">

@@ -13,6 +13,9 @@ export function Footer() {
   const LOCATIONS_HREFS = [
     ...Array(5).fill(`${prefix}/locations`),
     `${prefix}/location-scouting-milan`,
+    `${prefix}/location-scouting-rome`,
+    `${prefix}/location-scouting-florence`,
+    `${prefix}/location-scouting-naples`,
   ]
   const SERVICES_HREFS = [
     `${prefix}/services`,
