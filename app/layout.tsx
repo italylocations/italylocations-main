@@ -117,7 +117,10 @@ const jsonLd = {
   },
   serviceType: 'Film Location Scouting',
   priceRange: '€€€',
-  sameAs: [],
+  sameAs: [
+    'https://www.instagram.com/italylocations',
+    'https://www.linkedin.com/company/italy-locations',
+  ],
 }
 
 export default function RootLayout({

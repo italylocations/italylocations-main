@@ -39,6 +39,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Location Scouting Florence',
+  serviceType: 'Film Location Scouting',
+  url: CANONICAL,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Italy Locations',
+    url: 'https://italylocations.com',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Florence',
+    sameAs: 'https://www.wikidata.org/wiki/Q2044',
+  },
+}
+
 export default function FlorencePage() {
-  return <FlorenceContent />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <FlorenceContent />
+    </>
+  )
 }

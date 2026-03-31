@@ -39,6 +39,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Location Scouting Naples',
+  serviceType: 'Film Location Scouting',
+  url: CANONICAL,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Italy Locations',
+    url: 'https://italylocations.com',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Naples',
+    sameAs: 'https://www.wikidata.org/wiki/Q2634',
+  },
+}
+
 export default function NaplesPage() {
-  return <NaplesContent />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <NaplesContent />
+    </>
+  )
 }
