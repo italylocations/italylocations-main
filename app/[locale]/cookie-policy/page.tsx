@@ -62,20 +62,6 @@ export default function CookiePolicyPage() {
 
               <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-xs font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full bg-[rgba(255,100,50,0.15)] text-[#fb923c] border border-[rgba(255,100,50,0.25)]">Marketing</span>
-                </div>
-                <h3 className="text-white font-semibold mb-2">Meta Pixel (Facebook Pixel)</h3>
-                <p className="text-sm">
-                  <strong className="text-[rgba(255,255,255,0.85)]">Pixel ID:</strong> <code className="text-[#c9a84c]">929852512972213</code><br />
-                  <strong className="text-[rgba(255,255,255,0.85)]">Cookies:</strong> <code className="text-[#c9a84c]">_fbp</code>, <code className="text-[#c9a84c]">_fbc</code><br />
-                  <strong className="text-[rgba(255,255,255,0.85)]">Purpose:</strong> Tracks PageView events to measure the effectiveness of advertising campaigns on Facebook and Instagram. Enables retargeting audiences for professional productions.<br />
-                  <strong className="text-[rgba(255,255,255,0.85)]">Duration:</strong> Up to 90 days.<br />
-                  <strong className="text-[rgba(255,255,255,0.85)]">Third party:</strong> Meta Platforms, Inc. — <a href="https://www.facebook.com/privacy/policy/" className="text-[#c9a84c] hover:underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                </p>
-              </div>
-
-              <div className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full bg-[rgba(255,200,50,0.15)] text-[#fbbf24] border border-[rgba(255,200,50,0.25)]">Security</span>
                 </div>
                 <h3 className="text-white font-semibold mb-2">Cloudflare Turnstile</h3>
@@ -101,16 +87,6 @@ export default function CookiePolicyPage() {
               <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" className="text-[#c9a84c] hover:underline" target="_blank" rel="noopener noreferrer">Safari</a></li>
               <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" className="text-[#c9a84c] hover:underline" target="_blank" rel="noopener noreferrer">Edge</a></li>
             </ul>
-            <p className="mt-4 text-sm">
-              To opt out of Meta Pixel tracking specifically, visit{' '}
-              <a href="https://www.facebook.com/settings/?tab=ads" className="text-[#c9a84c] hover:underline" target="_blank" rel="noopener noreferrer">
-                Facebook Ad Preferences
-              </a>{' '}
-              or use the{' '}
-              <a href="https://optout.aboutads.info/" className="text-[#c9a84c] hover:underline" target="_blank" rel="noopener noreferrer">
-                Digital Advertising Alliance opt-out
-              </a>.
-            </p>
           </section>
 
           <section>
