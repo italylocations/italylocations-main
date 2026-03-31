@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `${location.seoTitle} | Italy Locations`
       : `${location.title} | Italy Locations`,
     description: location.seoDescription ?? location.excerpt,
+    alternates: {
+      canonical: `https://italylocations.com/locations/${slug}`,
+    },
     openGraph: {
       title: location.seoTitle ?? location.title,
       description: location.seoDescription ?? location.excerpt,

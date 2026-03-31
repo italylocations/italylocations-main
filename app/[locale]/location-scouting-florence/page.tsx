@@ -5,6 +5,8 @@ interface Props {
   params: Promise<{ locale: string }>
 }
 
+const CANONICAL = 'https://italylocations.com/location-scouting-florence'
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
 
@@ -14,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description:
         'Servizio professionale di location scouting a Firenze e in Toscana. Troviamo palazzi storici, ville medicee, campagna toscana e spazi unici per produzioni di moda, automotive e cinema.',
       keywords: 'location scouting firenze, location film toscana, riprese a firenze, shooting moda firenze',
+      alternates: { canonical: CANONICAL },
     }
   }
 
@@ -23,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description:
         'Servicio profesional de location scouting en Florencia y Toscana. Encontramos palacios hist\u00f3ricos, villas mediceas, campi\u00f1a toscana y espacios \u00fanicos para producciones de moda, automoci\u00f3n y cine.',
       keywords: 'location scouting florencia, locaciones film toscana, rodaje en florencia, shooting moda florencia',
+      alternates: { canonical: CANONICAL },
     }
   }
 
@@ -31,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       'Professional location scouting service in Florence and Tuscany. We find historic palaces, Medici villas, Tuscan countryside and unique spaces for fashion, automotive and film productions.',
     keywords: 'location scouting florence, film locations tuscany, filming in florence italy, fashion shoot florence',
+    alternates: { canonical: CANONICAL },
   }
 }
 
