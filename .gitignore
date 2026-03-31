@@ -43,3 +43,5 @@ next-env.d.ts
 scouting-pdfs/
 
 scouting-pdfs-compressed/
+
+downloaded-images/
