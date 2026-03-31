@@ -1,0 +1,346 @@
+{
+  "generatedAt": "2026-03-19T22:15:41.903Z",
+  "stats": {
+    "total": 48,
+    "withPdf": 47,
+    "withoutPdf": 1
+  },
+  "mapping": [
+    {
+      "slug": "abruzzo-pescara-adriatic-seaside",
+      "mdxFile": "abruzzo-pescara-adriatic-seaside.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Pescara/pescara-italy_locations.pdf",
+      "relPath": "Pescara/pescara-italy_locations.pdf"
+    },
+    {
+      "slug": "abruzzo-san-domenico-lake",
+      "mdxFile": "abruzzo-san-domenico-lake.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/lago%20san%20Domenico%20-%20Abruzzo/lago-san-domenico.pdf",
+      "relPath": "lago san Domenico - Abruzzo/lago-san-domenico.pdf"
+    },
+    {
+      "slug": "abruzzo-sulmona",
+      "mdxFile": "abruzzo-sulmona.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Sulmona/sulmona_italy_locations.pdf",
+      "relPath": "Sulmona/sulmona_italy_locations.pdf"
+    },
+    {
+      "slug": "amalfi-coast-street-locations-scouting",
+      "mdxFile": "amalfi-coast-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/amalfi/amalfi-scouting.pdf",
+      "relPath": "amalfi/amalfi-scouting.pdf"
+    },
+    {
+      "slug": "atrani-coast-street-locations-scouting",
+      "mdxFile": "atrani-coast-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/atrani-scouting/atrani-scouting.pdf",
+      "relPath": "atrani-scouting/atrani-scouting.pdf"
+    },
+    {
+      "slug": "bologna-street-locations-scouting",
+      "mdxFile": "bologna-street-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Bologna-scouting-2020/bologna-scouting.pdf",
+      "relPath": "Bologna-scouting-2020/bologna-scouting.pdf"
+    },
+    {
+      "slug": "caprarola-tuscia-street-locations-scouting",
+      "mdxFile": "caprarola-tuscia-street-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Tuscia-scouting/scouting-tuscia.pdf",
+      "relPath": "Tuscia-scouting/scouting-tuscia.pdf"
+    },
+    {
+      "slug": "cetara-coast-street-locations-scouting",
+      "mdxFile": "cetara-coast-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/cetara/cetara-scouting.pdf",
+      "relPath": "cetara/cetara-scouting.pdf"
+    },
+    {
+      "slug": "dolomites-alpine-automotive-filming-locations",
+      "mdxFile": "dolomites-alpine-automotive-filming-locations.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/passi-alpini/passi-alpini-italy_locations.pdf",
+      "relPath": "passi-alpini/passi-alpini-italy_locations.pdf"
+    },
+    {
+      "slug": "dolomiti-cortina-dampezzo-alps",
+      "mdxFile": "dolomiti-cortina-dampezzo-alps.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Cortina-dampezzo-dolomiti/scouting-cortina-dampezzo.pdf",
+      "relPath": "Cortina-dampezzo-dolomiti/scouting-cortina-dampezzo.pdf"
+    },
+    {
+      "slug": "lazio-latina-automotive-location",
+      "mdxFile": "lazio-latina-automotive-location.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Latina/Latina-scouting.pdf",
+      "relPath": "Latina/Latina-scouting.pdf"
+    },
+    {
+      "slug": "lazio-ponza-island",
+      "mdxFile": "lazio-ponza-island.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Ponza/ponza_italy_locations_scouting.pdf",
+      "relPath": "Ponza/ponza_italy_locations_scouting.pdf"
+    },
+    {
+      "slug": "lazio-rieti-locations-scouting",
+      "mdxFile": "lazio-rieti-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/rieti/Lazio-nord_est.pdf",
+      "relPath": "rieti/Lazio-nord_est.pdf"
+    },
+    {
+      "slug": "lazio-roma-appia-antica",
+      "mdxFile": "lazio-roma-appia-antica.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/roma-scouting/roma-appia-e-acquedotti.pdf",
+      "relPath": "roma-scouting/roma-appia-e-acquedotti.pdf"
+    },
+    {
+      "slug": "lazio-roma-gazometro-industrial-location",
+      "mdxFile": "lazio-roma-gazometro-industrial-location.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/roma-scouting/roma-gazometro.pdf",
+      "relPath": "roma-scouting/roma-gazometro.pdf"
+    },
+    {
+      "slug": "lazio-tuscia-bolsena-lake",
+      "mdxFile": "lazio-tuscia-bolsena-lake.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Tuscia-scouting/bolsena.pdf",
+      "relPath": "Tuscia-scouting/bolsena.pdf"
+    },
+    {
+      "slug": "lazio-tuscia-bomarzo-viterbo",
+      "mdxFile": "lazio-tuscia-bomarzo-viterbo.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Tuscia-scouting/viterbo.pdf",
+      "relPath": "Tuscia-scouting/viterbo.pdf"
+    },
+    {
+      "slug": "lazio-tuscia-viterbo",
+      "mdxFile": "lazio-tuscia-viterbo.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Tuscia-scouting/viterbo.pdf",
+      "relPath": "Tuscia-scouting/viterbo.pdf"
+    },
+    {
+      "slug": "lazio-tuscia-viterbo-tuscania",
+      "mdxFile": "lazio-tuscia-viterbo-tuscania.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Tuscania/tuscania-tuscia.pdf",
+      "relPath": "Tuscania/tuscania-tuscia.pdf"
+    },
+    {
+      "slug": "maiori-coast-street-locations-scouting",
+      "mdxFile": "maiori-coast-street-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/maiori/maiori-scouting.pdf",
+      "relPath": "maiori/maiori-scouting.pdf"
+    },
+    {
+      "slug": "nepi-tuscia-street-locations-scouting",
+      "mdxFile": "nepi-tuscia-street-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Tuscia-scouting/scouting-tuscia.pdf",
+      "relPath": "Tuscia-scouting/scouting-tuscia.pdf"
+    },
+    {
+      "slug": "northeast-italy-rivers-filming-locations",
+      "mdxFile": "northeast-italy-rivers-filming-locations.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/fiumi-navigabili-nordest/locations-navigabili-nord-est-italy-locations.pdf",
+      "relPath": "fiumi-navigabili-nordest/locations-navigabili-nord-est-italy-locations.pdf"
+    },
+    {
+      "slug": "parma-street-locations-scouting",
+      "mdxFile": "parma-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Parma-scouting/parma-scouting.pdf",
+      "relPath": "Parma-scouting/parma-scouting.pdf"
+    },
+    {
+      "slug": "ravello-coast-street-locations-scouting",
+      "mdxFile": "ravello-coast-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/ravello/ravello-scouting.pdf",
+      "relPath": "ravello/ravello-scouting.pdf"
+    },
+    {
+      "slug": "reggio-emilia-street-locations-scouting",
+      "mdxFile": "reggio-emilia-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Reggio-emilia-scouting/scouting-reggio-emilia.pdf",
+      "relPath": "Reggio-emilia-scouting/scouting-reggio-emilia.pdf"
+    },
+    {
+      "slug": "rimini-street-locations-scouting",
+      "mdxFile": "rimini-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Rimini-scouting/rimini-scouting.pdf",
+      "relPath": "Rimini-scouting/rimini-scouting.pdf"
+    },
+    {
+      "slug": "rome-colosseum-street-locations-scouting",
+      "mdxFile": "rome-colosseum-street-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/roma-scouting/scouting-rome-italy-locations.pdf",
+      "relPath": "roma-scouting/scouting-rome-italy-locations.pdf"
+    },
+    {
+      "slug": "rome-white-marble-fashion-locations",
+      "mdxFile": "rome-white-marble-fashion-locations.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/roma-scouting/scouting-rome-italy-locations.pdf",
+      "relPath": "roma-scouting/scouting-rome-italy-locations.pdf"
+    },
+    {
+      "slug": "sardegna-beach-chia",
+      "mdxFile": "sardegna-beach-chia.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Sardegna/chia-sardegna.pdf",
+      "relPath": "Sardegna/chia-sardegna.pdf"
+    },
+    {
+      "slug": "sardegna-bosa-sardinia",
+      "mdxFile": "sardegna-bosa-sardinia.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Sardegna/Bosa.pdf",
+      "relPath": "Sardegna/Bosa.pdf"
+    },
+    {
+      "slug": "sardegna-cagliari-salt-pans",
+      "mdxFile": "sardegna-cagliari-salt-pans.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Sardegna/saline-sardegna.pdf",
+      "relPath": "Sardegna/saline-sardegna.pdf"
+    },
+    {
+      "slug": "sardegna-castelsardo-sardinia",
+      "mdxFile": "sardegna-castelsardo-sardinia.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Sardegna/CastelSardo.pdf",
+      "relPath": "Sardegna/CastelSardo.pdf"
+    },
+    {
+      "slug": "sardegna-quarry-mars",
+      "mdxFile": "sardegna-quarry-mars.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Sardegna/iglesias.pdf",
+      "relPath": "Sardegna/iglesias.pdf"
+    },
+    {
+      "slug": "tarquinia-tuscia-street-locations-scouting",
+      "mdxFile": "tarquinia-tuscia-street-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/tarquinia-scouting/scouting-tarquinia.pdf",
+      "relPath": "tarquinia-scouting/scouting-tarquinia.pdf"
+    },
+    {
+      "slug": "todi-medieval-film-location-umbria",
+      "mdxFile": "todi-medieval-film-location-umbria.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/Todi-umbria-scouting.pdf",
+      "relPath": "Umbria-scouting/Todi-umbria-scouting.pdf"
+    },
+    {
+      "slug": "torino-piemonte",
+      "mdxFile": "torino-piemonte.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Torino/torino_italy_locations.pdf",
+      "relPath": "Torino/torino_italy_locations.pdf"
+    },
+    {
+      "slug": "umbria-assisi",
+      "mdxFile": "umbria-assisi.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Assisi/Assisi_italy_locations.pdf",
+      "relPath": "Assisi/Assisi_italy_locations.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting",
+      "mdxFile": "umbria-locations-scouting.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/umbria-scouting1.pdf",
+      "relPath": "Umbria-scouting/umbria-scouting1.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-2",
+      "mdxFile": "umbria-locations-scouting-2.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/umbria-scouting-part2.pdf",
+      "relPath": "Umbria-scouting/umbria-scouting-part2.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-2-2",
+      "mdxFile": "umbria-locations-scouting-2-2.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/flgn_Umbria.pdf",
+      "relPath": "Umbria-scouting/flgn_Umbria.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-2-2-2",
+      "mdxFile": "umbria-locations-scouting-2-2-2.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/gbb_umbria.pdf",
+      "relPath": "Umbria-scouting/gbb_umbria.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-amelia",
+      "mdxFile": "umbria-locations-scouting-amelia.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/Amelia-Umbria-scouting.pdf",
+      "relPath": "Umbria-scouting/Amelia-Umbria-scouting.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-montefalco",
+      "mdxFile": "umbria-locations-scouting-montefalco.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/mntflc_Umbria.pdf",
+      "relPath": "Umbria-scouting/mntflc_Umbria.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-rasiglia",
+      "mdxFile": "umbria-locations-scouting-rasiglia.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/rsgla_umbria.pdf",
+      "relPath": "Umbria-scouting/rsgla_umbria.pdf"
+    },
+    {
+      "slug": "umbria-locations-scouting-spoleto",
+      "mdxFile": "umbria-locations-scouting-spoleto.mdx",
+      "source": "manual",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Umbria-scouting/splet_umbria.pdf",
+      "relPath": "Umbria-scouting/splet_umbria.pdf"
+    },
+    {
+      "slug": "umbria-orvieto",
+      "mdxFile": "umbria-orvieto.mdx",
+      "source": "manual",
+      "pdfUrl": null,
+      "relPath": null
+    },
+    {
+      "slug": "veneto-chioggia-venice-alternative",
+      "mdxFile": "veneto-chioggia-venice-alternative.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/Chioggia/chioggia.pdf",
+      "relPath": "Chioggia/chioggia.pdf"
+    },
+    {
+      "slug": "vietri-coast-street-locations-scouting",
+      "mdxFile": "vietri-coast-street-locations-scouting.mdx",
+      "source": "auto",
+      "pdfUrl": "https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/scouting-reports/vietri/vietri-scouting.pdf",
+      "relPath": "vietri/vietri-scouting.pdf"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+=== RIEPILOGO MIGRAZIONE WordPress → Next.js ===
+Data: 2026-03-17 20:20
+
+CONTENUTI MIGRATI:
+  Post (location):     48
+  Pagine statiche:     6
+  Immagini uniche:     341
+  Redirect 301:        48
+
+FILE GENERATI:
+  content/locations/   48 file .mdx
+  content/pages/       6 file .mdx
+  _meta/all-slugs.json
+  _meta/all-images.json
+  _meta/redirects.json
+  _meta/next-config-redirects.js  ← copia in next.config.js
+  _meta/download-images.mjs       ← scarica foto da WordPress
+
+PROSSIMI PASSI:
+1. Copia content/ nella root del progetto Next.js
+2. Installa: npm install next-mdx-remote gray-matter
+3. Copia i redirect da next-config-redirects.js in next.config.js
+4. Esegui download-images.mjs per scaricare le foto
+5. Carica le foto su Cloudflare R2
+6. Sostituisci gli URL italylocations.com/wp-content/... con URL R2
+
+STRUTTURA NEXT.JS CONSIGLIATA:
+  app/locations/[slug]/page.tsx   ← legge il file MDX corrispondente
+  app/locations/page.tsx          ← griglia di tutte le location
+  lib/mdx.ts                      ← helper per leggere i file MDX
+
+NOTE SEO:
+  - Gli slug originali sono preservati (/{slug} → /locations/{slug})
+  - I redirect 301 mantengono il posizionamento Google
+  - Tutti gli excerpt e le meta description Yoast sono inclusi nel frontmatter

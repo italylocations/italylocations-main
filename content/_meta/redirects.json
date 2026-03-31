@@ -1,0 +1,242 @@
+[
+  {
+    "source": "/bologna-street-locations-scouting",
+    "destination": "/locations/bologna-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/parma-street-locations-scouting",
+    "destination": "/locations/parma-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/reggio-emilia-street-locations-scouting",
+    "destination": "/locations/reggio-emilia-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/rimini-street-locations-scouting",
+    "destination": "/locations/rimini-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/nepi-tuscia-street-locations-scouting",
+    "destination": "/locations/nepi-tuscia-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/caprarola-tuscia-street-locations-scouting",
+    "destination": "/locations/caprarola-tuscia-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/tarquinia-tuscia-street-locations-scouting",
+    "destination": "/locations/tarquinia-tuscia-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/amalfi-coast-street-locations-scouting",
+    "destination": "/locations/amalfi-coast-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/atrani-coast-street-locations-scouting",
+    "destination": "/locations/atrani-coast-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/cetara-coast-street-locations-scouting",
+    "destination": "/locations/cetara-coast-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/maiori-coast-street-locations-scouting",
+    "destination": "/locations/maiori-coast-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/ravello-coast-street-locations-scouting",
+    "destination": "/locations/ravello-coast-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/vietri-coast-street-locations-scouting",
+    "destination": "/locations/vietri-coast-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting",
+    "destination": "/locations/umbria-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/rome-colosseum-street-locations-scouting",
+    "destination": "/locations/rome-colosseum-street-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-2",
+    "destination": "/locations/umbria-locations-scouting-2",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-2-2",
+    "destination": "/locations/umbria-locations-scouting-2-2",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-2-2-2",
+    "destination": "/locations/umbria-locations-scouting-2-2-2",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-montefalco",
+    "destination": "/locations/umbria-locations-scouting-montefalco",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-rasiglia",
+    "destination": "/locations/umbria-locations-scouting-rasiglia",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-spoleto",
+    "destination": "/locations/umbria-locations-scouting-spoleto",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-rieti-locations-scouting",
+    "destination": "/locations/lazio-rieti-locations-scouting",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-tuscia-bomarzo-viterbo",
+    "destination": "/locations/lazio-tuscia-bomarzo-viterbo",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-tuscia-bolsena-lake",
+    "destination": "/locations/lazio-tuscia-bolsena-lake",
+    "permanent": true
+  },
+  {
+    "source": "/abruzzo-san-domenico-lake",
+    "destination": "/locations/abruzzo-san-domenico-lake",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-assisi",
+    "destination": "/locations/umbria-assisi",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-orvieto",
+    "destination": "/locations/umbria-orvieto",
+    "permanent": true
+  },
+  {
+    "source": "/abruzzo-pescara-adriatic-seaside",
+    "destination": "/locations/abruzzo-pescara-adriatic-seaside",
+    "permanent": true
+  },
+  {
+    "source": "/abruzzo-sulmona",
+    "destination": "/locations/abruzzo-sulmona",
+    "permanent": true
+  },
+  {
+    "source": "/torino-piemonte",
+    "destination": "/locations/torino-piemonte",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-tuscia-viterbo",
+    "destination": "/locations/lazio-tuscia-viterbo",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-tuscia-viterbo-tuscania",
+    "destination": "/locations/lazio-tuscia-viterbo-tuscania",
+    "permanent": true
+  },
+  {
+    "source": "/sardegna-beach-chia",
+    "destination": "/locations/sardegna-beach-chia",
+    "permanent": true
+  },
+  {
+    "source": "/sardegna-quarry-mars",
+    "destination": "/locations/sardegna-quarry-mars",
+    "permanent": true
+  },
+  {
+    "source": "/sardegna-cagliari-salt-pans",
+    "destination": "/locations/sardegna-cagliari-salt-pans",
+    "permanent": true
+  },
+  {
+    "source": "/sardegna-bosa-sardinia",
+    "destination": "/locations/sardegna-bosa-sardinia",
+    "permanent": true
+  },
+  {
+    "source": "/sardegna-castelsardo-sardinia",
+    "destination": "/locations/sardegna-castelsardo-sardinia",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-ponza-island",
+    "destination": "/locations/lazio-ponza-island",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-latina-automotive-location",
+    "destination": "/locations/lazio-latina-automotive-location",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-roma-appia-antica",
+    "destination": "/locations/lazio-roma-appia-antica",
+    "permanent": true
+  },
+  {
+    "source": "/lazio-roma-gazometro-industrial-location",
+    "destination": "/locations/lazio-roma-gazometro-industrial-location",
+    "permanent": true
+  },
+  {
+    "source": "/dolomiti-cortina-dampezzo-alps",
+    "destination": "/locations/dolomiti-cortina-dampezzo-alps",
+    "permanent": true
+  },
+  {
+    "source": "/todi-medieval-film-location-umbria",
+    "destination": "/locations/todi-medieval-film-location-umbria",
+    "permanent": true
+  },
+  {
+    "source": "/umbria-locations-scouting-amelia",
+    "destination": "/locations/umbria-locations-scouting-amelia",
+    "permanent": true
+  },
+  {
+    "source": "/dolomites-alpine-automotive-filming-locations",
+    "destination": "/locations/dolomites-alpine-automotive-filming-locations",
+    "permanent": true
+  },
+  {
+    "source": "/rome-white-marble-fashion-locations",
+    "destination": "/locations/rome-white-marble-fashion-locations",
+    "permanent": true
+  },
+  {
+    "source": "/northeast-italy-rivers-filming-locations",
+    "destination": "/locations/northeast-italy-rivers-filming-locations",
+    "permanent": true
+  },
+  {
+    "source": "/veneto-chioggia-venice-alternative",
+    "destination": "/locations/veneto-chioggia-venice-alternative",
+    "permanent": true
+  }
+]
