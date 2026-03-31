@@ -45,12 +45,12 @@ export function Footer() {
               {t.footer.tagline}
             </p>
             <a
-              href="https://locations.italylocations.com"
+              href="https://locations.italylocations.com/registrazione"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-xs font-semibold px-4 py-2 rounded-full border border-[rgba(201,168,76,0.35)] gold-text hover:bg-[rgba(201,168,76,0.08)] transition-colors"
             >
-              locations.italylocations.com ↗
+              {t.footer.registerCta}
             </a>
           </div>
 

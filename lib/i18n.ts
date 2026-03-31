@@ -141,6 +141,7 @@ const en = {
   footer: {
     tagline: 'Professional Film Location Scouting in Italy',
     rights: 'All Rights Reserved',
+    registerCta: 'Register your location →',
     links: {
       locations: ['Rome & Lazio', 'Amalfi Coast', 'Dolomites', 'Sardinia', 'All Regions', 'Milan', 'Rome', 'Florence', 'Naples'],
       services: [
@@ -713,6 +714,7 @@ const it: typeof en = {
   footer: {
     tagline: 'Scouting professionale di location cinematografiche in Italia',
     rights: 'Tutti i Diritti Riservati',
+    registerCta: 'Registra la tua location →',
     links: {
       locations: ['Roma & Lazio', 'Costiera Amalfitana', 'Dolomiti', 'Sardegna', 'Tutte le regioni', 'Milano', 'Roma', 'Firenze', 'Napoli'],
       services: [
@@ -1285,6 +1287,7 @@ const es: typeof en = {
   footer: {
     tagline: 'Scouting profesional de locations cinematográficas en Italia',
     rights: 'Todos los Derechos Reservados',
+    registerCta: 'Registra tu locación →',
     links: {
       locations: ['Roma & Lazio', 'Costa Amalfitana', 'Dolomitas', 'Cerdeña', 'Todas las regiones', 'Milán', 'Roma', 'Florencia', 'Nápoles'],
       services: [
