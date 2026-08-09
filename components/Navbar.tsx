@@ -3,18 +3,22 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { localizedPath, stripLocale } from '@/lib/hreflang'
 import type { Lang } from '@/lib/i18n'
 
 const LANGS: Lang[] = ['en', 'it', 'es']
 
 export function Navbar() {
   const { lang, setLang, t } = useLanguage()
-  const router = useRouter()
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  // Locale-agnostic path of the page we are on, so each language link points at
+  // the translated version of THIS page instead of the homepage.
+  const basePath = stripLocale(pathname ?? '/')
 
   const prefix = lang === 'en' ? '' : `/${lang}`
 
@@ -32,23 +36,6 @@ export function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  function switchLang(l: Lang) {
-    // Strip current locale prefix to get the base path
-    let basePath = pathname
-    if (lang !== 'en') {
-      const currentPrefix = `/${lang}`
-      if (pathname.startsWith(currentPrefix + '/')) {
-        basePath = pathname.slice(currentPrefix.length)
-      } else if (pathname === currentPrefix) {
-        basePath = '/'
-      }
-    }
-
-    const newPath = l === 'en' ? basePath : `/${l}${basePath === '/' ? '' : basePath}`
-    setLang(l)
-    router.push(newPath)
-  }
 
   return (
     <header
@@ -93,8 +80,11 @@ export function Navbar() {
             {LANGS.map((l, i) => (
               <span key={l} className="flex items-center">
                 {i > 0 && <span className="text-[rgba(255,255,255,0.20)] px-1">|</span>}
-                <button
-                  onClick={() => switchLang(l)}
+                <Link
+                  href={localizedPath(l, basePath)}
+                  hrefLang={l}
+                  aria-current={lang === l ? 'page' : undefined}
+                  onClick={() => setLang(l)}
                   className={`px-1.5 py-1 rounded transition-colors duration-200 uppercase ${
                     lang === l
                       ? 'gold-text'
@@ -102,7 +92,7 @@ export function Navbar() {
                   }`}
                 >
                   {l}
-                </button>
+                </Link>
               </span>
             ))}
           </div>
@@ -150,14 +140,17 @@ export function Navbar() {
             {LANGS.map((l, i) => (
               <span key={l} className="flex items-center">
                 {i > 0 && <span className="text-[rgba(255,255,255,0.20)] text-xs px-1">|</span>}
-                <button
-                  onClick={() => { switchLang(l); setMobileOpen(false) }}
+                <Link
+                  href={localizedPath(l, basePath)}
+                  hrefLang={l}
+                  aria-current={lang === l ? 'page' : undefined}
+                  onClick={() => { setLang(l); setMobileOpen(false) }}
                   className={`text-xs font-semibold px-1.5 py-1 uppercase ${
                     lang === l ? 'gold-text' : 'text-[rgba(255,255,255,0.40)]'
                   }`}
                 >
                   {l}
-                </button>
+                </Link>
               </span>
             ))}
           </li>

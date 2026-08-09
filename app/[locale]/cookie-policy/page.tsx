@@ -1,9 +1,22 @@
 import type { Metadata } from 'next'
+import { localizedUrl } from '@/lib/hreflang'
+import type { Lang } from '@/lib/i18n'
 
-export const metadata: Metadata = {
-  title: 'Cookie Policy',
-  description: 'Cookie Policy for italylocations.com — how we use cookies and tracking technologies.',
-  robots: { index: false, follow: false },
+interface Props {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+
+  return {
+    title: 'Cookie Policy',
+    description: 'Cookie Policy for italylocations.com — how we use cookies and tracking technologies.',
+    robots: { index: false, follow: false },
+    // Self-referencing canonical only: this page is noindex, and hreflang
+    // annotations on a noindex page are contradictory (Google ignores them).
+    alternates: { canonical: localizedUrl(locale as Lang, '/cookie-policy') },
+  }
 }
 
 export default function CookiePolicyPage() {

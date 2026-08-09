@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getAllLocations, getLocationBySlug } from '@/lib/locations'
+import { alternatesFor } from '@/lib/hreflang'
 import { ImageGallery } from './ImageGallery'
 import { PdfDownloadButton } from './PdfDownloadButton'
 import type { Lang } from '@/lib/i18n'
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { locale, slug } = await params
   const location = getLocationBySlug(slug)
   if (!location) return {}
 
@@ -29,9 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `${location.seoTitle} | Italy Locations`
       : `${location.title} | Italy Locations`,
     description: location.seoDescription ?? location.excerpt,
-    alternates: {
-      canonical: `https://italylocations.com/locations/${slug}`,
-    },
+    alternates: alternatesFor(locale, `/locations/${slug}`),
     openGraph: {
       title: location.seoTitle ?? location.title,
       description: location.seoDescription ?? location.excerpt,

@@ -74,14 +74,10 @@ export const metadata: Metadata = {
       'Expert film location scouting across Italy. Exclusive access to 500+ locations from Rome to Sicily.',
     images: ['https://pub-213b9b519e9d40f4b320ee44e8b12130.r2.dev/main-site/2024_02_rome-aerial-shot-drone-scouting-locations-italy.jpg'],
   },
-  alternates: {
-    canonical: 'https://italylocations.com',
-    languages: {
-      'en': 'https://italylocations.com',
-      'it': 'https://italylocations.com/it',
-      'es': 'https://italylocations.com/es',
-    },
-  },
+  // NOTE: no `alternates` here on purpose — metadata is inherited by every
+  // segment below, so a canonical set here would point every page at the
+  // homepage. Each page under app/[locale] declares its own canonical +
+  // hreflang set via alternatesFor() in lib/hreflang.ts.
   verification: {
     google: 'SqftTTM8l_qJGIUW0R786J480M6k-kHfx8VW7O7ImoA',
   },
