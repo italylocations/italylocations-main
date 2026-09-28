@@ -3,6 +3,15 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+function escapeHtml(value: string): string {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
   const res = await fetch(
     'https://challenges.cloudflare.com/turnstile/v0/siteverify',
@@ -33,7 +42,7 @@ function buildEmailHtml(fields: {
     value
       ? `<tr>
           <td style="padding:8px 16px;color:#9ca3af;font-size:13px;white-space:nowrap;">${label}</td>
-          <td style="padding:8px 16px;color:#f9fafb;font-size:14px;">${value}</td>
+          <td style="padding:8px 16px;color:#f9fafb;font-size:14px;">${escapeHtml(value)}</td>
         </tr>`
       : ''
 
@@ -57,11 +66,11 @@ function buildEmailHtml(fields: {
       </table>
       <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.08);">
         <p style="margin:0 0 8px;color:#9ca3af;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;">Message</p>
-        <p style="margin:0;color:#f9fafb;font-size:14px;line-height:1.65;white-space:pre-wrap;">${fields.message}</p>
+        <p style="margin:0;color:#f9fafb;font-size:14px;line-height:1.65;white-space:pre-wrap;">${escapeHtml(fields.message)}</p>
       </div>
     </div>
     <div style="padding:16px 32px 24px;text-align:center;">
-      <a href="mailto:${fields.email}" style="display:inline-block;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:12px 28px;border-radius:999px;">Reply to ${fields.name}</a>
+      <a href="mailto:${escapeHtml(fields.email)}" style="display:inline-block;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:12px 28px;border-radius:999px;">Reply to ${escapeHtml(fields.name)}</a>
     </div>
   </div>
 </body>
@@ -74,6 +83,7 @@ function buildConfirmationHtml(fields: {
   shootingDate?: string
   message: string
 }): string {
+  // value must already be HTML-escaped by the caller
   const summaryRow = (label: string, value?: string) =>
     value
       ? `<tr>
@@ -96,16 +106,16 @@ function buildConfirmationHtml(fields: {
 
     <!-- Body -->
     <div style="padding:32px;">
-      <h1 style="margin:0 0 16px;color:#ffffff;font-size:24px;font-weight:700;">Thank you, ${fields.name}!</h1>
+      <h1 style="margin:0 0 16px;color:#ffffff;font-size:24px;font-weight:700;">Thank you, ${escapeHtml(fields.name)}!</h1>
       <p style="margin:0 0 8px;color:#d1d5db;font-size:15px;line-height:1.65;">We have received your project inquiry and will get back to you within <strong style="color:#ffffff;">24 hours</strong>.</p>
       <p style="margin:0 0 24px;color:#d1d5db;font-size:15px;line-height:1.65;">Here&apos;s a summary of what you sent us:</p>
 
       <!-- Summary box -->
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;margin-bottom:28px;">
         <table style="width:100%;border-collapse:collapse;">
-          ${summaryRow('Project Type', fields.projectType)}
-          ${summaryRow('Shooting Date', fields.shootingDate)}
-          ${summaryRow('Message', fields.message.replace(/\n/g, '<br>'))}
+          ${summaryRow('Project Type', escapeHtml(fields.projectType))}
+          ${summaryRow('Shooting Date', fields.shootingDate ? escapeHtml(fields.shootingDate) : undefined)}
+          ${summaryRow('Message', escapeHtml(fields.message).replace(/\n/g, '<br>'))}
         </table>
       </div>
 
@@ -136,40 +146,55 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const { name, email, company, projectType, shootingDate, message, budgetRange, website, turnstileToken } = body
 
-    // Validate required fields
-    if (!name || !email || !message || !projectType) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-    }
-
     // Honeypot check — silent false positive
     if (website) {
       return NextResponse.json({ success: true })
     }
 
+    // Validate required fields
+    if (!name || !email || !message || !projectType) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+    }
+
     // Turnstile verification
-    const ip = req.headers.get('cf-connecting-ip') ?? req.headers.get('x-forwarded-for') ?? ''
+    if (typeof turnstileToken !== 'string' || !turnstileToken.trim()) {
+      return NextResponse.json({ error: 'Verification failed' }, { status: 400 })
+    }
+    const ip =
+      req.headers.get('x-real-ip') ??
+      req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+      ''
     const turnstileValid = await verifyTurnstile(turnstileToken, ip)
     if (!turnstileValid) {
       return NextResponse.json({ error: 'Verification failed' }, { status: 400 })
     }
 
-    await resend.emails.send({
+    const subject = `New inquiry: ${projectType} — ${name}`.replace(/[\r\n]+/g, ' ')
+
+    const { error: sendError } = await resend.emails.send({
       from: 'Italy Locations <noreply@italylocations.com>',
       to: 'info@italylocations.com',
       replyTo: email,
-      subject: `New inquiry: ${projectType} — ${name}`,
+      subject,
       html: buildEmailHtml({ name, email, company, projectType, shootingDate, message, budgetRange }),
     })
+    if (sendError) {
+      console.error('[contact] inquiry email failed:', sendError)
+      return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    }
 
     // Confirmation email to sender — non-blocking
     try {
-      await resend.emails.send({
+      const { error: confirmError } = await resend.emails.send({
         from: 'Italy Locations <noreply@italylocations.com>',
         to: email,
         replyTo: 'info@italylocations.com',
         subject: 'We received your inquiry — Italy Locations',
         html: buildConfirmationHtml({ name, projectType, shootingDate, message }),
       })
+      if (confirmError) {
+        console.error('[contact] confirmation email failed:', confirmError)
+      }
     } catch (err) {
       console.error('[contact] confirmation email failed:', err)
     }
