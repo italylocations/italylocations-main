@@ -151,6 +151,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true })
     }
 
+    // Heuristic spam check — a bot hitting this form keeps submitting
+    // shootingDate '1970-05-31'; drop it silently like the honeypot
+    if (shootingDate === '1970-05-31') {
+      return NextResponse.json({ success: true })
+    }
+
     // Validate required fields
     if (!name || !email || !message || !projectType) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
